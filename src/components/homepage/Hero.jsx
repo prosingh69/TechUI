@@ -213,15 +213,25 @@ const Hero = () => {
             </AnimatePresence>
           </div>
 
-          {/* 4. Button: Horizontally aligned text and arrow icon */}
-          <div className="mt-3.5 sm:mt-4">
-            <a
-              href={currentSlide.href}
-              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-white text-[#1A1D2E] font-medium text-xs sm:text-sm hover:bg-gray-100 transition-all duration-200 shadow-md group shrink-0 leading-none"
-            >
-              <span className="leading-none">{currentSlide.cta}</span>
-              <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </a>
+          {/* 4. Button: Horizontally aligned text and arrow icon with synchronized slide animation */}
+          <div className="mt-3.5 sm:mt-4 h-10 sm:h-11 flex items-center justify-start lg:justify-end">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`btn-${currentIndex}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <a
+                  href={currentSlide.href}
+                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-white text-[#1A1D2E] font-medium text-xs sm:text-sm hover:bg-gray-100 transition-all duration-200 shadow-md group shrink-0 leading-none"
+                >
+                  <span className="leading-none">{currentSlide.cta}</span>
+                  <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </a>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
         </div>
