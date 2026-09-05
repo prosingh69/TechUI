@@ -29,7 +29,7 @@ const GrowthEngineBanner = () => {
             transition={{ duration: 0.55 }}
             className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.75rem] font-bold text-white tracking-tight leading-[1.15] max-w-2xl drop-shadow-md"
           >
-            Build and Scale with Big Feathers Technology.
+            Engineer Your Next High-Growth Digital Venture.
           </motion.h2>
 
           {/* GrowthJockey Style "Build with us" CTA Button */}
