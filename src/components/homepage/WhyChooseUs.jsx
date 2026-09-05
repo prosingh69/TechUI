@@ -55,11 +55,11 @@ const WhyChooseUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col justify-between h-full p-2 sm:p-4 lg:p-6 lg:pl-0 lg:py-3"
+            className="flex flex-col justify-between h-full py-1 lg:py-2 pr-0 lg:pr-6"
           >
             <div>
-              {/* Main Heading with Gradient Accent */}
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-slate-900 tracking-tight leading-[1.12]">
+              {/* Main Heading with Gradient Accent - Refined GrowthJockey aesthetic */}
+              <h2 className="text-3xl sm:text-4xl lg:text-[2.85rem] xl:text-[3.15rem] font-normal sm:font-[450] lg:font-medium text-slate-900 tracking-[-0.025em] leading-[1.14]">
                 Why Choose Us <br />
                 <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent whitespace-nowrap">
                   To Build & Scale
@@ -67,12 +67,12 @@ const WhyChooseUs = () => {
               </h2>
 
               {/* Body Description */}
-              <p className="mt-4 sm:mt-5 text-slate-600 text-sm sm:text-base leading-[1.68] font-normal">
+              <p className="mt-4 sm:mt-5 text-slate-600 text-sm sm:text-base leading-[1.7] font-light sm:font-normal">
                 From zero-to-one venture building to enterprise-level digital expansion, our venture engineering system replaces guesswork with validated execution. We align design, technology, and commercial strategy to build businesses that lead markets.
               </p>
 
               {/* Key Trust Checkpoints */}
-              <div className="mt-6 sm:mt-7 space-y-2.5">
+              <div className="mt-6 sm:mt-8 space-y-3">
                 {trustPoints.map((point, index) => (
                   <div key={index} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-[#1F40CB] shrink-0" />
@@ -83,13 +83,13 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Micro CTA link at bottom of Quadrant 1 */}
-            <div className="mt-8 pt-6 border-t border-slate-200/80 flex items-center justify-between">
-              <span className="text-xs text-slate-500 font-medium">
+            <div className="mt-8 pt-5 border-t border-slate-200/80 flex items-center justify-between">
+              <span className="text-xs text-slate-500 font-normal">
                 Proven across 50+ ventures & enterprises
               </span>
               <Link
                 to="/contact-us"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F40CB] hover:text-blue-700 transition-colors group"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1F40CB] hover:text-blue-700 transition-colors group"
               >
                 <span>Talk to Our Experts</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -120,24 +120,24 @@ const WhyChooseUs = () => {
             <div className="relative z-10 flex flex-col justify-between h-full p-6 sm:p-7 lg:p-8 text-white">
               {/* Header: Pillar Badge */}
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/20 text-white">
+                <span className="text-[11px] font-medium uppercase tracking-wider px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/20 text-white">
                   {reasons[0].pillar}
                 </span>
               </div>
 
               {/* Bottom: Title, Description & Action */}
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight group-hover:text-cyan-200 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-cyan-200 transition-colors">
                   {reasons[0].title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-normal line-clamp-2 sm:line-clamp-3">
+                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2 sm:line-clamp-3">
                   {reasons[0].description}
                 </p>
 
                 <div className="mt-4 flex items-center justify-end">
                   <Link
                     to={reasons[0].link}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-xs font-semibold text-white transition-all duration-200 group-hover:bg-white group-hover:text-slate-900 group-hover:border-transparent"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-xs font-medium text-white transition-all duration-200 group-hover:bg-white group-hover:text-slate-900 group-hover:border-transparent"
                   >
                     <span>Explore Capability</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -170,24 +170,24 @@ const WhyChooseUs = () => {
             <div className="relative z-10 flex flex-col justify-between h-full p-6 sm:p-7 lg:p-8 text-white">
               {/* Header: Pillar Badge */}
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/20 text-white">
+                <span className="text-[11px] font-medium uppercase tracking-wider px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/20 text-white">
                   {reasons[1].pillar}
                 </span>
               </div>
 
               {/* Bottom: Title, Description & Action */}
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight group-hover:text-cyan-200 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-cyan-200 transition-colors">
                   {reasons[1].title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-normal line-clamp-2 sm:line-clamp-3">
+                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2 sm:line-clamp-3">
                   {reasons[1].description}
                 </p>
 
                 <div className="mt-4 flex items-center justify-end">
                   <Link
                     to={reasons[1].link}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-xs font-semibold text-white transition-all duration-200 group-hover:bg-white group-hover:text-slate-900 group-hover:border-transparent"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-xs font-medium text-white transition-all duration-200 group-hover:bg-white group-hover:text-slate-900 group-hover:border-transparent"
                   >
                     <span>Explore Capability</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -220,24 +220,24 @@ const WhyChooseUs = () => {
             <div className="relative z-10 flex flex-col justify-between h-full p-6 sm:p-7 lg:p-8 text-white">
               {/* Header: Pillar Badge */}
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/20 text-white">
+                <span className="text-[11px] font-medium uppercase tracking-wider px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/20 text-white">
                   {reasons[2].pillar}
                 </span>
               </div>
 
               {/* Bottom: Title, Description & Action */}
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight group-hover:text-cyan-200 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-cyan-200 transition-colors">
                   {reasons[2].title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-normal line-clamp-2 sm:line-clamp-3">
+                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2 sm:line-clamp-3">
                   {reasons[2].description}
                 </p>
 
                 <div className="mt-4 flex items-center justify-end">
                   <Link
                     to={reasons[2].link}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-xs font-semibold text-white transition-all duration-200 group-hover:bg-white group-hover:text-slate-900 group-hover:border-transparent"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-xs font-medium text-white transition-all duration-200 group-hover:bg-white group-hover:text-slate-900 group-hover:border-transparent"
                   >
                     <span>Explore Capability</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
