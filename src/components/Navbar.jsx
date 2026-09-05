@@ -50,14 +50,14 @@ const Navbar = () => {
         {/* Left Side: Brand Logo & Nav Links together with gap */}
         <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center group py-0.5 -mr-4 sm:-mr-6 lg:-mr-8">
+          <Link to="/" className="flex items-center group py-0.5 -mr-3 sm:-mr-5 lg:-mr-6">
             <img
               src="/logo.png"
               alt="Big Feathers Technology"
               className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                 isScrolled
-                  ? 'h-9 sm:h-11 lg:h-12 max-w-[160px] sm:max-w-[190px] -translate-y-0.5 sm:-translate-y-1 drop-shadow-[0_1px_3px_rgba(2,19,56,0.65)]'
-                  : 'h-14 sm:h-18 lg:h-22 max-w-[220px] sm:max-w-[260px] -translate-y-1 sm:-translate-y-1.5 drop-shadow-[0_2px_12px_rgba(0,102,255,0.25)]'
+                  ? 'h-11 sm:h-13 lg:h-14 max-w-[185px] sm:max-w-[220px] -translate-y-0.5 sm:-translate-y-1 drop-shadow-[0_1px_3px_rgba(2,19,56,0.65)]'
+                  : 'h-16 sm:h-20 lg:h-24 max-w-[250px] sm:max-w-[295px] -translate-y-1 sm:-translate-y-1.5 drop-shadow-[0_2px_12px_rgba(0,102,255,0.25)]'
               }`}
             />
           </Link>
