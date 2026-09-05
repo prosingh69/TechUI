@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#EEF5FD]/95 backdrop-blur-md border-b border-blue-200/70 shadow-[0_4px_20px_rgba(31,64,203,0.07)] py-1.5 sm:py-2'
+          ? 'bg-[#EEF5FD]/95 backdrop-blur-md border-b border-blue-200/70 shadow-[0_4px_20px_rgba(31,64,203,0.07)] py-0.5 sm:py-1'
           : 'bg-transparent border-none shadow-none py-2.5 sm:py-3'
       }`}
     >
@@ -50,13 +50,18 @@ const Navbar = () => {
         {/* Left Side: Brand Logo & Nav Links together with gap */}
         <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center group py-0.5 -mr-3 sm:-mr-5 lg:-mr-6">
+          <Link
+            to="/"
+            className={`flex items-center group ${
+              isScrolled ? 'py-0 mr-0' : 'py-0.5 -mr-3 sm:-mr-5 lg:-mr-6'
+            }`}
+          >
             <img
-              src="/logo.png"
+              src={isScrolled ? '/logo-trimmed.png' : '/logo.png'}
               alt="Big Feathers Technology"
               className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                 isScrolled
-                  ? 'h-[3.25rem] sm:h-[3.65rem] lg:h-[3.95rem] max-w-[210px] sm:max-w-[245px] lg:max-w-[265px] -translate-y-0.5 sm:-translate-y-1 drop-shadow-[0_2px_8px_rgba(31,64,203,0.22)]'
+                  ? 'h-[2.65rem] sm:h-[2.9rem] lg:h-[3.15rem] max-w-[200px] sm:max-w-[230px] lg:max-w-[250px] drop-shadow-[0_2px_8px_rgba(31,64,203,0.22)]'
                   : 'h-16 sm:h-20 lg:h-24 max-w-[250px] sm:max-w-[295px] -translate-y-1 sm:-translate-y-1.5 drop-shadow-[0_2px_12px_rgba(0,102,255,0.25)]'
               }`}
             />
@@ -126,7 +131,7 @@ const Navbar = () => {
             /* Scrolled: "Free Demo" CTA Button with Brand Blue Gradient */
             <Link
               to="/free-demo"
-              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-[#1F40CB] via-[#1554D8] to-[#00A2ED] hover:from-[#1935aa] hover:to-[#008ecf] text-white shadow-md hover:shadow-lg hover:shadow-blue-500/25 px-4 sm:px-5 py-2 text-xs sm:text-sm group"
+              className="hidden sm:inline-flex items-center justify-center gap-1.5 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-[#1F40CB] via-[#1554D8] to-[#00A2ED] hover:from-[#1935aa] hover:to-[#008ecf] text-white shadow-md hover:shadow-lg hover:shadow-blue-500/25 px-4 sm:px-5 py-1.5 text-xs sm:text-sm group"
             >
               <span>Free Demo</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
