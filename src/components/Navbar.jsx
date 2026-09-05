@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#020B24]/92 backdrop-blur-md border-b border-white/10 shadow-[0_4px_25px_rgba(0,0,0,0.35)] py-1.5 sm:py-2'
+          ? 'bg-[#EEF5FD]/95 backdrop-blur-md border-b border-blue-200/70 shadow-[0_4px_20px_rgba(31,64,203,0.07)] py-1.5 sm:py-2'
           : 'bg-transparent border-none shadow-none py-2.5 sm:py-3'
       }`}
     >
@@ -56,7 +56,7 @@ const Navbar = () => {
               alt="Big Feathers Technology"
               className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                 isScrolled
-                  ? 'h-[3.25rem] sm:h-[3.65rem] lg:h-[3.95rem] max-w-[210px] sm:max-w-[245px] lg:max-w-[265px] -translate-y-0.5 sm:-translate-y-1 drop-shadow-[0_2px_12px_rgba(0,162,237,0.35)]'
+                  ? 'h-[3.25rem] sm:h-[3.65rem] lg:h-[3.95rem] max-w-[210px] sm:max-w-[245px] lg:max-w-[265px] -translate-y-0.5 sm:-translate-y-1 drop-shadow-[0_2px_8px_rgba(31,64,203,0.22)]'
                   : 'h-16 sm:h-20 lg:h-24 max-w-[250px] sm:max-w-[295px] -translate-y-1 sm:-translate-y-1.5 drop-shadow-[0_2px_12px_rgba(0,102,255,0.25)]'
               }`}
             />
@@ -70,7 +70,7 @@ const Navbar = () => {
                 to={link.href}
                 className={`tracking-wide transition-colors duration-200 ${
                   isScrolled
-                    ? 'text-[14px] text-white/85 hover:text-[#00A2ED] font-medium'
+                    ? 'text-[14px] text-slate-800 hover:text-[#1F40CB] font-semibold'
                     : 'text-[15px] text-white/80 hover:text-white font-normal'
                 }`}
               >
@@ -136,7 +136,11 @@ const Navbar = () => {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 md:hidden focus:outline-none rounded-lg transition-colors text-white hover:bg-white/10"
+            className={`p-2 md:hidden focus:outline-none rounded-lg transition-colors ${
+              isScrolled
+                ? 'text-slate-800 hover:bg-blue-100/60'
+                : 'text-white hover:bg-white/10'
+            }`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -146,14 +150,24 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden px-6 py-6 space-y-4 transition-colors bg-[#020B24]/98 backdrop-blur-xl border-b border-white/10 text-white shadow-2xl">
+        <div
+          className={`md:hidden px-6 py-6 space-y-4 transition-colors ${
+            isScrolled
+              ? 'bg-[#EEF5FD]/98 backdrop-blur-xl border-b border-blue-200/70 text-slate-900 shadow-xl'
+              : 'bg-[#020B24]/98 backdrop-blur-xl border-b border-white/10 text-white shadow-2xl'
+          }`}
+        >
           <div className="space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-base font-medium py-1.5 transition-colors text-white/80 hover:text-[#00A2ED]"
+                className={`block text-base font-medium py-1.5 transition-colors ${
+                  isScrolled
+                    ? 'text-slate-800 hover:text-[#1F40CB]'
+                    : 'text-white/80 hover:text-white'
+                }`}
               >
                 {link.name}
               </Link>
