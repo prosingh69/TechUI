@@ -11,38 +11,6 @@ import {
   ExternalLink 
 } from 'lucide-react';
 
-const enterpriseLogos = [
-  {
-    name: 'Microsoft',
-    darkSrc: 'https://growthjockey-prod.b-cdn.net/new/DarkLogos/Microsoft.webp',
-    origSrc: 'https://growthjockey-prod.b-cdn.net/new/Original/Microsoft.webp',
-  },
-  {
-    name: 'Samsung',
-    darkSrc: 'https://growthjockey-prod.b-cdn.net/new/DarkLogos/Samsung.webp',
-    origSrc: 'https://growthjockey-prod.b-cdn.net/new/Original/Samsung.webp',
-  },
-  {
-    name: 'Infosys',
-    darkSrc: 'https://growthjockey-prod.b-cdn.net/new/DarkLogos/Infosys.webp',
-    origSrc: 'https://growthjockey-prod.b-cdn.net/new/Original/Infosys.webp',
-  },
-  {
-    name: 'Jio',
-    darkSrc: 'https://growthjockey-prod.b-cdn.net/new/DarkLogos/JIO.webp',
-    origSrc: 'https://growthjockey-prod.b-cdn.net/new/Original/JIO.webp',
-  },
-  {
-    name: 'OYO',
-    darkSrc: 'https://growthjockey-prod.b-cdn.net/new/DarkLogos/OYO.webp',
-    origSrc: 'https://growthjockey-prod.b-cdn.net/new/Original/OYO.webp',
-  },
-  {
-    name: 'Rivigo',
-    darkSrc: 'https://growthjockey-prod.b-cdn.net/new/DarkLogos/Rivigo.webp',
-    origSrc: 'https://growthjockey-prod.b-cdn.net/new/Original/Rivigo.webp',
-  },
-];
 
 const solutionsData = [
   {
@@ -128,38 +96,107 @@ const VentureArchitects = () => {
         {/* Top Part: GrowthJockey Signature "Not Just Experts. Venture Architects." layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center pb-16 sm:pb-20 border-b border-slate-200">
           
-          {/* Left Column: Trusted Enterprise & Pedigree Logos Grid */}
+          {/* Left Column: 2 Pricing Cards (Clean Placeholders) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.55 }}
-            className="grid grid-cols-3 gap-4 sm:gap-6 items-center justify-center p-4 sm:p-6 bg-slate-50 rounded-2xl border border-slate-100"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-stretch w-full"
           >
-            {enterpriseLogos.map((logo, index) => (
-              <div
-                key={index}
-                className="group relative h-16 sm:h-20 flex items-center justify-center p-3 rounded-xl bg-white border border-slate-200/70 hover:border-[#1F40CB]/40 shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                {/* Monochrome/Dark Logo */}
-                <img
-                  src={logo.darkSrc}
-                  alt={logo.name}
-                  loading="lazy"
-                  className="max-h-7 sm:max-h-9 max-w-[85%] object-contain filter grayscale opacity-70 group-hover:opacity-0 transition-opacity duration-300"
-                />
-                {/* Original/Color Logo on Hover */}
-                <img
-                  src={logo.origSrc}
-                  alt={logo.name}
-                  loading="lazy"
-                  className="absolute max-h-7 sm:max-h-9 max-w-[85%] object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
+            {/* Pricing Card 1 */}
+            <div className="relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-50/90 border border-slate-200/90 hover:border-slate-300 shadow-sm transition-all duration-300 min-h-[350px]">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-200/70 text-slate-700 font-ibm">
+                    Plan 01
+                  </span>
+                </div>
+
+                <div className="mt-5">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 font-ibm">
+                    Sprint Plan
+                  </h3>
+                  <div className="mt-3 flex items-baseline gap-1">
+                    <span className="text-2xl sm:text-3xl font-bold text-slate-900 font-ibm tracking-tight">
+                      ₹—
+                    </span>
+                    <span className="text-xs text-slate-500 font-ibm">
+                      / sprint
+                    </span>
+                  </div>
+                </div>
+
+                {/* Empty content area ready for user's features */}
+                <div className="mt-6 py-10 px-4 rounded-xl border border-dashed border-slate-200/90 bg-white/60 flex items-center justify-center text-center">
+                  <span className="text-xs text-slate-400 font-normal font-ibm">
+                    Features placeholder
+                  </span>
+                </div>
               </div>
-            ))}
+
+              <div className="mt-6">
+                <Link
+                  to="/contact-us"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 text-xs sm:text-sm font-medium border border-slate-300 shadow-sm transition-all duration-200 font-ibm"
+                >
+                  <span>Select Plan</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Pricing Card 2 (Highlighted) */}
+            <div className="relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border-2 border-[#1F40CB]/40 hover:border-[#1F40CB] shadow-md hover:shadow-xl transition-all duration-300 min-h-[350px]">
+              {/* Popular Badge */}
+              <div className="absolute -top-3 right-6">
+                <span className="px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] text-white shadow-sm font-ibm">
+                  Popular
+                </span>
+              </div>
+
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#1F40CB] border border-blue-100 font-ibm">
+                    Tier 02
+                  </span>
+                </div>
+
+                <div className="mt-5">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 font-ibm">
+                    Scale Squad
+                  </h3>
+                  <div className="mt-3 flex items-baseline gap-1">
+                    <span className="text-2xl sm:text-3xl font-bold text-slate-900 font-ibm tracking-tight">
+                      ₹—
+                    </span>
+                    <span className="text-xs text-slate-500 font-ibm">
+                      / month
+                    </span>
+                  </div>
+                </div>
+
+                {/* Empty content area ready for user's features */}
+                <div className="mt-6 py-10 px-4 rounded-xl border border-dashed border-blue-200/80 bg-blue-50/20 flex items-center justify-center text-center">
+                  <span className="text-xs text-blue-400 font-normal font-ibm">
+                    Features placeholder
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <Link
+                  to="/contact-us"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] hover:opacity-95 text-white text-xs sm:text-sm font-medium shadow-md transition-all duration-200 font-ibm"
+                >
+                  <span>Select Plan</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Right Column: High-Impact Typography & Dual CTAs */}
+          {/* Right Column: High-Impact Typography & Dual CTAs for Pricing */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -167,33 +204,37 @@ const VentureArchitects = () => {
             transition={{ duration: 0.55 }}
             className="flex flex-col items-start lg:items-end text-left lg:text-right"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-5xl font-bold text-slate-900 tracking-tight leading-[1.12]">
-              Not Just Developers.{' '}
+            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#1F40CB] mb-2 sm:mb-2.5 block font-ibm">
+              Pricing & Engagement Models
+            </span>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-5xl font-normal sm:font-[450] lg:font-medium text-slate-900 tracking-[-0.02em] leading-[1.12] font-ibm">
+              Transparent Pricing.{' '}
               <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent whitespace-nowrap">
-                Venture Architects.
+                Engineered to Scale.
               </span>
             </h2>
 
-            <p className="mt-4 sm:mt-5 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
-              With proven engineering execution across custom software, generative AI, omnichannel commerce, and performance marketing, our roots lie in building what works. We bring disciplined venture building to every partnership.
+            <p className="mt-4 sm:mt-5 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal font-ibm">
+              Predictable, value-driven investment models tailored to your stage of growth. From rapid MVP sprints to dedicated venture engineering squads, get transparent deliverables with zero hidden costs.
             </p>
 
             {/* Dual CTA Buttons */}
             <div className="mt-7 sm:mt-8 flex flex-wrap items-center gap-3.5">
               <Link
-                to="/about-us"
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-900 hover:bg-[#1F40CB] text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg group"
+                to="/contact-us"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-900 hover:bg-[#1F40CB] text-white text-xs sm:text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg group font-ibm"
               >
-                <span>Who we are</span>
+                <span>Get a custom quote</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
 
               <Link
                 to="/contact-us"
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-300/80 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-medium border border-slate-300/80 transition-all duration-200 font-ibm"
               >
-                <span>Start a project</span>
+                <span>Schedule a consult</span>
               </Link>
             </div>
           </motion.div>
