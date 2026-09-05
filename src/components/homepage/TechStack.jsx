@@ -205,13 +205,13 @@ const TechStack = () => {
           transition={{ duration: 0.55 }}
           className="flex flex-col items-start"
         >
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] xl:text-[3.5rem] font-bold text-white tracking-tight leading-[1.08] font-ibm">
+          {/* Heading - Refined GrowthJockey weight */}
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.85rem] font-normal sm:font-[450] lg:font-medium text-white tracking-[-0.02em] leading-[1.14] font-ibm">
             Engineered with Modern Tech & AI Stack
           </h2>
 
           {/* Description */}
-          <p className="mt-4 sm:mt-5 text-white/90 text-sm sm:text-base lg:text-[16px] leading-[1.65] font-ibm max-w-xl font-normal">
+          <p className="mt-4 sm:mt-5 text-white/80 text-sm sm:text-base leading-relaxed font-ibm max-w-xl font-light sm:font-normal">
             We build on battle-tested frameworks, cloud infrastructure, and state-of-the-art AI models. From responsive cross-platform web and mobile applications to high-throughput business automation and marketplace catalogue scaling, our stack is engineered for speed, resilience, and measurable growth.
           </p>
 
@@ -219,7 +219,7 @@ const TechStack = () => {
           <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3.5">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-[#1F40CB] hover:bg-blue-50 font-semibold text-sm transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] group font-ibm"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-[#1F40CB] hover:bg-blue-50 font-medium text-sm transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] group font-ibm"
             >
               <span>Explore Architecture</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -227,7 +227,7 @@ const TechStack = () => {
 
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm border border-white/40 backdrop-blur-md transition-all duration-200 hover:scale-[1.02] font-ibm"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-normal sm:font-medium text-sm border border-white/40 backdrop-blur-md transition-all duration-200 hover:scale-[1.02] font-ibm"
             >
               <span>Schedule Tech Consult</span>
             </a>
@@ -257,14 +257,14 @@ const TechStack = () => {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
                   <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
                 </div>
-                <span className="text-xs font-bold text-slate-700 tracking-wider uppercase font-ibm flex items-center gap-1.5 ml-1">
+                <span className="text-xs font-medium text-slate-700 tracking-wider uppercase font-ibm flex items-center gap-1.5 ml-1">
                   <Code2 className="w-3.5 h-3.5 text-[#1F40CB]" />
                   Stack Console
                 </span>
               </div>
 
               {/* Status Badge */}
-              <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2.5 py-0.5 rounded-full font-ibm">
+              <div className="flex items-center gap-1.5 text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2.5 py-0.5 rounded-full font-ibm">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span>Production Ready</span>
               </div>
@@ -279,7 +279,7 @@ const TechStack = () => {
                   <button
                     key={cat.id}
                     onClick={() => setActiveTab(cat.id)}
-                    className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-semibold transition-all duration-200 font-ibm ${
+                    className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg text-xs font-medium transition-all duration-200 font-ibm ${
                       isActive
                         ? 'bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] text-white shadow-md'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
@@ -314,13 +314,13 @@ const TechStack = () => {
                           className="w-2.5 h-2.5 rounded-full shrink-0 shadow-sm"
                           style={{ backgroundColor: tech.color }}
                         />
-                        <h4 className="text-sm font-bold text-slate-900 font-ibm group-hover/card:text-[#1F40CB] transition-colors truncate">
+                        <h4 className="text-sm font-medium sm:font-semibold text-slate-900 font-ibm group-hover/card:text-[#1F40CB] transition-colors truncate">
                           {tech.name}
                         </h4>
                       </div>
 
                       {/* Pill Tag */}
-                      <span className="text-[10px] font-semibold text-[#1F40CB] bg-blue-50 px-2 py-0.5 rounded border border-blue-200/60 font-ibm shrink-0">
+                      <span className="text-[10px] font-medium text-[#1F40CB] bg-blue-50 px-2 py-0.5 rounded border border-blue-200/60 font-ibm shrink-0">
                         {tech.tag}
                       </span>
                     </div>
@@ -336,7 +336,7 @@ const TechStack = () => {
             {/* Performance Status Metrics Bar */}
             <div className="grid grid-cols-3 gap-2 pt-3.5 mt-4 border-t border-slate-100 text-center relative z-10">
               <div>
-                <div className="text-sm sm:text-base font-bold text-slate-900 font-ibm flex items-center justify-center gap-1">
+                <div className="text-sm sm:text-base font-semibold text-slate-900 font-ibm flex items-center justify-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                   <span>99.9%</span>
                 </div>
@@ -344,14 +344,14 @@ const TechStack = () => {
               </div>
 
               <div className="border-x border-slate-200/80">
-                <div className="text-sm sm:text-base font-bold text-[#1F40CB] font-ibm">
+                <div className="text-sm sm:text-base font-semibold text-[#1F40CB] font-ibm">
                   &lt;80ms
                 </div>
                 <div className="text-[10px] sm:text-[11px] text-slate-500 font-ibm mt-0.5">API Latency</div>
               </div>
 
               <div>
-                <div className="text-sm sm:text-base font-bold text-slate-900 font-ibm">
+                <div className="text-sm sm:text-base font-semibold text-slate-900 font-ibm">
                   100%
                 </div>
                 <div className="text-[10px] sm:text-[11px] text-slate-500 font-ibm mt-0.5">Cloud Scalable</div>
