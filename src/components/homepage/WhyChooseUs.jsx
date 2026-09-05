@@ -103,7 +103,7 @@ const WhyChooseUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="group relative h-[20rem] sm:h-[23rem] lg:h-auto min-h-[20rem] lg:min-h-[23rem] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg"
+            className="group relative h-[20rem] sm:h-[23rem] lg:h-auto min-h-[20rem] lg:min-h-[23rem] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/80 hover:border-[#1F40CB]/60 shadow-sm hover:shadow-xl transition-all duration-300"
           >
             {/* Background Image with Zoom */}
             <img
@@ -114,33 +114,33 @@ const WhyChooseUs = () => {
             />
 
             {/* Dark Gradient Overlay for optimal readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#020B24]/95 via-[#020B24]/60 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#020B24] via-[#020B24]/75 to-[#020B24]/30" />
 
             {/* Card Content */}
             <div className="relative z-10 flex flex-col justify-between h-full p-6 sm:p-7 lg:p-8 text-white">
-              {/* Header: Pillar Badge */}
+              {/* Header: Pillar Badge - Brand Theme Solid Pill */}
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[11px] font-medium uppercase tracking-wider px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/20 text-white">
+                <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#1F40CB] border border-blue-100 shadow-sm font-ibm">
                   {reasons[0].pillar}
                 </span>
               </div>
 
               {/* Bottom: Title, Description & Action */}
               <div>
-                <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-cyan-200 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-[#00A2ED] transition-colors font-ibm">
                   {reasons[0].title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2">
+                <p className="mt-2 text-xs sm:text-sm text-slate-200 leading-relaxed font-normal line-clamp-2 font-ibm">
                   {reasons[0].description}
                 </p>
 
                 <div className="mt-4 flex items-center justify-end">
                   <Link
                     to={reasons[0].link}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-xs font-medium text-white transition-all duration-200 group-hover:bg-white group-hover:text-slate-900 group-hover:border-transparent"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] hover:from-[#1935aa] hover:to-[#008ecf] text-xs sm:text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02] font-ibm"
                   >
                     <span>Explore Capability</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -153,7 +153,7 @@ const WhyChooseUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="group relative h-[20rem] sm:h-[23rem] lg:h-auto min-h-[20rem] lg:min-h-[23rem] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg"
+            className="group relative h-[20rem] sm:h-[23rem] lg:h-auto min-h-[20rem] lg:min-h-[23rem] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/80 hover:border-[#1F40CB]/60 shadow-sm hover:shadow-xl transition-all duration-300"
           >
             {/* Background Image with Zoom */}
             <img
@@ -164,33 +164,33 @@ const WhyChooseUs = () => {
             />
 
             {/* Dark Gradient Overlay for optimal readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#020B24]/95 via-[#020B24]/60 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#020B24] via-[#020B24]/75 to-[#020B24]/30" />
 
             {/* Card Content */}
             <div className="relative z-10 flex flex-col justify-between h-full p-6 sm:p-7 lg:p-8 text-white">
-              {/* Header: Pillar Badge */}
+              {/* Header: Pillar Badge - Brand Theme Solid Pill */}
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[11px] font-medium uppercase tracking-wider px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/20 text-white">
+                <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#1F40CB] border border-blue-100 shadow-sm font-ibm">
                   {reasons[1].pillar}
                 </span>
               </div>
 
               {/* Bottom: Title, Description & Action */}
               <div>
-                <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-cyan-200 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-[#00A2ED] transition-colors font-ibm">
                   {reasons[1].title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2">
+                <p className="mt-2 text-xs sm:text-sm text-slate-200 leading-relaxed font-normal line-clamp-2 font-ibm">
                   {reasons[1].description}
                 </p>
 
                 <div className="mt-4 flex items-center justify-end">
                   <Link
                     to={reasons[1].link}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-xs font-medium text-white transition-all duration-200 group-hover:bg-white group-hover:text-slate-900 group-hover:border-transparent"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] hover:from-[#1935aa] hover:to-[#008ecf] text-xs sm:text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02] font-ibm"
                   >
                     <span>Explore Capability</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -203,7 +203,7 @@ const WhyChooseUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="group relative h-[20rem] sm:h-[23rem] lg:h-auto min-h-[20rem] lg:min-h-[23rem] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg"
+            className="group relative h-[20rem] sm:h-[23rem] lg:h-auto min-h-[20rem] lg:min-h-[23rem] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/80 hover:border-[#1F40CB]/60 shadow-sm hover:shadow-xl transition-all duration-300"
           >
             {/* Background Image with Zoom */}
             <img
@@ -214,33 +214,33 @@ const WhyChooseUs = () => {
             />
 
             {/* Dark Gradient Overlay for optimal readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#020B24]/95 via-[#020B24]/60 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#020B24] via-[#020B24]/75 to-[#020B24]/30" />
 
             {/* Card Content */}
             <div className="relative z-10 flex flex-col justify-between h-full p-6 sm:p-7 lg:p-8 text-white">
-              {/* Header: Pillar Badge */}
+              {/* Header: Pillar Badge - Brand Theme Solid Pill */}
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[11px] font-medium uppercase tracking-wider px-2.5 py-1 rounded bg-white/15 backdrop-blur-md border border-white/20 text-white">
+                <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#1F40CB] border border-blue-100 shadow-sm font-ibm">
                   {reasons[2].pillar}
                 </span>
               </div>
 
               {/* Bottom: Title, Description & Action */}
               <div>
-                <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-cyan-200 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-[#00A2ED] transition-colors font-ibm">
                   {reasons[2].title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2">
+                <p className="mt-2 text-xs sm:text-sm text-slate-200 leading-relaxed font-normal line-clamp-2 font-ibm">
                   {reasons[2].description}
                 </p>
 
                 <div className="mt-4 flex items-center justify-end">
                   <Link
                     to={reasons[2].link}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-xs font-medium text-white transition-all duration-200 group-hover:bg-white group-hover:text-slate-900 group-hover:border-transparent"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] hover:from-[#1935aa] hover:to-[#008ecf] text-xs sm:text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02] font-ibm"
                   >
                     <span>Explore Capability</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
