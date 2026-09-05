@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
@@ -82,12 +82,6 @@ const solutionsData = [
 ];
 
 const VentureArchitects = () => {
-  const [activeTab, setActiveTab] = useState('all');
-
-  const filteredSolutions =
-    activeTab === 'all'
-      ? solutionsData
-      : solutionsData.filter((s) => s.id === activeTab);
 
   return (
     <section className="w-full bg-white text-slate-900 py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm">
@@ -244,44 +238,19 @@ const VentureArchitects = () => {
         {/* Bottom Part: The Core 4 Solutions Ecosystem (User's Exact Offerings) */}
         <div className="pt-7 sm:pt-9 lg:pt-10">
           
-          {/* Section Sub-heading */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-7 sm:mb-8">
-            <div>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium sm:font-semibold text-slate-900 tracking-tight font-ibm">
-                End-to-End Solutions to{' '}
-                <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
-                  Build, Automate & Scale
-                </span>
-              </h3>
-            </div>
-
-            {/* Category Filter Pills */}
-            <div className="flex items-center flex-wrap gap-2">
-              {[
-                { id: 'all', label: 'All Solutions' },
-                { id: 'tech-solutions', label: 'Tech' },
-                { id: 'ai-solutions', label: 'AI' },
-                { id: 'ecommerce-solutions', label: 'E-Commerce' },
-                { id: 'digital-marketing', label: 'Marketing' },
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
-                    activeTab === tab.id
-                      ? 'bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] text-white shadow-sm'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
+          {/* Section Sub-heading: Single Line & Tight Spacing */}
+          <div className="mb-4 sm:mb-5 lg:mb-6">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.65rem] font-medium sm:font-semibold text-slate-900 tracking-tight font-ibm">
+              End-to-End Solutions to{' '}
+              <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
+                Build, Automate & Scale
+              </span>
+            </h3>
           </div>
 
           {/* 4 Solutions Solid Cards Grid (NO Glassmorphism) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {filteredSolutions.map((solution, idx) => {
+            {solutionsData.map((solution, idx) => {
               const IconComponent = solution.icon;
               return (
                 <motion.div
