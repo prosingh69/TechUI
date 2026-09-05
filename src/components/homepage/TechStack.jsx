@@ -205,13 +205,13 @@ const TechStack = () => {
           transition={{ duration: 0.55 }}
           className="flex flex-col items-start"
         >
-          {/* Heading - Refined GrowthJockey weight */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.85rem] font-normal sm:font-[450] lg:font-medium text-white tracking-[-0.02em] leading-[1.14] font-ibm">
+          {/* Heading - Increased size with elegant medium weight */}
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.35rem] xl:text-[3.75rem] font-medium text-white tracking-[-0.025em] leading-[1.1] font-ibm">
             Engineered with Modern Tech & AI Stack
           </h2>
 
           {/* Description */}
-          <p className="mt-4 sm:mt-5 text-white/80 text-sm sm:text-base leading-relaxed font-ibm max-w-xl font-light sm:font-normal">
+          <p className="mt-4 sm:mt-5 text-white/85 text-sm sm:text-base lg:text-[17px] leading-[1.7] font-ibm max-w-xl font-normal">
             We build on battle-tested frameworks, cloud infrastructure, and state-of-the-art AI models. From responsive cross-platform web and mobile applications to high-throughput business automation and marketplace catalogue scaling, our stack is engineered for speed, resilience, and measurable growth.
           </p>
 
