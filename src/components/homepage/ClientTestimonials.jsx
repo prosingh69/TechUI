@@ -366,6 +366,21 @@ const ClientTestimonials = () => {
                     }`}
                   />
                 </div>
+
+                {/* Animated Review Snippet Reveal for Active Card */}
+                <AnimatePresence>
+                  {i === activeIndex && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.35, ease: 'easeOut' }}
+                      className="mt-2.5 text-xs text-white/85 leading-relaxed line-clamp-2 pl-13"
+                    >
+                      &ldquo;{t.text.substring(0, 105)}...&rdquo;
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </motion.button>
             ))}
           </motion.div>
