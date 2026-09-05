@@ -93,7 +93,7 @@ const VentureArchitects = () => {
     <section className="w-full bg-white text-slate-900 py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm">
       <div className="max-w-7xl mx-auto">
         
-        {/* Top Part: GrowthJockey Signature "Not Just Experts. Venture Architects." layout */}
+        {/* Top Part: Pricing & Engagement Models layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center pb-16 sm:pb-20 border-b border-slate-200">
           
           {/* Left Column: 2 Pricing Cards (Clean Placeholders) */}
@@ -208,7 +208,7 @@ const VentureArchitects = () => {
               Pricing & Engagement Models
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-5xl font-normal sm:font-[450] lg:font-medium text-slate-900 tracking-[-0.02em] leading-[1.12] font-ibm">
+            <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-slate-900 leading-[1.12] font-ibm">
               Transparent Pricing.{' '}
               <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent whitespace-nowrap">
@@ -250,7 +250,7 @@ const VentureArchitects = () => {
               <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#1F40CB]">
                 Our Full-Stack Capabilities
               </span>
-              <h3 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
+              <h3 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-medium sm:font-semibold text-slate-900 tracking-tight font-ibm">
                 Solutions Engineered For Digital Ventures
               </h3>
             </div>

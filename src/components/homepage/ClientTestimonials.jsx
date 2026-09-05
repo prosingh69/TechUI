@@ -138,7 +138,7 @@ const ClientTestimonials = () => {
           transition={{ duration: 0.6 }}
           className="mb-8 sm:mb-10 lg:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-normal sm:font-[450] lg:font-medium tracking-[-0.02em] text-slate-900 leading-[1.12] font-ibm">
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-slate-900 leading-[1.12] font-ibm">
             Voices, Trust and{' '}
             <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
               Results

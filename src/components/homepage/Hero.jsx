@@ -188,7 +188,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="text-white text-[1.75rem] sm:text-[2.2rem] md:text-[2.85rem] lg:text-[3.75rem] xl:text-[4.35rem] font-normal sm:font-[450] lg:font-medium tracking-[-0.02em] leading-[1.08] font-ibm"
+                className="text-white text-[1.75rem] sm:text-[2.2rem] md:text-[2.85rem] lg:text-[3.75rem] xl:text-[4.35rem] font-medium sm:font-semibold tracking-tight leading-[1.08] font-ibm"
               >
                 {currentSlide.titleLines.map((line, lIdx) => (
                   <div key={lIdx} className="leading-[1.08]">{line}</div>

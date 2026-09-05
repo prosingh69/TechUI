@@ -28,7 +28,7 @@ const FinalCTA = () => {
             <span>Ready for 10X Venture Acceleration</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-5xl font-bold text-white tracking-tight leading-[1.12]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-5xl font-medium sm:font-semibold text-white tracking-tight leading-[1.12] font-ibm">
             Ready to Build and Scale with <br />
             <span className="bg-gradient-to-r from-cyan-300 to-sky-100 bg-clip-text text-transparent">
               Big Feathers Technology?

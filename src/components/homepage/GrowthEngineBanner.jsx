@@ -27,7 +27,7 @@ const GrowthEngineBanner = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
-            className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.75rem] font-bold text-white tracking-tight leading-[1.15] max-w-2xl drop-shadow-md"
+            className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.75rem] font-medium sm:font-semibold text-white tracking-tight leading-[1.15] max-w-2xl drop-shadow-md font-ibm"
           >
             Engineer Your Next High-Growth Digital Venture.
           </motion.h2>

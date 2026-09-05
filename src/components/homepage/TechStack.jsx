@@ -206,7 +206,7 @@ const TechStack = () => {
           className="flex flex-col items-start"
         >
           {/* Heading - Increased size with elegant medium weight */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.35rem] xl:text-[3.75rem] font-medium text-white tracking-[-0.025em] leading-[1.1] font-ibm">
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.35rem] xl:text-[3.75rem] font-medium sm:font-semibold text-white tracking-tight leading-[1.1] font-ibm">
             Engineered with Modern Tech & AI Stack
           </h2>
 
