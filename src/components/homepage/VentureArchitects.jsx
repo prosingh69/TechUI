@@ -247,11 +247,11 @@ const VentureArchitects = () => {
           {/* Section Sub-heading */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
             <div>
-              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#1F40CB]">
-                Our Full-Stack Capabilities
-              </span>
-              <h3 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-medium sm:font-semibold text-slate-900 tracking-tight font-ibm">
-                Solutions Engineered For Digital Ventures
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium sm:font-semibold text-slate-900 tracking-tight font-ibm">
+                End-to-End Solutions to{' '}
+                <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
+                  Build, Automate & Scale
+                </span>
               </h3>
             </div>
 
