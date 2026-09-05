@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const GrowthEngineBanner = () => {
   return (
-    <section className="relative w-full h-[260px] sm:h-[320px] lg:h-[380px] overflow-hidden flex items-center font-ibm">
+    <section className="relative w-full h-[220px] sm:h-[260px] lg:h-[300px] overflow-hidden flex items-center font-ibm">
       {/* Background Graphic: Rising arrows architectural backdrop */}
       <img
         src="https://growthjockey-prod.b-cdn.net/new/joinUs-v2.webp"
