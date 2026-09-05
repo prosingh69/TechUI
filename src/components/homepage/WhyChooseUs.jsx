@@ -58,8 +58,8 @@ const WhyChooseUs = () => {
             className="flex flex-col justify-between h-full py-1 lg:py-2 pr-0 lg:pr-6"
           >
             <div>
-              {/* Main Heading with Gradient Accent - Refined GrowthJockey aesthetic */}
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.85rem] xl:text-[3.15rem] font-normal sm:font-[450] lg:font-medium text-slate-900 tracking-[-0.025em] leading-[1.14]">
+              {/* Main Heading - Exact matching ProcessVision typography */}
+              <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-gray-900 leading-[1.12] font-ibm">
                 Why Choose Us <br />
                 <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent whitespace-nowrap">
                   To Build & Scale
@@ -67,14 +67,14 @@ const WhyChooseUs = () => {
               </h2>
 
               {/* Body Description */}
-              <p className="mt-4 sm:mt-5 text-slate-600 text-sm sm:text-base leading-[1.7] font-light sm:font-normal">
+              <p className="mt-4 sm:mt-5 text-gray-600 text-sm sm:text-base leading-[1.7] font-normal font-ibm">
                 From zero-to-one venture building to enterprise-level digital expansion, our venture engineering system replaces guesswork with validated execution. We align design, technology, and commercial strategy to build businesses that lead markets.
               </p>
 
               {/* Key Trust Checkpoints */}
-              <div className="mt-6 sm:mt-8 space-y-3">
+              <div className="mt-6 sm:mt-7 space-y-3">
                 {trustPoints.map((point, index) => (
-                  <div key={index} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 font-medium">
+                  <div key={index} className="flex items-center gap-2.5 text-xs sm:text-sm text-gray-700 font-medium font-ibm">
                     <CheckCircle2 className="w-4 h-4 text-[#1F40CB] shrink-0" />
                     <span>{point}</span>
                   </div>
@@ -83,8 +83,8 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Micro CTA link at bottom of Quadrant 1 */}
-            <div className="mt-8 pt-5 border-t border-slate-200/80 flex items-center justify-between">
-              <span className="text-xs text-slate-500 font-normal">
+            <div className="mt-8 pt-5 border-t border-gray-200 flex items-center justify-between font-ibm">
+              <span className="text-xs text-gray-500 font-normal">
                 Proven across 50+ ventures & enterprises
               </span>
               <Link
