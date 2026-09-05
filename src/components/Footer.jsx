@@ -78,11 +78,11 @@ const Footer = () => {
           
           {/* Brand Identity */}
           <div className="lg:col-span-6 flex flex-col items-start">
-            <Link to="/" className="inline-block group mb-4">
+            <Link to="/" className="inline-block group mb-5">
               <img
-                src="/logo.png"
+                src="/logo-trimmed.png"
                 alt="Big Feathers Technology"
-                className="h-14 sm:h-16 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,162,237,0.3)] transition-transform group-hover:scale-105"
+                className="h-16 sm:h-[4.75rem] lg:h-[5.25rem] w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,162,237,0.35)] transition-transform group-hover:scale-105"
               />
             </Link>
             <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-lg font-normal">
