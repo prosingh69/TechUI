@@ -227,7 +227,7 @@ const TechStack = () => {
 
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-normal sm:font-medium text-sm border border-white/40 backdrop-blur-md transition-all duration-200 hover:scale-[1.02] font-ibm"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/15 hover:bg-white/25 text-white font-medium text-sm border border-white/60 transition-all duration-200 hover:scale-[1.02] font-ibm"
             >
               <span>Schedule Tech Consult</span>
             </a>
@@ -243,30 +243,28 @@ const TechStack = () => {
           transition={{ duration: 0.55 }}
           className="w-full flex items-center justify-center"
         >
-          <div className="w-full bg-white rounded-2xl sm:rounded-3xl shadow-[0_25px_60px_-15px_rgba(2,19,56,0.35)] border border-white/80 p-5 sm:p-6 lg:p-7 relative overflow-hidden text-slate-900">
+          <div className="w-full bg-white rounded-2xl sm:rounded-3xl shadow-[0_25px_60px_-15px_rgba(2,19,56,0.35)] border border-slate-100 p-5 sm:p-6 lg:p-7 relative overflow-hidden text-slate-900">
             
             {/* Ambient Subtle Glow */}
             <div className="pointer-events-none absolute -right-16 -top-16 w-44 h-44 bg-blue-100/60 rounded-full blur-2xl" />
             <div className="pointer-events-none absolute -left-16 -bottom-16 w-44 h-44 bg-cyan-100/60 rounded-full blur-2xl" />
 
-            {/* Console Header Bar */}
+            {/* Console Header Bar - Brand Theme Styled */}
             <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-100 relative z-10">
               <div className="flex items-center gap-2.5">
-                <div className="flex gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
-                </div>
-                <span className="text-xs font-medium text-slate-700 tracking-wider uppercase font-ibm flex items-center gap-1.5 ml-1">
+                <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#1F40CB] border border-blue-100 shadow-sm font-ibm">
+                  Enterprise Stack
+                </span>
+                <span className="text-xs sm:text-[13px] font-semibold text-slate-800 tracking-tight font-ibm flex items-center gap-1.5">
                   <Code2 className="w-3.5 h-3.5 text-[#1F40CB]" />
-                  Stack Console
+                  Active Architecture
                 </span>
               </div>
 
-              {/* Status Badge */}
-              <div className="flex items-center gap-1.5 text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2.5 py-0.5 rounded-full font-ibm">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Production Ready</span>
+              {/* Status Badge - Brand Blue Tint with Pulsing Cyan Indicator */}
+              <div className="flex items-center gap-1.5 text-[11px] font-semibold text-[#1F40CB] bg-blue-50 border border-blue-100 px-3 py-1 rounded-full font-ibm shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00A2ED] animate-pulse" />
+                <span>Production Verified</span>
               </div>
             </div>
 
