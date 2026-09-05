@@ -94,7 +94,7 @@ const VentureArchitects = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Top Part: Pricing & Engagement Models layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center pb-16 sm:pb-20 border-b border-slate-200">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pb-8 sm:pb-10 border-b border-slate-200/80">
           
           {/* Left Column: 2 Pricing Cards (Clean Placeholders) */}
           <motion.div
@@ -105,7 +105,7 @@ const VentureArchitects = () => {
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-stretch w-full"
           >
             {/* Pricing Card 1 */}
-            <div className="relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-50/90 border border-slate-200/90 hover:border-slate-300 shadow-sm transition-all duration-300 min-h-[350px]">
+            <div className="relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50/90 border border-slate-200/90 hover:border-slate-300 shadow-sm transition-all duration-300 min-h-[290px] sm:min-h-[310px]">
               <div>
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-200/70 text-slate-700 font-ibm">
@@ -113,11 +113,11 @@ const VentureArchitects = () => {
                   </span>
                 </div>
 
-                <div className="mt-5">
+                <div className="mt-4 sm:mt-5">
                   <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 font-ibm">
                     Sprint Plan
                   </h3>
-                  <div className="mt-3 flex items-baseline gap-1">
+                  <div className="mt-2.5 flex items-baseline gap-1">
                     <span className="text-2xl sm:text-3xl font-bold text-slate-900 font-ibm tracking-tight">
                       ₹—
                     </span>
@@ -128,14 +128,14 @@ const VentureArchitects = () => {
                 </div>
 
                 {/* Empty content area ready for user's features */}
-                <div className="mt-6 py-10 px-4 rounded-xl border border-dashed border-slate-200/90 bg-white/60 flex items-center justify-center text-center">
+                <div className="mt-5 py-6 px-4 rounded-xl border border-dashed border-slate-200/90 bg-white/60 flex items-center justify-center text-center">
                   <span className="text-xs text-slate-400 font-normal font-ibm">
                     Features placeholder
                   </span>
                 </div>
               </div>
 
-              <div className="mt-6">
+              <div className="mt-5">
                 <Link
                   to="/contact-us"
                   className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 text-xs sm:text-sm font-medium border border-slate-300 shadow-sm transition-all duration-200 font-ibm"
@@ -147,7 +147,7 @@ const VentureArchitects = () => {
             </div>
 
             {/* Pricing Card 2 (Highlighted) */}
-            <div className="relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border-2 border-[#1F40CB]/40 hover:border-[#1F40CB] shadow-md hover:shadow-xl transition-all duration-300 min-h-[350px]">
+            <div className="relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border-2 border-[#1F40CB]/40 hover:border-[#1F40CB] shadow-md hover:shadow-xl transition-all duration-300 min-h-[290px] sm:min-h-[310px]">
               {/* Popular Badge */}
               <div className="absolute -top-3 right-6">
                 <span className="px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] text-white shadow-sm font-ibm">
@@ -162,11 +162,11 @@ const VentureArchitects = () => {
                   </span>
                 </div>
 
-                <div className="mt-5">
+                <div className="mt-4 sm:mt-5">
                   <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 font-ibm">
                     Scale Squad
                   </h3>
-                  <div className="mt-3 flex items-baseline gap-1">
+                  <div className="mt-2.5 flex items-baseline gap-1">
                     <span className="text-2xl sm:text-3xl font-bold text-slate-900 font-ibm tracking-tight">
                       ₹—
                     </span>
@@ -177,14 +177,14 @@ const VentureArchitects = () => {
                 </div>
 
                 {/* Empty content area ready for user's features */}
-                <div className="mt-6 py-10 px-4 rounded-xl border border-dashed border-blue-200/80 bg-blue-50/20 flex items-center justify-center text-center">
+                <div className="mt-5 py-6 px-4 rounded-xl border border-dashed border-blue-200/80 bg-blue-50/20 flex items-center justify-center text-center">
                   <span className="text-xs text-blue-400 font-normal font-ibm">
                     Features placeholder
                   </span>
                 </div>
               </div>
 
-              <div className="mt-6">
+              <div className="mt-5">
                 <Link
                   to="/contact-us"
                   className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] hover:opacity-95 text-white text-xs sm:text-sm font-medium shadow-md transition-all duration-200 font-ibm"
@@ -242,10 +242,10 @@ const VentureArchitects = () => {
         </div>
 
         {/* Bottom Part: The Core 4 Solutions Ecosystem (User's Exact Offerings) */}
-        <div className="pt-16 sm:pt-20">
+        <div className="pt-7 sm:pt-9 lg:pt-10">
           
           {/* Section Sub-heading */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-7 sm:mb-8">
             <div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium sm:font-semibold text-slate-900 tracking-tight font-ibm">
                 End-to-End Solutions to{' '}
