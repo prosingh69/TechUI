@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, ArrowRight } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,10 +39,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 border-none transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-[0_2px_15px_rgba(0,0,0,0.06)] py-1 sm:py-1.5'
-          : 'bg-transparent shadow-none py-2.5 sm:py-3'
+          ? 'bg-[#020B24]/92 backdrop-blur-md border-b border-white/10 shadow-[0_4px_25px_rgba(0,0,0,0.35)] py-1.5 sm:py-2'
+          : 'bg-transparent border-none shadow-none py-2.5 sm:py-3'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
@@ -56,7 +56,7 @@ const Navbar = () => {
               alt="Big Feathers Technology"
               className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                 isScrolled
-                  ? 'h-11 sm:h-13 lg:h-14 max-w-[185px] sm:max-w-[220px] -translate-y-0.5 sm:-translate-y-1 drop-shadow-[0_1px_3px_rgba(2,19,56,0.65)]'
+                  ? 'h-[3.25rem] sm:h-[3.65rem] lg:h-[3.95rem] max-w-[210px] sm:max-w-[245px] lg:max-w-[265px] -translate-y-0.5 sm:-translate-y-1 drop-shadow-[0_2px_12px_rgba(0,162,237,0.35)]'
                   : 'h-16 sm:h-20 lg:h-24 max-w-[250px] sm:max-w-[295px] -translate-y-1 sm:-translate-y-1.5 drop-shadow-[0_2px_12px_rgba(0,102,255,0.25)]'
               }`}
             />
@@ -70,7 +70,7 @@ const Navbar = () => {
                 to={link.href}
                 className={`tracking-wide transition-colors duration-200 ${
                   isScrolled
-                    ? 'text-[14px] text-gray-700 hover:text-blue-600 font-medium'
+                    ? 'text-[14px] text-white/85 hover:text-[#00A2ED] font-medium'
                     : 'text-[15px] text-white/80 hover:text-white font-normal'
                 }`}
               >
@@ -123,23 +123,20 @@ const Navbar = () => {
               </div>
             </button>
           ) : (
-            /* Scrolled: "Free Demo" CTA Button */
+            /* Scrolled: "Free Demo" CTA Button with Brand Blue Gradient */
             <Link
               to="/free-demo"
-              className="hidden sm:inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-200 bg-[#1F40CB] hover:bg-blue-700 text-white shadow-sm px-4 py-1.5 text-xs sm:text-sm"
+              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-[#1F40CB] via-[#1554D8] to-[#00A2ED] hover:from-[#1935aa] hover:to-[#008ecf] text-white shadow-md hover:shadow-lg hover:shadow-blue-500/25 px-4 sm:px-5 py-2 text-xs sm:text-sm group"
             >
-              Free Demo
+              <span>Free Demo</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           )}
 
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2 md:hidden focus:outline-none rounded-lg transition-colors ${
-              isScrolled
-                ? 'text-gray-900 hover:bg-gray-100'
-                : 'text-white hover:bg-white/10'
-            }`}
+            className="p-2 md:hidden focus:outline-none rounded-lg transition-colors text-white hover:bg-white/10"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -149,24 +146,14 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div
-          className={`md:hidden px-6 py-6 space-y-4 transition-colors ${
-            isScrolled
-              ? 'bg-white/98 backdrop-blur-xl border-b border-gray-200 text-gray-900 shadow-xl'
-              : 'bg-[#020d26]/95 backdrop-blur-xl border-b border-white/10 text-white'
-          }`}
-        >
+        <div className="md:hidden px-6 py-6 space-y-4 transition-colors bg-[#020B24]/98 backdrop-blur-xl border-b border-white/10 text-white shadow-2xl">
           <div className="space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block text-base font-medium py-1.5 transition-colors ${
-                  isScrolled
-                    ? 'text-gray-800 hover:text-blue-600'
-                    : 'text-white/80 hover:text-white'
-                }`}
+                className="block text-base font-medium py-1.5 transition-colors text-white/80 hover:text-[#00A2ED]"
               >
                 {link.name}
               </Link>
@@ -177,9 +164,10 @@ const Navbar = () => {
             <Link
               to="/free-demo"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full text-center py-2.5 rounded-lg font-semibold text-sm bg-[#1F40CB] text-white shadow-md hover:bg-blue-700 transition-colors"
+              className="flex items-center justify-center gap-2 w-full text-center py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#1F40CB] via-[#1554D8] to-[#00A2ED] text-white shadow-md hover:from-[#1935aa] hover:to-[#008ecf] transition-all"
             >
-              Free Demo
+              <span>Free Demo</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
