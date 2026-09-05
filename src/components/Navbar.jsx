@@ -97,7 +97,6 @@ const Navbar = () => {
           </div>
         </div>
 
-
         {/* Right Side: Theme Switch + Free Demo + Mobile Menu Toggle */}
         <div className="flex items-center gap-2.5 sm:gap-3.5">
           {/* GrowthJockey Sliding Disc Theme Switch (Always Accessible) */}
