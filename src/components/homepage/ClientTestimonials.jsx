@@ -165,7 +165,7 @@ const ClientTestimonials = () => {
             onMouseLeave={() => setIsPaused(false)}
           >
             <div
-              className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 min-h-[320px] sm:min-h-[360px] overflow-hidden shadow-[0_20px_50px_-12px_rgba(31,64,203,0.35)]"
+              className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 h-[490px] sm:h-[480px] lg:h-[490px] overflow-hidden shadow-[0_20px_50px_-12px_rgba(31,64,203,0.35)] flex flex-col justify-between"
               style={{
                 background:
                   'linear-gradient(135deg, #1838BA 0%, #1F40CB 35%, #1068E6 70%, #00A2ED 100%)',
@@ -173,7 +173,7 @@ const ClientTestimonials = () => {
             >
               {/* Floating Quote Icon */}
               <motion.div
-                className="absolute top-5 right-6 sm:top-7 sm:right-8"
+                className="absolute top-5 right-6 sm:top-7 sm:right-8 pointer-events-none"
                 animate={{ rotate: [0, 6, -6, 0], y: [0, -3, 3, 0] }}
                 transition={{
                   duration: 6,
@@ -184,75 +184,84 @@ const ClientTestimonials = () => {
                 <Quote className="w-10 h-10 sm:w-12 sm:h-12 text-white/15 fill-white/5" />
               </motion.div>
 
-              {/* Animated Card Content */}
-              <AnimatePresence custom={direction} mode="wait">
-                <motion.div
-                  key={current.id}
-                  custom={direction}
-                  variants={slideVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  {/* Industry Badge */}
-                  <span className="inline-block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/15 border border-white/20 text-white mb-5 sm:mb-6">
-                    {current.industry}
-                  </span>
-
-                  {/* Stars */}
-                  <div className="mb-4 sm:mb-5">
-                    <StarRating rating={current.rating} />
-                  </div>
-
-                  {/* Testimonial Text */}
-                  <p className="text-white/95 text-base sm:text-lg lg:text-xl leading-[1.7] font-normal">
-                    &ldquo;{current.text}&rdquo;
-                  </p>
-
-                  {/* Highlight Metric */}
+              {/* Animated Card Content Area with Fixed Flow */}
+              <div className="relative flex-1 min-h-0 flex flex-col justify-between overflow-hidden">
+                <AnimatePresence custom={direction} mode="wait">
                   <motion.div
-                    className="mt-5 sm:mt-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-400/20 border border-emerald-300/30 backdrop-blur-sm"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3, duration: 0.3 }}
+                    key={current.id}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex flex-col justify-between h-full"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
-                    <span className="text-xs sm:text-sm font-semibold text-emerald-200">
-                      {current.highlight}
-                    </span>
-                  </motion.div>
-
-                  {/* Author Info */}
-                  <div className="mt-6 sm:mt-8 flex items-center gap-4">
-                    {/* Avatar Circle */}
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-md">
-                      {current.avatar}
-                    </div>
+                    {/* Top Section: Badge, Stars & Quote Text */}
                     <div>
-                      <p className="text-white font-semibold text-sm sm:text-base">
-                        {current.name}
-                      </p>
-                      <p className="text-white/80 text-xs sm:text-sm">
-                        {current.role},{' '}
-                        <span className="text-cyan-200 font-medium">
-                          {current.company}
-                        </span>
+                      {/* Industry Badge */}
+                      <span className="inline-block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/15 border border-white/20 text-white mb-3 sm:mb-4">
+                        {current.industry}
+                      </span>
+
+                      {/* Stars */}
+                      <div className="mb-3 sm:mb-4">
+                        <StarRating rating={current.rating} />
+                      </div>
+
+                      {/* Testimonial Text with Consistent Breathing Room */}
+                      <p className="text-white/95 text-base sm:text-lg lg:text-xl leading-[1.65] font-normal min-h-[5.5rem] sm:min-h-[6rem] lg:min-h-[6.5rem]">
+                        &ldquo;{current.text}&rdquo;
                       </p>
                     </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
 
-              {/* Navigation Controls */}
-              <div className="mt-8 flex items-center justify-between">
+                    {/* Bottom Section: Metric Badge & Author Info */}
+                    <div className="pt-2">
+                      {/* Highlight Metric */}
+                      <motion.div
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-400/20 border border-emerald-300/30 backdrop-blur-sm"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.25, duration: 0.3 }}
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
+                        <span className="text-xs sm:text-sm font-semibold text-emerald-200">
+                          {current.highlight}
+                        </span>
+                      </motion.div>
+
+                      {/* Author Info */}
+                      <div className="mt-4 sm:mt-5 flex items-center gap-3.5 sm:gap-4">
+                        {/* Avatar Circle */}
+                        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/20 border border-white/30 flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-md shrink-0">
+                          {current.avatar}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-white font-semibold text-sm sm:text-base truncate">
+                            {current.name}
+                          </p>
+                          <p className="text-white/80 text-xs sm:text-sm truncate">
+                            {current.role},{' '}
+                            <span className="text-cyan-200 font-medium">
+                              {current.company}
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Navigation Controls - Permanently Docked at Bottom */}
+              <div className="shrink-0 pt-4 mt-3 flex items-center justify-between border-t border-white/15">
                 {/* Progress Dots */}
                 <div className="flex items-center gap-2">
                   {testimonials.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => goTo(i)}
-                      className="relative group"
+                      className="relative group p-1 -m-1"
                       aria-label={`Go to testimonial ${i + 1}`}
                     >
                       <div
@@ -287,19 +296,19 @@ const ClientTestimonials = () => {
             </div>
           </motion.div>
 
-          {/* Right: Stacked Mini Testimonial Preview Cards */}
+          {/* Right: Stacked Mini Testimonial Preview Cards - Stable Uniform Height */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.55, delay: 0.15 }}
-            className="lg:col-span-5 flex flex-col gap-3 sm:gap-4"
+            className="lg:col-span-5 flex flex-col gap-3"
           >
             {testimonials.map((t, i) => (
               <motion.button
                 key={t.id}
                 onClick={() => goTo(i)}
-                className={`group w-full text-left rounded-xl sm:rounded-2xl p-4 sm:p-5 transition-all duration-300 border ${
+                className={`group w-full text-left rounded-xl sm:rounded-2xl p-4 transition-all duration-300 border ${
                   i === activeIndex
                     ? 'border-transparent shadow-lg shadow-blue-500/25'
                     : 'bg-slate-50/80 border-slate-200/60 hover:bg-slate-100/80 hover:border-slate-300/70'
@@ -318,9 +327,9 @@ const ClientTestimonials = () => {
                 <div className="flex items-center gap-3">
                   {/* Mini Avatar */}
                   <div
-                    className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold shrink-0 transition-all duration-300 ${
+                    className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold shrink-0 transition-all duration-300 ${
                       i === activeIndex
-                        ? 'bg-white/20 border border-white/30 text-white'
+                        ? 'bg-white/20 border border-white/30 text-white shadow-sm'
                         : 'bg-slate-200/80 text-slate-600 group-hover:bg-slate-300/70'
                     }`}
                   >
@@ -338,13 +347,13 @@ const ClientTestimonials = () => {
                       {t.name}
                     </p>
                     <p
-                      className={`text-[11px] truncate ${
+                      className={`text-xs truncate ${
                         i === activeIndex
                           ? 'text-white/80'
                           : 'text-slate-400'
                       }`}
                     >
-                      {t.role} — {t.company}
+                      {t.role} — <span className="font-medium">{t.company}</span>
                     </p>
                   </div>
 
@@ -352,26 +361,11 @@ const ClientTestimonials = () => {
                   <div
                     className={`w-2 h-2 rounded-full shrink-0 transition-all duration-300 ${
                       i === activeIndex
-                        ? 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]'
-                        : 'bg-slate-200'
+                        ? 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] scale-110'
+                        : 'bg-slate-300'
                     }`}
                   />
                 </div>
-
-                {/* Preview text — only for active card */}
-                <AnimatePresence>
-                  {i === activeIndex && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-2.5 text-xs text-white/80 leading-relaxed line-clamp-2 pl-12"
-                    >
-                      &ldquo;{t.text.substring(0, 100)}...&rdquo;
-                    </motion.p>
-                  )}
-                </AnimatePresence>
               </motion.button>
             ))}
           </motion.div>
