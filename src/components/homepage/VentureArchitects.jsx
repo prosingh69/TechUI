@@ -94,7 +94,7 @@ const VentureArchitects = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Top Part: Pricing & Engagement Models layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pb-8 sm:pb-10 border-b border-slate-200/80">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pb-11 sm:pb-13 lg:pb-14 border-b border-slate-200/80">
           
           {/* Left Column: 2 Pricing Cards (Clean Placeholders) */}
           <motion.div
