@@ -87,8 +87,94 @@ const VentureArchitects = () => {
     <section className="w-full bg-white text-slate-900 py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm">
       <div className="max-w-7xl mx-auto">
         
-        {/* Top Part: Pricing & Engagement Models layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pb-11 sm:pb-13 lg:pb-14 border-b border-slate-200/80">
+        {/* Part 1: The Core 4 Solutions Ecosystem (User's Exact Offerings) */}
+        <div className="pb-12 sm:pb-14 lg:pb-16 border-b border-slate-200/80">
+          
+          {/* Section Sub-heading: Single Line */}
+          <div className="mb-6 sm:mb-8 lg:mb-10">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.65rem] font-medium sm:font-semibold text-slate-900 tracking-tight font-ibm">
+              End-to-End Solutions to{' '}
+              <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
+                Build, Automate & Scale
+              </span>
+            </h3>
+          </div>
+
+          {/* 4 Solutions Solid Cards Grid (NO Glassmorphism) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {solutionsData.map((solution, idx) => {
+              const IconComponent = solution.icon;
+              return (
+                <motion.div
+                  key={solution.id}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.45, delay: idx * 0.08 }}
+                  className="group relative rounded-2xl p-6 sm:p-8 bg-white border border-slate-200 hover:border-[#1F40CB]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Top Row: Pillar tag & Category Badge */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <span className="text-[11px] font-bold text-slate-400 tracking-wider">
+                        {solution.pillar}
+                      </span>
+                      <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-[#1F40CB] border border-blue-100">
+                        {solution.badge}
+                      </span>
+                    </div>
+
+                    {/* Card Title & Icon */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1F40CB] to-[#00A2ED] flex items-center justify-center text-white shrink-0 shadow-sm">
+                        <IconComponent className="w-5 h-5" />
+                      </div>
+                      <h4 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#1F40CB] transition-colors">
+                        {solution.title}
+                      </h4>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                      {solution.description}
+                    </p>
+
+                    {/* Sub-services List with Checkmarks */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 border-t border-slate-100">
+                      {solution.services.map((service, sIdx) => (
+                        <div
+                          key={sIdx}
+                          className="flex items-center gap-2 text-xs sm:text-[13px] text-slate-700 font-medium py-1 px-2 rounded-lg bg-slate-50 group-hover:bg-blue-50/50 transition-colors"
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#1F40CB] shrink-0" />
+                          <span className="truncate">{service}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Card Bottom Link */}
+                  <div className="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors">
+                      Customized Deployment
+                    </span>
+                    <Link
+                      to="/contact-us"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F40CB] hover:text-blue-700 group-hover:translate-x-1 transition-all"
+                    >
+                      <span>Consult With Our Experts</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+        </div>
+
+        {/* Part 2: Pricing & Engagement Models layout */}
+        <div className="pt-12 sm:pt-14 lg:pt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: 2 Pricing Cards (Clean Placeholders) */}
           <motion.div
@@ -232,92 +318,6 @@ const VentureArchitects = () => {
               </Link>
             </div>
           </motion.div>
-
-        </div>
-
-        {/* Bottom Part: The Core 4 Solutions Ecosystem (User's Exact Offerings) */}
-        <div className="pt-7 sm:pt-9 lg:pt-10">
-          
-          {/* Section Sub-heading: Single Line & Tight Spacing */}
-          <div className="mb-4 sm:mb-5 lg:mb-6">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.65rem] font-medium sm:font-semibold text-slate-900 tracking-tight font-ibm">
-              End-to-End Solutions to{' '}
-              <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
-                Build, Automate & Scale
-              </span>
-            </h3>
-          </div>
-
-          {/* 4 Solutions Solid Cards Grid (NO Glassmorphism) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {solutionsData.map((solution, idx) => {
-              const IconComponent = solution.icon;
-              return (
-                <motion.div
-                  key={solution.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.45, delay: idx * 0.08 }}
-                  className="group relative rounded-2xl p-6 sm:p-8 bg-white border border-slate-200 hover:border-[#1F40CB]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-                >
-                  <div>
-                    {/* Top Row: Pillar tag & Category Badge */}
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <span className="text-[11px] font-bold text-slate-400 tracking-wider">
-                        {solution.pillar}
-                      </span>
-                      <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-[#1F40CB] border border-blue-100">
-                        {solution.badge}
-                      </span>
-                    </div>
-
-                    {/* Card Title & Icon */}
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1F40CB] to-[#00A2ED] flex items-center justify-center text-white shrink-0 shadow-sm">
-                        <IconComponent className="w-5 h-5" />
-                      </div>
-                      <h4 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#1F40CB] transition-colors">
-                        {solution.title}
-                      </h4>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
-                      {solution.description}
-                    </p>
-
-                    {/* Sub-services List with Checkmarks */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 border-t border-slate-100">
-                      {solution.services.map((service, sIdx) => (
-                        <div
-                          key={sIdx}
-                          className="flex items-center gap-2 text-xs sm:text-[13px] text-slate-700 font-medium py-1 px-2 rounded-lg bg-slate-50 group-hover:bg-blue-50/50 transition-colors"
-                        >
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#1F40CB] shrink-0" />
-                          <span className="truncate">{service}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Card Bottom Link */}
-                  <div className="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors">
-                      Customized Deployment
-                    </span>
-                    <Link
-                      to="/contact-us"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F40CB] hover:text-blue-700 group-hover:translate-x-1 transition-all"
-                    >
-                      <span>Consult With Our Experts</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
 
         </div>
 
