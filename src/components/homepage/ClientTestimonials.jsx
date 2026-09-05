@@ -128,7 +128,7 @@ const ClientTestimonials = () => {
   };
 
   return (
-    <section className="w-full bg-white text-slate-900 pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-20 lg:pb-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm">
+    <section className="w-full bg-white text-slate-900 pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-10 lg:pb-12 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header — GrowthJockey "Insights, Innovation and Impact" style */}
         <motion.div
@@ -386,13 +386,13 @@ const ClientTestimonials = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Stats Strip */}
+        {/* Bottom Stats Strip - Tightened Gap */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 sm:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-8 border-t border-slate-200/80"
+          className="mt-6 sm:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-5 sm:pt-6 border-t border-slate-200/80"
         >
           {[
             { value: '50+', label: 'Projects Delivered' },
