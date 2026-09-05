@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const FinalCTA = () => {
   return (
-    <section className="w-full relative py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-12 overflow-hidden font-ibm"
+    <section className="w-full relative py-10 sm:py-12 lg:py-14 px-6 sm:px-8 lg:px-12 overflow-hidden font-ibm"
       style={{
         background: 'linear-gradient(to right, #1F40CB, #0F2065, #162E92)',
       }}
@@ -23,11 +23,6 @@ const FinalCTA = () => {
           transition={{ duration: 0.55 }}
           className="max-w-2xl"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
-            <span>Ready for 10X Venture Acceleration</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-5xl font-medium sm:font-semibold text-white tracking-tight leading-[1.12] font-ibm">
             Ready to Build and Scale with <br />
             <span className="bg-gradient-to-r from-cyan-300 to-sky-100 bg-clip-text text-transparent">
@@ -35,7 +30,7 @@ const FinalCTA = () => {
             </span>
           </h2>
 
-          <p className="mt-4 sm:mt-5 text-white/80 text-sm sm:text-base leading-relaxed font-normal">
+          <p className="mt-3 sm:mt-4 text-white/80 text-sm sm:text-base leading-relaxed font-normal">
             Whether you are launching a new digital product from scratch or scaling an existing enterprise, our full-stack venture architects are ready to deploy.
           </p>
         </motion.div>
