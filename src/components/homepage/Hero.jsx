@@ -163,7 +163,7 @@ const Hero = () => {
         {/* Entire Right Content Block: You can change `translate-y-[20px]` to any pixel value to shift up/down */}
         <div className="w-full lg:max-w-3xl xl:max-w-4xl flex flex-col items-start lg:items-end text-left lg:text-right translate-y-[17px]">
           
-          {/* 1. Kicker: Service Category */}
+          {/* 1. Kicker: Service Category - Match GrowthJockey white normal title case */}
           <div className="h-5 sm:h-6 flex items-center justify-start lg:justify-end w-full">
             <AnimatePresence mode="wait">
               <motion.span
@@ -172,14 +172,14 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.35 }}
-                className="text-cyan-400 font-semibold text-xs sm:text-sm tracking-wider uppercase"
+                className="text-white/80 font-normal sm:font-medium text-xs sm:text-sm tracking-normal"
               >
                 {currentSlide.kicker}
               </motion.span>
             </AnimatePresence>
           </div>
 
-          {/* 2. Headline: Bold, finely tuned GrowthJockey-grade typography */}
+          {/* 2. Headline: Refined, elegant medium-weight GrowthJockey typography */}
           <div className="min-h-[78px] sm:min-h-[100px] lg:min-h-[128px] xl:min-h-[148px] flex flex-col justify-start items-start lg:items-end w-full mt-1 sm:mt-2">
             <AnimatePresence mode="wait">
               <motion.h1
@@ -188,16 +188,16 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="text-white text-[1.75rem] sm:text-[2.2rem] md:text-[2.85rem] lg:text-[3.75rem] xl:text-[4.35rem] font-medium sm:font-semibold tracking-tight leading-[1.05] font-ibm"
+                className="text-white text-[1.75rem] sm:text-[2.2rem] md:text-[2.85rem] lg:text-[3.75rem] xl:text-[4.35rem] font-normal sm:font-[450] lg:font-medium tracking-[-0.02em] leading-[1.08] font-ibm"
               >
                 {currentSlide.titleLines.map((line, lIdx) => (
-                  <div key={lIdx} className="leading-[1.05]">{line}</div>
+                  <div key={lIdx} className="leading-[1.08]">{line}</div>
                 ))}
               </motion.h1>
             </AnimatePresence>
           </div>
 
-          {/* 3. Subheading: Fixed height slot */}
+          {/* 3. Subheading: Refined light/normal weight */}
           <div className="h-[44px] sm:h-[50px] flex items-start justify-start lg:justify-end w-full max-w-xl mt-2 sm:mt-2.5">
             <AnimatePresence mode="wait">
               <motion.p
@@ -206,7 +206,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.4 }}
-                className="text-white/85 text-xs sm:text-sm lg:text-[15px] font-normal leading-relaxed"
+                className="text-white/75 text-xs sm:text-sm lg:text-[15px] font-light sm:font-normal leading-relaxed"
               >
                 {currentSlide.description}
               </motion.p>
@@ -217,7 +217,7 @@ const Hero = () => {
           <div className="mt-3.5 sm:mt-4">
             <a
               href={currentSlide.href}
-              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-white text-[#1A1D2E] font-semibold text-xs sm:text-sm hover:bg-gray-100 transition-all duration-200 shadow-md group shrink-0 leading-none"
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-white text-[#1A1D2E] font-medium text-xs sm:text-sm hover:bg-gray-100 transition-all duration-200 shadow-md group shrink-0 leading-none"
             >
               <span className="leading-none">{currentSlide.cta}</span>
               <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
