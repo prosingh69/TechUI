@@ -84,15 +84,15 @@ const solutionsData = [
 const VentureArchitects = () => {
 
   return (
-    <section className="w-full bg-white text-slate-900 py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm">
+    <section className="w-full bg-white dark:bg-[#020B24] text-slate-900 dark:text-white py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         
         {/* Part 1: The Core 4 Solutions Ecosystem (User's Exact Offerings) */}
-        <div className="pb-12 sm:pb-14 lg:pb-16 border-b border-slate-200/80">
+        <div className="pb-12 sm:pb-14 lg:pb-16 border-b border-slate-200/80 dark:border-white/10">
           
           {/* Section Sub-heading: Single Line */}
           <div className="mb-6 sm:mb-8 lg:mb-10">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.65rem] font-medium sm:font-semibold text-slate-900 tracking-tight font-ibm">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[2.65rem] font-medium sm:font-semibold text-slate-900 dark:text-white tracking-tight font-ibm">
               End-to-End Solutions to{' '}
               <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
                 Build, Automate & Scale
@@ -111,15 +111,15 @@ const VentureArchitects = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.45, delay: idx * 0.08 }}
-                  className="group relative rounded-2xl p-6 sm:p-8 bg-white border border-slate-200 hover:border-[#1F40CB]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                  className="group relative rounded-2xl p-6 sm:p-8 bg-white dark:bg-[#06112C] border border-slate-200 dark:border-white/10 hover:border-[#1F40CB]/40 dark:hover:border-[#1F40CB]/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     {/* Top Row: Pillar tag & Category Badge */}
                     <div className="flex items-center justify-between gap-2 mb-4">
-                      <span className="text-[11px] font-bold text-slate-400 tracking-wider">
+                      <span className="text-[11px] font-bold text-slate-400 dark:text-slate-400 tracking-wider">
                         {solution.pillar}
                       </span>
-                      <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-[#1F40CB] border border-blue-100">
+                      <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-blue-50 dark:bg-white/[0.06] text-[#1F40CB] dark:text-blue-400 border border-blue-100 dark:border-white/10">
                         {solution.badge}
                       </span>
                     </div>
@@ -129,24 +129,24 @@ const VentureArchitects = () => {
                       <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1F40CB] to-[#00A2ED] flex items-center justify-center text-white shrink-0 shadow-sm">
                         <IconComponent className="w-5 h-5" />
                       </div>
-                      <h4 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#1F40CB] transition-colors">
+                      <h4 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-[#1F40CB] dark:group-hover:text-blue-400 transition-colors">
                         {solution.title}
                       </h4>
                     </div>
 
                     {/* Description */}
-                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                    <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
                       {solution.description}
                     </p>
 
                     {/* Sub-services List with Checkmarks */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 border-t border-slate-100">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 border-t border-slate-100 dark:border-white/10">
                       {solution.services.map((service, sIdx) => (
                         <div
                           key={sIdx}
-                          className="flex items-center gap-2 text-xs sm:text-[13px] text-slate-700 font-medium py-1 px-2 rounded-lg bg-slate-50 group-hover:bg-blue-50/50 transition-colors"
+                          className="flex items-center gap-2 text-xs sm:text-[13px] text-slate-700 dark:text-slate-200 font-medium py-1 px-2 rounded-lg bg-slate-50 dark:bg-white/[0.04] group-hover:bg-blue-50/50 dark:group-hover:bg-white/[0.08] transition-colors"
                         >
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#1F40CB] shrink-0" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#1F40CB] dark:text-blue-400 shrink-0" />
                           <span className="truncate">{service}</span>
                         </div>
                       ))}
@@ -154,13 +154,13 @@ const VentureArchitects = () => {
                   </div>
 
                   {/* Card Bottom Link */}
-                  <div className="mt-7 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs font-semibold text-slate-400 group-hover:text-slate-600 transition-colors">
+                  <div className="mt-7 pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between">
+                    <span className="text-xs font-semibold text-slate-400 dark:text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
                       Customized Deployment
                     </span>
                     <Link
                       to="/contact-us"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F40CB] hover:text-blue-700 group-hover:translate-x-1 transition-all"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F40CB] dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 group-hover:translate-x-1 transition-all"
                     >
                       <span>Consult With Our Experts</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -185,31 +185,31 @@ const VentureArchitects = () => {
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-stretch w-full"
           >
             {/* Pricing Card 1 */}
-            <div className="relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50/90 border border-slate-200/90 hover:border-slate-300 shadow-sm transition-all duration-300 min-h-[290px] sm:min-h-[310px]">
+            <div className="relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50/90 dark:bg-[#06112C] border border-slate-200/90 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 shadow-sm transition-all duration-300 min-h-[290px] sm:min-h-[310px]">
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-200/70 text-slate-700 font-ibm">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-200/70 dark:bg-white/10 text-slate-700 dark:text-slate-300 font-ibm">
                     Plan 01
                   </span>
                 </div>
 
                 <div className="mt-4 sm:mt-5">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 font-ibm">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white font-ibm">
                     Sprint Plan
                   </h3>
                   <div className="mt-2.5 flex items-baseline gap-1">
-                    <span className="text-2xl sm:text-3xl font-bold text-slate-900 font-ibm tracking-tight">
+                    <span className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-ibm tracking-tight">
                       ₹—
                     </span>
-                    <span className="text-xs text-slate-500 font-ibm">
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-ibm">
                       / sprint
                     </span>
                   </div>
                 </div>
 
                 {/* Empty content area ready for user's features */}
-                <div className="mt-5 py-6 px-4 rounded-xl border border-dashed border-slate-200/90 bg-white/60 flex items-center justify-center text-center">
-                  <span className="text-xs text-slate-400 font-normal font-ibm">
+                <div className="mt-5 py-6 px-4 rounded-xl border border-dashed border-slate-200/90 dark:border-white/15 bg-white/60 dark:bg-white/[0.02] flex items-center justify-center text-center">
+                  <span className="text-xs text-slate-400 dark:text-slate-500 font-normal font-ibm">
                     Features placeholder
                   </span>
                 </div>
@@ -218,7 +218,7 @@ const VentureArchitects = () => {
               <div className="mt-5">
                 <Link
                   to="/contact-us"
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 text-xs sm:text-sm font-medium border border-slate-300 shadow-sm transition-all duration-200 font-ibm"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-white/[0.06] hover:bg-slate-100 dark:hover:bg-white/[0.12] text-slate-800 dark:text-slate-100 text-xs sm:text-sm font-medium border border-slate-300 dark:border-white/15 shadow-sm transition-all duration-200 font-ibm"
                 >
                   <span>Select Plan</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -227,7 +227,7 @@ const VentureArchitects = () => {
             </div>
 
             {/* Pricing Card 2 (Highlighted) */}
-            <div className="relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border-2 border-[#1F40CB]/40 hover:border-[#1F40CB] shadow-md hover:shadow-xl transition-all duration-300 min-h-[290px] sm:min-h-[310px]">
+            <div className="relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#06112C] border-2 border-[#1F40CB]/40 hover:border-[#1F40CB] dark:border-[#1F40CB]/60 dark:hover:border-[#00A2ED] shadow-md hover:shadow-xl transition-all duration-300 min-h-[290px] sm:min-h-[310px]">
               {/* Popular Badge */}
               <div className="absolute -top-3 right-6">
                 <span className="px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-[#1F40CB] to-[#00A2ED] text-white shadow-sm font-ibm">
@@ -237,28 +237,28 @@ const VentureArchitects = () => {
 
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#1F40CB] border border-blue-100 font-ibm">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 dark:bg-white/[0.06] text-[#1F40CB] dark:text-blue-400 border border-blue-100 dark:border-white/10 font-ibm">
                     Tier 02
                   </span>
                 </div>
 
                 <div className="mt-4 sm:mt-5">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 font-ibm">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white font-ibm">
                     Scale Squad
                   </h3>
                   <div className="mt-2.5 flex items-baseline gap-1">
-                    <span className="text-2xl sm:text-3xl font-bold text-slate-900 font-ibm tracking-tight">
+                    <span className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-ibm tracking-tight">
                       ₹—
                     </span>
-                    <span className="text-xs text-slate-500 font-ibm">
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-ibm">
                       / month
                     </span>
                   </div>
                 </div>
 
                 {/* Empty content area ready for user's features */}
-                <div className="mt-5 py-6 px-4 rounded-xl border border-dashed border-blue-200/80 bg-blue-50/20 flex items-center justify-center text-center">
-                  <span className="text-xs text-blue-400 font-normal font-ibm">
+                <div className="mt-5 py-6 px-4 rounded-xl border border-dashed border-blue-200/80 dark:border-blue-500/30 bg-blue-50/20 dark:bg-blue-950/20 flex items-center justify-center text-center">
+                  <span className="text-xs text-blue-400 dark:text-blue-300 font-normal font-ibm">
                     Features placeholder
                   </span>
                 </div>
@@ -284,11 +284,11 @@ const VentureArchitects = () => {
             transition={{ duration: 0.55 }}
             className="flex flex-col items-start lg:items-end text-left lg:text-right"
           >
-            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#1F40CB] mb-2 sm:mb-2.5 block font-ibm">
+            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#1F40CB] dark:text-[#00A2ED] mb-2 sm:mb-2.5 block font-ibm">
               Pricing & Engagement Models
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-slate-900 leading-[1.12] font-ibm">
+            <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.12] font-ibm">
               Transparent Pricing.{' '}
               <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent whitespace-nowrap">
@@ -296,7 +296,7 @@ const VentureArchitects = () => {
               </span>
             </h2>
 
-            <p className="mt-4 sm:mt-5 text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal font-ibm">
+            <p className="mt-4 sm:mt-5 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl font-normal font-ibm">
               Predictable, value-driven investment models tailored to your stage of growth. From rapid MVP sprints to dedicated venture engineering squads, get transparent deliverables with zero hidden costs.
             </p>
 
@@ -304,7 +304,7 @@ const VentureArchitects = () => {
             <div className="mt-7 sm:mt-8 flex flex-wrap items-center gap-3.5">
               <Link
                 to="/contact-us"
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-900 hover:bg-[#1F40CB] text-white text-xs sm:text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg group font-ibm"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-900 hover:bg-[#1F40CB] dark:bg-gradient-to-r dark:from-[#1F40CB] dark:to-[#00A2ED] dark:hover:opacity-95 text-white text-xs sm:text-sm font-medium transition-all duration-200 shadow-md hover:shadow-lg group font-ibm"
               >
                 <span>Get a custom quote</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -312,7 +312,7 @@ const VentureArchitects = () => {
 
               <Link
                 to="/contact-us"
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-medium border border-slate-300/80 transition-all duration-200 font-ibm"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/15 text-slate-800 dark:text-white text-xs sm:text-sm font-medium border border-slate-300/80 dark:border-white/15 transition-all duration-200 font-ibm"
               >
                 <span>Schedule a consult</span>
               </Link>

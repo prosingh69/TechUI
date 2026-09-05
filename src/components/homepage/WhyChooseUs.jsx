@@ -44,7 +44,7 @@ const trustPoints = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="w-full bg-white text-slate-900 pt-16 sm:pt-20 lg:pt-24 pb-6 sm:pb-8 lg:pb-10 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm">
+    <section className="w-full bg-white dark:bg-[#020B24] text-slate-900 dark:text-white pt-16 sm:pt-20 lg:pt-24 pb-6 sm:pb-8 lg:pb-10 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* GrowthJockey Signature 2x2 Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-9">
@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
           >
             <div>
               {/* Main Heading - Exact matching ProcessVision typography */}
-              <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-gray-900 leading-[1.12] font-ibm">
+              <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-gray-900 dark:text-white leading-[1.12] font-ibm">
                 Why Choose Us <br />
                 <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent whitespace-nowrap">
                   To Build & Scale
@@ -67,14 +67,14 @@ const WhyChooseUs = () => {
               </h2>
 
               {/* Body Description */}
-              <p className="mt-4 sm:mt-5 text-gray-600 text-sm sm:text-base leading-[1.7] font-normal font-ibm">
+              <p className="mt-4 sm:mt-5 text-gray-600 dark:text-slate-300 text-sm sm:text-base leading-[1.7] font-normal font-ibm">
                 From zero-to-one venture building to enterprise-level digital expansion, our venture engineering system replaces guesswork with validated execution. We align design, technology, and commercial strategy to build businesses that lead markets.
               </p>
 
               {/* Key Trust Checkpoints */}
               <div className="mt-6 sm:mt-7 space-y-3">
                 {trustPoints.map((point, index) => (
-                  <div key={index} className="flex items-center gap-2.5 text-xs sm:text-sm text-gray-700 font-medium font-ibm">
+                  <div key={index} className="flex items-center gap-2.5 text-xs sm:text-sm text-gray-700 dark:text-slate-300 font-medium font-ibm">
                     <CheckCircle2 className="w-4 h-4 text-[#1F40CB] shrink-0" />
                     <span>{point}</span>
                   </div>
@@ -83,8 +83,8 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Micro CTA link at bottom of Quadrant 1 */}
-            <div className="mt-8 pt-5 border-t border-gray-200 flex items-center justify-between font-ibm">
-              <span className="text-xs text-gray-500 font-normal">
+            <div className="mt-8 pt-5 border-t border-gray-200 dark:border-white/10 flex items-center justify-between font-ibm">
+              <span className="text-xs text-gray-500 dark:text-slate-400 font-normal">
                 Proven across 50+ ventures & enterprises
               </span>
               <Link
@@ -250,9 +250,9 @@ const WhyChooseUs = () => {
         </div>
 
         {/* GrowthJockey Style Bottom Bar with "Build with us" CTA */}
-        <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row items-center justify-between gap-2.5 pt-3 sm:pt-3.5 border-t border-slate-100">
-          <p className="text-xs sm:text-sm text-slate-600 text-center sm:text-left font-medium">
-            Ready to build, launch, or scale your venture with <span className="text-slate-900 font-semibold">Big Feathers Technology</span>?
+        <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row items-center justify-between gap-2.5 pt-3 sm:pt-3.5 border-t border-slate-100 dark:border-white/10">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center sm:text-left font-medium">
+            Ready to build, launch, or scale your venture with <span className="text-slate-900 dark:text-white font-semibold">Big Feathers Technology</span>?
           </p>
 
           <Link

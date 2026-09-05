@@ -55,7 +55,7 @@ const processSteps = [
 
 const ProcessVision = () => {
   return (
-    <section className="w-full bg-white text-gray-900 pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-10 lg:pb-12 px-6 sm:px-8 lg:px-12 overflow-hidden">
+    <section className="w-full bg-white dark:bg-[#030A1E] text-gray-900 dark:text-white pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-10 lg:pb-12 px-6 sm:px-8 lg:px-12 overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header: Headline only */}
@@ -65,7 +65,7 @@ const ProcessVision = () => {
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-gray-900 leading-[1.12] font-ibm">
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-gray-900 dark:text-white leading-[1.12] font-ibm">
             <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
               How we bring
             </span>{' '}
@@ -83,7 +83,7 @@ const ProcessVision = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative flex flex-col w-full h-[25.5rem] sm:h-[28rem] lg:h-[29.5rem] rounded-2xl overflow-hidden border border-gray-200/80 bg-white hover:shadow-2xl hover:border-blue-200 transition-all duration-500 cursor-pointer"
+              className="group relative flex flex-col w-full h-[25.5rem] sm:h-[28rem] lg:h-[29.5rem] rounded-2xl overflow-hidden border border-gray-200/80 dark:border-white/10 bg-white dark:bg-[#06112C] hover:shadow-2xl hover:border-blue-200 dark:hover:border-[#00A2ED]/40 transition-all duration-500 cursor-pointer"
             >
               {/* 
                 Top Image Container:
@@ -99,34 +99,34 @@ const ProcessVision = () => {
                 />
 
                 {/* Step Badge Overlay */}
-                <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md shadow-sm border border-white/60 flex items-center gap-1.5 z-10">
+                <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 px-3 py-1 rounded-full bg-white/95 dark:bg-slate-900/90 shadow-sm border border-white/60 dark:border-white/20 flex items-center gap-1.5 z-10">
                   <span className="w-2 h-2 rounded-full bg-[#1F40CB]" />
-                  <span className="text-[11px] sm:text-xs font-bold text-gray-900 tracking-wider font-ibm">
+                  <span className="text-[11px] sm:text-xs font-bold text-gray-900 dark:text-white tracking-wider font-ibm">
                     STEP {step.stepNumber}
                   </span>
                 </div>
               </div>
 
               {/* 
-                White Content Area (Description Background):
+                Content Area:
                 - Expands upwards as the image contracts
                 - Fixed overall card height (zero layout shift)
               */}
-              <div className="flex-1 flex flex-col justify-between p-5 sm:p-6 lg:p-7 bg-white transition-all duration-500">
+              <div className="flex-1 flex flex-col justify-between p-5 sm:p-6 lg:p-7 bg-white dark:bg-[#06112C] transition-all duration-500">
                 <div>
                   {/* Phase Kicker */}
-                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-blue-600 font-ibm block mb-1">
+                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-[#00A2ED] font-ibm block mb-1">
                     {step.phase}
                   </span>
 
                   {/* Title */}
-                  <h3 className="text-lg sm:text-xl lg:text-[1.35rem] font-semibold sm:font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 font-ibm leading-snug line-clamp-2">
+                  <h3 className="text-lg sm:text-xl lg:text-[1.35rem] font-semibold sm:font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-[#00A2ED] transition-colors duration-200 font-ibm leading-snug line-clamp-2">
                     {step.title}
                   </h3>
 
                   {/* Description: Collapsed by default, expands and fades in on hover */}
                   <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-28 group-hover:opacity-100 transition-all duration-500 ease-out">
-                    <p className="mt-3 text-sm sm:text-[14.5px] text-gray-600 leading-relaxed font-ibm font-normal line-clamp-2">
+                    <p className="mt-3 text-sm sm:text-[14.5px] text-gray-600 dark:text-slate-300 leading-relaxed font-ibm font-normal line-clamp-2">
                       {step.description}
                     </p>
 
@@ -135,7 +135,7 @@ const ProcessVision = () => {
                       {step.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] sm:text-[11px] font-medium text-gray-600 bg-gray-50 px-2 py-0.5 rounded border border-gray-200/80"
+                          className="text-[10px] sm:text-[11px] font-medium text-gray-600 dark:text-slate-300 bg-gray-50 dark:bg-white/[0.06] px-2 py-0.5 rounded border border-gray-200/80 dark:border-white/10"
                         >
                           {tag}
                         </span>
@@ -145,9 +145,9 @@ const ProcessVision = () => {
                 </div>
 
                 {/* Bottom Footer Row: Timeline on Left, View Details on Right */}
-                <div className="flex items-center justify-between pt-3.5 mt-auto border-t border-gray-100">
+                <div className="flex items-center justify-between pt-3.5 mt-auto border-t border-gray-100 dark:border-white/10">
                   {/* Timeline (Always visible on bottom-left, exactly like reference) */}
-                  <div className="flex items-center gap-1.5 text-xs sm:text-[13px] text-gray-500 font-medium font-ibm">
+                  <div className="flex items-center gap-1.5 text-xs sm:text-[13px] text-gray-500 dark:text-slate-400 font-medium font-ibm">
                     <Clock className="w-3.5 h-3.5 text-gray-400" />
                     <span>{step.duration}</span>
                   </div>

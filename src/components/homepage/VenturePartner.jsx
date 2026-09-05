@@ -120,7 +120,7 @@ const CardItem = ({ card }) => {
 
 const VenturePartner = () => {
   return (
-    <section className="w-full bg-white text-gray-900 pt-3 sm:pt-5 lg:pt-6 pb-8 sm:pb-12 lg:pb-14 px-6 sm:px-8 lg:px-12 overflow-hidden">
+    <section className="w-full bg-white dark:bg-[#020B24] text-gray-900 dark:text-white pt-3 sm:pt-5 lg:pt-6 pb-8 sm:pb-12 lg:pb-14 px-6 sm:px-8 lg:px-12 overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[38%_minmax(0,1fr)] xl:grid-cols-[40%_minmax(0,1fr)] gap-8 lg:gap-10 xl:gap-12 items-start">
         
         {/* Left Column (38%-40%): Brand Headline, Pitch, CTA & 3D Feature Illustration */}
@@ -133,13 +133,13 @@ const VenturePartner = () => {
         >
           {/* Kicker: Tailored to Big Feathers Technology (tight spacing to headline) */}
           <div className="block mb-1 sm:mb-1.5">
-            <span className="text-[15px] sm:text-[1.05rem] lg:text-[1.18rem] xl:text-[1.22rem] font-medium tracking-normal text-gray-800 font-ibm">
+            <span className="text-[15px] sm:text-[1.05rem] lg:text-[1.18rem] xl:text-[1.22rem] font-medium tracking-normal text-gray-800 dark:text-slate-300 font-ibm">
               Full-Stack Tech, AI & Digital Growth Partner
             </span>
           </div>
 
           {/* Headline with Exact GrowthJockey Line Wrap and Signature Gradient */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-gray-900 leading-[1.12] font-ibm">
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-gray-900 dark:text-white leading-[1.12] font-ibm">
             <div>
               We{' '}
               <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
@@ -159,7 +159,7 @@ const VenturePartner = () => {
           </h2>
 
           {/* Copy: Tailored to Big Feathers Technology services */}
-          <div className="mt-4 sm:mt-5 lg:mt-6 space-y-4 text-gray-800 text-sm sm:text-[15.5px] lg:text-[16.5px] leading-[1.65] font-medium font-ibm max-w-xl">
+          <div className="mt-4 sm:mt-5 lg:mt-6 space-y-4 text-gray-800 dark:text-slate-300 text-sm sm:text-[15.5px] lg:text-[16.5px] leading-[1.65] font-medium font-ibm max-w-xl">
             <p>
               From concept to code, we engineer high-performance websites, custom software, mobile apps,
               and intelligent business automation that streamline operations and give brands a competitive edge.
@@ -183,7 +183,7 @@ const VenturePartner = () => {
 
           {/* Feature Illustration Image: Sized to match paragraph width and scale proportionally */}
           <div className="mt-6 sm:mt-8 w-full max-w-xl">
-            <div className="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 w-full">
+            <div className="relative rounded-2xl overflow-hidden shadow-md border border-gray-100 dark:border-white/10 w-full">
               <img
                 src="https://growthjockey-prod.b-cdn.net/new/VentureCardImage-v2.webp"
                 alt="Stylized hands raising a glowing sphere with cubes rising above, symbolizing nurturing ventures from concept to scalable innovation"

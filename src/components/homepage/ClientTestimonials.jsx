@@ -128,7 +128,7 @@ const ClientTestimonials = () => {
   };
 
   return (
-    <section className="w-full bg-white text-slate-900 pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-10 lg:pb-12 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm">
+    <section className="w-full bg-white dark:bg-[#030A1E] text-slate-900 dark:text-white pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-10 lg:pb-12 px-6 sm:px-8 lg:px-12 relative overflow-hidden font-ibm transition-colors duration-300">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header — GrowthJockey "Insights, Innovation and Impact" style */}
         <motion.div
@@ -138,14 +138,14 @@ const ClientTestimonials = () => {
           transition={{ duration: 0.6 }}
           className="mb-8 sm:mb-10 lg:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-slate-900 leading-[1.12] font-ibm">
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.12] font-ibm">
             Voices, Trust and{' '}
             <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
               Results
             </span>
           </h2>
 
-          <p className="mt-4 sm:mt-5 text-slate-500 text-sm sm:text-base max-w-2xl leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-slate-500 dark:text-slate-400 text-sm sm:text-base max-w-2xl leading-relaxed">
             From venture launches to enterprise transformations, hear how we
             help founders and businesses turn ambition into scalable,
             market-leading digital products.
@@ -311,7 +311,7 @@ const ClientTestimonials = () => {
                 className={`group w-full text-left rounded-xl sm:rounded-2xl p-4 transition-all duration-300 border ${
                   i === activeIndex
                     ? 'border-transparent shadow-lg shadow-blue-500/25'
-                    : 'bg-slate-50/80 border-slate-200/60 hover:bg-slate-100/80 hover:border-slate-300/70'
+                    : 'bg-slate-50/80 dark:bg-[#06112C] border-slate-200/60 dark:border-white/10 hover:bg-slate-100/80 dark:hover:bg-[#08173B] hover:border-slate-300/70 dark:hover:border-white/20'
                 }`}
                 style={
                   i === activeIndex
@@ -330,7 +330,7 @@ const ClientTestimonials = () => {
                     className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold shrink-0 transition-all duration-300 ${
                       i === activeIndex
                         ? 'bg-white/20 border border-white/30 text-white shadow-sm'
-                        : 'bg-slate-200/80 text-slate-600 group-hover:bg-slate-300/70'
+                        : 'bg-slate-200/80 dark:bg-white/10 text-slate-600 dark:text-slate-300 group-hover:bg-slate-300/70 dark:group-hover:bg-white/15'
                     }`}
                   >
                     {t.avatar}
@@ -341,7 +341,7 @@ const ClientTestimonials = () => {
                       className={`text-sm font-semibold truncate transition-colors ${
                         i === activeIndex
                           ? 'text-white'
-                          : 'text-slate-700 group-hover:text-slate-900'
+                          : 'text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white'
                       }`}
                     >
                       {t.name}
@@ -350,7 +350,7 @@ const ClientTestimonials = () => {
                       className={`text-xs truncate ${
                         i === activeIndex
                           ? 'text-white/80'
-                          : 'text-slate-400'
+                          : 'text-slate-400 dark:text-slate-400'
                       }`}
                     >
                       {t.role} — <span className="font-medium">{t.company}</span>
@@ -362,7 +362,7 @@ const ClientTestimonials = () => {
                     className={`w-2 h-2 rounded-full shrink-0 transition-all duration-300 ${
                       i === activeIndex
                         ? 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] scale-110'
-                        : 'bg-slate-300'
+                        : 'bg-slate-300 dark:bg-slate-600'
                     }`}
                   />
                 </div>
@@ -392,7 +392,7 @@ const ClientTestimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-6 sm:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-5 sm:pt-6 border-t border-slate-200/80"
+          className="mt-6 sm:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-5 sm:pt-6 border-t border-slate-200/80 dark:border-white/10"
         >
           {[
             { value: '50+', label: 'Projects Delivered' },
