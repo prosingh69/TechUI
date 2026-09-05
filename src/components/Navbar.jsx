@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#EEF5FD]/95 backdrop-blur-md border-b border-blue-200/70 shadow-[0_4px_20px_rgba(31,64,203,0.07)] py-0.5 sm:py-1'
+          ? 'bg-gradient-to-r from-[#BFD8F7]/95 via-[#D4E6FA]/95 to-[#B5D2F5]/95 backdrop-blur-md border-b border-[#1F40CB]/20 shadow-[0_4px_20px_rgba(20,50,150,0.08)] py-0.5 sm:py-1'
           : 'bg-transparent border-none shadow-none py-2.5 sm:py-3'
       }`}
     >
@@ -158,7 +158,7 @@ const Navbar = () => {
         <div
           className={`md:hidden px-6 py-6 space-y-4 transition-colors ${
             isScrolled
-              ? 'bg-[#EEF5FD]/98 backdrop-blur-xl border-b border-blue-200/70 text-slate-900 shadow-xl'
+              ? 'bg-gradient-to-b from-[#BFD8F7]/98 via-[#D4E6FA]/98 to-[#B5D2F5]/98 backdrop-blur-xl border-b border-[#1F40CB]/20 text-slate-900 shadow-xl'
               : 'bg-[#020B24]/98 backdrop-blur-xl border-b border-white/10 text-white shadow-2xl'
           }`}
         >
