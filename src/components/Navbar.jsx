@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-gradient-to-r from-[#BFD8F7]/95 via-[#D4E6FA]/95 to-[#B5D2F5]/95 backdrop-blur-md border-b border-[#1F40CB]/20 shadow-[0_4px_20px_rgba(20,50,150,0.08)] py-0.5 sm:py-1'
+          ? 'bg-gradient-to-r from-[#BFD8F7]/95 via-[#D4E6FA]/95 to-[#B5D2F5]/95 backdrop-blur-md border-b border-[#1F40CB]/20 shadow-[0_4px_20px_rgba(20,50,150,0.08)] py-1.5 sm:py-2'
           : 'bg-transparent border-none shadow-none py-2.5 sm:py-3'
       }`}
     >
