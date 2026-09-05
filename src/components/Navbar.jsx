@@ -61,14 +61,18 @@ const Navbar = () => {
               alt="Big Feathers Technology"
               className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                 isScrolled
-                  ? 'h-[2.65rem] sm:h-[2.9rem] lg:h-[3.15rem] max-w-[200px] sm:max-w-[230px] lg:max-w-[250px] drop-shadow-[0_2px_8px_rgba(31,64,203,0.22)]'
+                  ? 'h-[2.65rem] sm:h-[2.85rem] lg:h-[3.05rem] max-w-[200px] sm:max-w-[230px] lg:max-w-[250px] -translate-y-1 sm:-translate-y-1.5 drop-shadow-[0_2px_8px_rgba(31,64,203,0.22)]'
                   : 'h-16 sm:h-20 lg:h-24 max-w-[250px] sm:max-w-[295px] -translate-y-1 sm:-translate-y-1.5 drop-shadow-[0_2px_12px_rgba(0,102,255,0.25)]'
               }`}
             />
           </Link>
 
           {/* Left Navigation Links (Next to Logo) */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div
+            className={`hidden md:flex items-center gap-6 lg:gap-8 transition-transform duration-200 ${
+              isScrolled ? 'translate-y-1 sm:translate-y-1.5' : ''
+            }`}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -87,7 +91,11 @@ const Navbar = () => {
 
 
         {/* Right Side: Theme Switch (at top) OR Free Demo (on scroll) + Mobile Menu Toggle */}
-        <div className="flex items-center gap-3">
+        <div
+          className={`flex items-center gap-3 transition-transform duration-200 ${
+            isScrolled ? 'translate-y-0.5 sm:translate-y-1' : ''
+          }`}
+        >
           {!isScrolled ? (
             /* Scroll Zero (Top): Exact GrowthJockey Sliding Disc Theme Switch on Transparent Background */
             <button
