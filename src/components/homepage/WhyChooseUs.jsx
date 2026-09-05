@@ -27,9 +27,9 @@ const reasons = [
   {
     id: 'reason-3',
     pillar: '03 / COMMERCE & GROWTH',
-    title: 'End-to-End Market Expansion & Revenue Scaling',
+    title: 'E-Commerce Scaling & Revenue Growth',
     description:
-      'Real-time automated marketplace synchronization across Amazon, Flipkart, and Shopify, combined with performance marketing that converts traffic into revenue.',
+      'Automated multi-platform marketplace listings on Amazon & Flipkart, paired with high-converting performance marketing campaigns.',
     image: 'https://growthjockey-prod.b-cdn.net/new/clientStories1-v2.webp',
     alt: 'Glowing futuristic sphere representing market growth',
     link: '/contact-us',
@@ -130,7 +130,7 @@ const WhyChooseUs = () => {
                 <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-cyan-200 transition-colors">
                   {reasons[0].title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2 sm:line-clamp-3">
+                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2">
                   {reasons[0].description}
                 </p>
 
@@ -180,7 +180,7 @@ const WhyChooseUs = () => {
                 <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-cyan-200 transition-colors">
                   {reasons[1].title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2 sm:line-clamp-3">
+                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2">
                   {reasons[1].description}
                 </p>
 
@@ -230,7 +230,7 @@ const WhyChooseUs = () => {
                 <h3 className="text-xl sm:text-2xl font-medium sm:font-semibold text-white leading-tight group-hover:text-cyan-200 transition-colors">
                   {reasons[2].title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2 sm:line-clamp-3">
+                <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed font-light sm:font-normal line-clamp-2">
                   {reasons[2].description}
                 </p>
 
