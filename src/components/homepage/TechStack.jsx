@@ -1055,8 +1055,8 @@ const TechStack = () => {
                         Build your connected ecosystem
                       </h3>
                       <p className="market_desc">
-                        Connect roommaster with <strong>100+ third-party solutions</strong> — from door locks and point of
-                        sale to accounting systems and marketing tools, so your business runs like a well-oiled machine.
+                        Connect BigFeathers solutions with <strong>modern tech &amp; cloud ecosystems</strong> — from scalable databases
+                        and AI models to secure payment gateways and enterprise APIs, so your business runs like a high-performance machine.
                       </p>
                     </div>
                   </div>
@@ -1069,7 +1069,7 @@ const TechStack = () => {
                     </div>
                     <div className="market_addon_item">
                       <span className="market_addon_icon">✓</span>
-                      <span>Automated guest, POS & financial workflows</span>
+                      <span>Automated data, CRM & enterprise workflows</span>
                     </div>
                     <div className="market_addon_item">
                       <span className="market_addon_icon">✓</span>
