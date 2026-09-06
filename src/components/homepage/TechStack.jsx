@@ -626,14 +626,14 @@ const TechStack = () => {
 
         .section_market {
           padding-top: 1.5rem;
-          padding-bottom: 3.5rem;
+          padding-bottom: 2rem;
           font-family: inherit;
         }
 
         @media (min-width: 992px) {
           .section_market {
             padding-top: 1.75rem;
-            padding-bottom: 4rem;
+            padding-bottom: 2.25rem;
           }
         }
 
