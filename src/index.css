@@ -10,6 +10,10 @@ html, body {
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
+.font-ibm-serif {
+  font-family: 'IBM Plex Serif', Georgia, serif;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
