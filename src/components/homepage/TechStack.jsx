@@ -705,7 +705,7 @@ const TechStack = () => {
 
         .market_content.is_1 {
           background-color: var(--royal-blue--600-primary);
-          padding: 2.15rem 1.75rem 1.85rem 2.25rem;
+          padding: 2.15rem 2.25rem 1.85rem 2.25rem;
           border-radius: 1.5rem;
           flex: 1;
           height: 100%;
@@ -739,30 +739,9 @@ const TechStack = () => {
           flex-shrink: 0;
         }
 
-        .market_badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.45rem;
-          padding: 0.35rem 0.8rem;
-          background-color: rgba(255, 255, 255, 0.18);
-          border: 1px solid rgba(255, 255, 255, 0.28);
-          border-radius: 9999px;
-          color: #ffffff;
-          font-size: 0.75rem;
-          font-weight: 600;
-          letter-spacing: 0.02em;
-        }
-
-        .market_badge_dot {
-          width: 0.38rem;
-          height: 0.38rem;
-          border-radius: 9999px;
-          background-color: #4ade80;
-        }
-
         .market_desc_wrap {
           width: 100%;
-          max-width: 23rem;
+          max-width: 100%;
           margin-bottom: 0.75rem;
         }
 
