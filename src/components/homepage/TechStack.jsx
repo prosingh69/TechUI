@@ -681,8 +681,8 @@ const TechStack = () => {
 
         .market_content_left {
           grid-column-gap: 1.5rem;
-          grid-row-gap: 1.25rem;
-          gap: 1.25rem;
+          grid-row-gap: 1.5rem;
+          gap: 1.5rem;
           flex-flow: column;
           width: 45%;
           margin-right: -9%;
