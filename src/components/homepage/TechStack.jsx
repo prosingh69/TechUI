@@ -717,13 +717,13 @@ const TechStack = () => {
 
         .market_content.is_1 {
           background-color: var(--royal-blue--600-primary);
-          padding: 2.15rem 5vw 2.15rem 2.25rem;
+          padding: 2.15rem 1.75rem 1.85rem 2.25rem;
           border-radius: 1.5rem;
           flex: 1;
           height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
+          justify-content: space-between;
         }
 
         @media (min-width: 992px) {
@@ -732,29 +732,100 @@ const TechStack = () => {
           }
         }
 
+        .market_top_bar {
+          display: flex;
+          align-items: center;
+          gap: 0.85rem;
+          margin-bottom: 1.15rem;
+        }
+
         .market_logo {
-          width: 3.1rem;
-          height: 3.1rem;
+          width: 2.85rem;
+          height: 2.85rem;
           color: #ffffff;
           background-color: #ffffff3d;
           border-radius: 0.65rem;
           justify-content: center;
           align-items: center;
-          margin-bottom: 1.35rem;
           display: flex;
+          flex-shrink: 0;
+        }
+
+        .market_badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          padding: 0.35rem 0.8rem;
+          background-color: rgba(255, 255, 255, 0.18);
+          border: 1px solid rgba(255, 255, 255, 0.28);
+          border-radius: 9999px;
+          color: #ffffff;
+          font-size: 0.75rem;
+          font-weight: 600;
+          letter-spacing: 0.02em;
+        }
+
+        .market_badge_dot {
+          width: 0.38rem;
+          height: 0.38rem;
+          border-radius: 9999px;
+          background-color: #4ade80;
         }
 
         .market_desc_wrap {
           width: 100%;
           max-width: 23rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .market_card_title {
+          color: #ffffff;
+          font-size: 1.18rem;
+          font-weight: 600;
+          line-height: 1.32;
+          margin: 0 0 0.55rem 0;
+          letter-spacing: -0.015em;
         }
 
         .market_desc {
-          color: #ffffff;
-          font-size: 1.075rem;
+          color: rgba(255, 255, 255, 0.92);
+          font-size: 0.95rem;
           line-height: 1.55;
           margin: 0;
           font-weight: 400;
+        }
+
+        .market_card_addon {
+          width: 100%;
+          max-width: 78%;
+          padding-top: 1rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          display: flex;
+          flex-direction: column;
+          gap: 0.55rem;
+        }
+
+        .market_addon_item {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          color: rgba(255, 255, 255, 0.95);
+          font-size: 0.825rem;
+          font-weight: 500;
+          line-height: 1.35;
+        }
+
+        .market_addon_icon {
+          width: 1.15rem;
+          height: 1.15rem;
+          border-radius: 9999px;
+          background-color: rgba(255, 255, 255, 0.22);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.65rem;
+          color: #ffffff;
+          flex-shrink: 0;
         }
 
         .market_content_cta {
@@ -937,74 +1008,102 @@ const TechStack = () => {
             <div id="w-node-_8c3b925d-ad9c-0682-3acb-a2ef7ab91c00-7ab91bf7" className="market_content_left">
               <div className="market_content_round is_1">
                 <div className="market_content is_1">
-                  <div className="market_logo">
-                    <div className="icon-embed-small w-embed">
-                      {/* Exact RoomMaster 4-Box App Grid SVG */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="100%"
-                        height="100%"
-                        viewBox="0 0 33 33"
-                        fill="none"
-                        preserveAspectRatio="xMidYMid meet"
-                        aria-hidden="true"
-                        role="img"
-                      >
-                        <g clipPath="url(#clip0_2514_10113)">
-                          <path
-                            d="M5.54492 7.11902C5.54492 6.75956 5.68772 6.41482 5.94189 6.16064C6.19607 5.90647 6.54081 5.76367 6.90027 5.76367H12.3217C12.6811 5.76367 13.0259 5.90647 13.28 6.16064C13.5342 6.41482 13.677 6.75956 13.677 7.11902V12.5404C13.677 12.8999 13.5342 13.2446 13.28 13.4988C13.0259 13.753 12.6811 13.8958 12.3217 13.8958H6.90027C6.54081 13.8958 6.19607 13.753 5.94189 13.4988C5.68772 13.2446 5.54492 12.8999 5.54492 12.5404V7.11902Z"
-                            stroke="currentColor"
-                            strokeWidth="2.71069"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M5.54492 20.6718C5.54492 20.3123 5.68772 19.9676 5.94189 19.7134C6.19607 19.4592 6.54081 19.3164 6.90027 19.3164H12.3217C12.6811 19.3164 13.0259 19.4592 13.28 19.7134C13.5342 19.9676 13.677 20.3123 13.677 20.6718V26.0931C13.677 26.4526 13.5342 26.7973 13.28 27.0515C13.0259 27.3057 12.6811 27.4485 12.3217 27.4485H6.90027C6.54081 27.4485 6.19607 27.3057 5.94189 27.0515C5.68772 26.7973 5.54492 26.4526 5.54492 26.0931V20.6718Z"
-                            stroke="currentColor"
-                            strokeWidth="2.71069"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M19.0977 20.6718C19.0977 20.3123 19.2405 19.9676 19.4946 19.7134C19.7488 19.4592 20.0935 19.3164 20.453 19.3164H25.8744C26.2338 19.3164 26.5786 19.4592 26.8328 19.7134C27.0869 19.9676 27.2297 20.3123 27.2297 20.6718V26.0931C27.2297 26.4526 27.0869 26.7973 26.8328 27.0515C26.5786 27.3057 26.2338 27.4485 25.8744 27.4485H20.453C20.0935 27.4485 19.7488 27.3057 19.4946 27.0515C19.2405 26.7973 19.0977 26.4526 19.0977 26.0931V20.6718Z"
-                            stroke="currentColor"
-                            strokeWidth="2.71069"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M19.0977 9.8291H27.2297"
-                            stroke="currentColor"
-                            strokeWidth="2.71069"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M23.165 5.76367V13.8958"
-                            stroke="currentColor"
-                            strokeWidth="2.71069"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_2514_10113">
-                            <rect
-                              width="32.5283"
-                              height="32.5283"
-                              fill="currentColor"
-                              transform="translate(0.123047 0.341797)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
+                  <div>
+                    <div className="market_top_bar">
+                      <div className="market_logo">
+                        <div className="icon-embed-small w-embed">
+                          {/* Exact RoomMaster 4-Box App Grid SVG */}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="100%"
+                            height="100%"
+                            viewBox="0 0 33 33"
+                            fill="none"
+                            preserveAspectRatio="xMidYMid meet"
+                            aria-hidden="true"
+                            role="img"
+                          >
+                            <g clipPath="url(#clip0_2514_10113)">
+                              <path
+                                d="M5.54492 7.11902C5.54492 6.75956 5.68772 6.41482 5.94189 6.16064C6.19607 5.90647 6.54081 5.76367 6.90027 5.76367H12.3217C12.6811 5.76367 13.0259 5.90647 13.28 6.16064C13.5342 6.41482 13.677 6.75956 13.677 7.11902V12.5404C13.677 12.8999 13.5342 13.2446 13.28 13.4988C13.0259 13.753 12.6811 13.8958 12.3217 13.8958H6.90027C6.54081 13.8958 6.19607 13.753 5.94189 13.4988C5.68772 13.2446 5.54492 12.8999 5.54492 12.5404V7.11902Z"
+                                stroke="currentColor"
+                                strokeWidth="2.71069"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M5.54492 20.6718C5.54492 20.3123 5.68772 19.9676 5.94189 19.7134C6.19607 19.4592 6.54081 19.3164 6.90027 19.3164H12.3217C12.6811 19.3164 13.0259 19.4592 13.28 19.7134C13.5342 19.9676 13.677 20.3123 13.677 20.6718V26.0931C13.677 26.4526 13.5342 26.7973 13.28 27.0515C13.0259 27.3057 12.6811 27.4485 12.3217 27.4485H6.90027C6.54081 27.4485 6.19607 27.3057 5.94189 27.0515C5.68772 26.7973 5.54492 26.4526 5.54492 26.0931V20.6718Z"
+                                stroke="currentColor"
+                                strokeWidth="2.71069"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M19.0977 20.6718C19.0977 20.3123 19.2405 19.9676 19.4946 19.7134C19.7488 19.4592 20.0935 19.3164 20.453 19.3164H25.8744C26.2338 19.3164 26.5786 19.4592 26.8328 19.7134C27.0869 19.9676 27.2297 20.3123 27.2297 20.6718V26.0931C27.2297 26.4526 27.0869 26.7973 26.8328 27.0515C26.5786 27.3057 26.2338 27.4485 25.8744 27.4485H20.453C20.0935 27.4485 19.7488 27.3057 19.4946 27.0515C19.2405 26.7973 19.0977 26.4526 19.0977 26.0931V20.6718Z"
+                                stroke="currentColor"
+                                strokeWidth="2.71069"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M19.0977 9.8291H27.2297"
+                                stroke="currentColor"
+                                strokeWidth="2.71069"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M23.165 5.76367V13.8958"
+                                stroke="currentColor"
+                                strokeWidth="2.71069"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_2514_10113">
+                                <rect
+                                  width="32.5283"
+                                  height="32.5283"
+                                  fill="currentColor"
+                                  transform="translate(0.123047 0.341797)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="market_badge">
+                        <span className="market_badge_dot" />
+                        <span>100+ INTEGRATIONS</span>
+                      </div>
+                    </div>
+
+                    <div className="market_desc_wrap">
+                      <h3 className="market_card_title">
+                        Build your connected ecosystem
+                      </h3>
+                      <p className="market_desc">
+                        Connect roommaster with <strong>100+ third-party solutions</strong> — from door locks and point of
+                        sale to accounting systems and marketing tools, so your business runs like a well-oiled machine.
+                      </p>
                     </div>
                   </div>
-                  <div className="market_desc_wrap">
-                    <p className="market_desc text-size-large">
-                      Connect roommaster with <strong>100+ third-party solutions</strong> from door locks, and point of
-                      sale to accounting systems, and marketing tools, so your hotel runs like a well-oiled machine.
-                    </p>
+
+                  {/* Bottom Addon: Fills the lower gap with rich, structured feature highlights */}
+                  <div className="market_card_addon">
+                    <div className="market_addon_item">
+                      <span className="market_addon_icon">✓</span>
+                      <span>Real-time 2-way data synchronization</span>
+                    </div>
+                    <div className="market_addon_item">
+                      <span className="market_addon_icon">✓</span>
+                      <span>Automated guest, POS & financial workflows</span>
+                    </div>
+                    <div className="market_addon_item">
+                      <span className="market_addon_icon">✓</span>
+                      <span>Plug-and-play secure enterprise APIs</span>
+                    </div>
                   </div>
                 </div>
               </div>
