@@ -660,6 +660,11 @@ const TechStack = () => {
           margin: 0;
         }
 
+        :global(.dark) .top_title,
+        .dark .top_title {
+          color: #ffffff;
+        }
+
         .market_content_wrap {
           justify-content: flex-start;
           display: flex;
@@ -999,7 +1004,7 @@ const TechStack = () => {
       <div className="max-w-7xl mx-auto market_component">
         {/* ── Section Title Header ── */}
         <div className="top_title_wrap">
-          <h2 className="top_title">Create your perfect technology ecosystem</h2>
+          <h2 className="top_title">Cutting-edge technologies powering your digital scale</h2>
         </div>
 
           {/* ── Exact RoomMaster Inspected HTML Hierarchy ── */}
