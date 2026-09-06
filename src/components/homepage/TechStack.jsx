@@ -490,7 +490,7 @@ const TechStack = () => {
 
         .market_content_left {
           grid-column-gap: 1.5rem;
-          grid-row-gap: 1.5rem;
+          grid-row-gap: 1rem;
           flex-flow: column;
           width: 45%;
           margin-right: -9%;
@@ -513,17 +513,24 @@ const TechStack = () => {
           }
 
           .market_content.is_1 {
-            clip-path: polygon(0% 0%, 100% 0%, 100% 46.5%, 75.5% 46.5%, 75.5% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 75.5% 48%, 75.5% 100%, 0% 100%);
           }
 
           .market_content.is_2 {
-            clip-path: polygon(20% 0%, 100% 0%, 100% 46.5%, 100% 100%, 75.5% 100%, 20% 100%, 20% 71.04%, 0% 71.04%, 0% 38.58%, 20% 38.58%);
+            clip-path: polygon(20% 0%, 100% 0%, 100% 48%, 100% 100%, 75.5% 100%, 20% 100%, 20% 77%, 0% 77%, 0% 41.5%, 20% 41.5%);
           }
+        }
+
+        .market_content_round.is_1 {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 0.875rem;
         }
 
         .market_content.is_1 {
           background-color: var(--royal-blue--600-primary);
-          padding: 2.75rem 12vw 2.75rem 2.75rem;
+          padding: 2.25rem 10vw 2.25rem 2.25rem;
           border-radius: 1.5rem;
           flex: 1;
           display: flex;
@@ -538,14 +545,14 @@ const TechStack = () => {
         }
 
         .market_logo {
-          width: 3.5rem;
-          height: 3.5rem;
+          width: 3.25rem;
+          height: 3.25rem;
           color: #ffffff;
           background-color: #ffffff3d;
           border-radius: 0.65rem;
           justify-content: center;
           align-items: center;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
           display: flex;
         }
 
@@ -556,8 +563,8 @@ const TechStack = () => {
 
         .market_desc {
           color: #ffffff;
-          font-size: 1.15rem;
-          line-height: 1.65;
+          font-size: 1.1rem;
+          line-height: 1.6;
           margin: 0;
           font-weight: 400;
         }
@@ -570,10 +577,11 @@ const TechStack = () => {
           flex-flow: row;
           justify-content: space-between;
           align-items: center;
-          padding: 1.5rem 2rem;
+          padding: 1.25rem 1.75rem;
           display: flex;
           background-color: #ffffff;
           margin-top: auto;
+          flex-shrink: 0;
         }
 
         @media (max-width: 640px) {
@@ -589,7 +597,7 @@ const TechStack = () => {
         }
 
         .market_content_title {
-          font-size: 1.15rem;
+          font-size: 1.05rem;
           line-height: 1.35;
           color: #0f172a;
           margin: 0;
@@ -636,7 +644,7 @@ const TechStack = () => {
         .market_content.is_2 {
           background-color: var(--beige--100-primary);
           height: 100%;
-          padding: 2.25rem 0;
+          padding: 1.5rem 0;
           position: relative;
           overflow: hidden;
           border-radius: 1.5rem;
@@ -656,13 +664,13 @@ const TechStack = () => {
           height: 100%;
           display: flex;
           position: relative;
-          gap: 1.75rem;
+          gap: 1.15rem;
           z-index: 2;
         }
 
         .market_content_logos_track {
-          grid-column-gap: 2rem;
-          grid-row-gap: 2rem;
+          grid-column-gap: 1.6rem;
+          grid-row-gap: 1.6rem;
           justify-content: flex-start;
           align-items: center;
           display: flex;
@@ -672,20 +680,20 @@ const TechStack = () => {
         @media (min-width: 992px) {
           .market_content_logos_track.is_1,
           .market_content_logos_track.is_5 {
-            margin-left: 3.75rem;
+            margin-left: 3.25rem;
           }
           .market_content_logos_track.is_2 {
-            margin-left: 10.95rem;
+            margin-left: 9.75rem;
           }
         }
 
         .market_content_logo_wrap {
           background-color: #ffffff;
-          border-radius: 1.125rem;
+          border-radius: 1rem;
           justify-content: center;
           align-items: center;
-          width: 5rem;
-          height: 5rem;
+          width: 4.4rem;
+          height: 4.4rem;
           display: flex;
           flex-shrink: 0;
           box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
@@ -700,8 +708,8 @@ const TechStack = () => {
 
         .market_content_logo {
           flex: none;
-          width: 2.5rem;
-          height: 2.5rem;
+          width: 2.25rem;
+          height: 2.25rem;
           display: flex;
           justify-content: center;
           align-items: center;
