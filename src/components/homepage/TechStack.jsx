@@ -69,6 +69,47 @@ const track1Logos = [
       </svg>
     ),
   },
+  {
+    name: 'Kubernetes',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#326CE5" />
+        <path d="M12 4.5l6.5 3.75v7.5L12 19.5l-6.5-3.75v-7.5L12 4.5z" fill="#FFFFFF" />
+        <path d="M12 6.8l4.5 2.6v5.2L12 17.2l-4.5-2.6V9.4L12 6.8z" fill="#326CE5" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Go',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M1.5 10.5h6v3h-6zm0-4h10v3h-10zm0 8h4v3h-4z" fill="#00ADD8" />
+        <path d="M16.5 6a6 6 0 100 12 6 6 0 000-12zm0 9.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z" fill="#00ADD8" />
+        <path d="M15 11h5v2h-5z" fill="#00ADD8" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Rust',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <circle cx="12" cy="12" r="10" fill="#DEA584" />
+        <path d="M12 4a8 8 0 100 16 8 8 0 000-16zm-3 5h6a2.5 2.5 0 010 5H12v3H9V9zm3 3.5h3a1 1 0 000-2h-3v2z" fill="#000000" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Linux',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <ellipse cx="12" cy="13" rx="6" ry="8" fill="#FFD133" />
+        <ellipse cx="12" cy="14" rx="5" ry="7" fill="#FFFFFF" />
+        <circle cx="10" cy="9" r="1" fill="#000000" />
+        <circle cx="14" cy="9" r="1" fill="#000000" />
+        <path d="M11 10.5h2l-1 2z" fill="#FF9900" />
+      </svg>
+    ),
+  },
 ];
 
 const track2Logos = [
@@ -133,6 +174,41 @@ const track2Logos = [
           d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.336 6.182 14.975 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.336 13.382 8.975 12 6.001 12z"
           fill="#38BDF8"
         />
+      </svg>
+    ),
+  },
+  {
+    name: 'Vue.js',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M2 3h3.5L12 14.5 18.5 3H22L12 20.5 2 3z" fill="#41B883" />
+        <path d="M6 3h3.5L12 7.5 14.5 3H18L12 13.5 6 3z" fill="#35495E" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Angular',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M12 2L2 5.5l1.5 13L12 22l8.5-3.5 1.5-13L12 2z" fill="#DD0031" />
+        <path d="M12 4.2l6.8 13.6h-2.3l-1.4-3.5H8.9l-1.4 3.5H5.2L12 4.2zm1.8 8.3L12 7.8l-1.8 4.7h3.6z" fill="#FFFFFF" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Vite',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M21.5 3.5L12.5 21.5 2.5 6.5l8.5-2 10.5-1z" fill="#646CFF" />
+        <path d="M13 3l-6 10h4l-2 7 9-11h-4l3-6z" fill="#FFD62E" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Svelte',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M18.8 4.8C16.6 2.4 13.1 1.7 10 3L6.8 4.8C5.2 5.8 4.1 7.4 3.9 9.3c-.2 2 .5 3.9 1.9 5.2l.9.8-1.5 1.8c-1.3 1.6-1.5 3.8-.5 5.6 1 1.8 3 2.8 5 2.6 1.7-.2 3.3-1.1 4.3-2.5l3.2-4.5c1.4-1.9 1.5-4.4.4-6.4l-.8-1.3 1.5-1.8c1.6-1.8 1.8-4.5.5-6.6z" fill="#FF3E00" />
       </svg>
     ),
   },
@@ -229,6 +305,44 @@ const track3Logos = [
       </svg>
     ),
   },
+  {
+    name: 'PyTorch',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M13.5 2.5a8 8 0 104.5 14.5l-1.5-1.5a6 6 0 11-3-11v-2z" fill="#EE4C2C" />
+        <circle cx="16" cy="6" r="1.5" fill="#EE4C2C" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Hugging Face',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <circle cx="12" cy="12" r="10" fill="#FFD21E" />
+        <circle cx="9" cy="10" r="1.5" fill="#000000" />
+        <circle cx="15" cy="10" r="1.5" fill="#000000" />
+        <path d="M8 14c1 2 7 2 8 0" stroke="#000000" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Claude AI',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <circle cx="12" cy="12" r="10" fill="#D97757" />
+        <path d="M12 7l1.5 3.5L17 12l-3.5 1.5L12 17l-1.5-3.5L7 12l3.5-1.5L12 7z" fill="#FFFFFF" />
+      </svg>
+    ),
+  },
+  {
+    name: 'LangChain',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <rect width="24" height="24" rx="5" fill="#1C3C3C" />
+        <path d="M7 10h4v4H7zm6 0h4v4h-4zm-3-3h4v4h-4zm0 6h4v4h-4z" fill="#00A67E" />
+      </svg>
+    ),
+  },
 ];
 
 const track4Logos = [
@@ -301,6 +415,50 @@ const track4Logos = [
       </svg>
     ),
   },
+  {
+    name: 'Swift',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M21.5 17.5c-4.5 4.5-11.5 4.5-16 0-1-1-1.5-2.2-1.5-3.5 0-3 3-6.5 7-9 0 2-1 4-2 5.5 3.5-1 7-4 7.5-6.5 1 2 1.5 4 1 6 3-2 4-5 4-5s-.5 4-3.5 7c4.5-1.5 6-4 6-4s-.5 2.5-2.5 4.5z" fill="#F05138" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Kotlin',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <defs>
+          <linearGradient id="ktGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#0095D5" />
+            <stop offset="50%" stopColor="#8056CA" />
+            <stop offset="100%" stopColor="#C757BC" />
+          </linearGradient>
+        </defs>
+        <path d="M2 2h20L12 12 22 22H2V2z" fill="url(#ktGrad)" />
+      </svg>
+    ),
+  },
+  {
+    name: 'React Native',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <circle cx="12" cy="12" r="2.5" fill="#61DAFB" />
+        <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61DAFB" strokeWidth="1.2" transform="rotate(30 12 12)" />
+        <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61DAFB" strokeWidth="1.2" transform="rotate(90 12 12)" />
+        <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="#61DAFB" strokeWidth="1.2" transform="rotate(150 12 12)" />
+      </svg>
+    ),
+  },
+  {
+    name: 'GitLab',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M12 21.5L2 14.2l3.8-11.7L9 11.2h6l3.2-8.7L22 14.2 12 21.5z" fill="#E24329" />
+        <path d="M12 21.5l-3-10.3h6L12 21.5z" fill="#FC6D26" />
+        <path d="M12 21.5L2 14.2h7L12 21.5zm0 0l10-7.3h-7L12 21.5z" fill="#FCA326" />
+      </svg>
+    ),
+  },
 ];
 
 const track5Logos = [
@@ -360,14 +518,47 @@ const track5Logos = [
       </svg>
     ),
   },
+  {
+    name: 'HTML5',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M2.5 2l1.7 18.5 7.8 2.2 7.8-2.2L21.5 2H2.5zm15.4 5.2H7.9l.3 3.1h9.4l-.8 8-4.8 1.3-4.8-1.3-.3-3.6h2.5l.2 1.8 2.4.6 2.4-.6.3-3.4H6.5L5.7 4.2h12.5l-.3 3z" fill="#E34F26" />
+      </svg>
+    ),
+  },
+  {
+    name: 'CSS3',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M2.5 2l1.7 18.5 7.8 2.2 7.8-2.2L21.5 2H2.5zm15.4 5.2H7.9l.3 3.1h9.4l-.8 8-4.8 1.3-4.8-1.3-.3-3.6h2.5l.2 1.8 2.4.6 2.4-.6.3-3.4H6.5L5.7 4.2h12.5l-.3 3z" fill="#1572B6" />
+      </svg>
+    ),
+  },
+  {
+    name: 'MySQL',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M12 3c-4.5 0-8 3-8 7 0 2.5 1.5 4.8 3.8 6 .5.3.8.8.7 1.4l-.3 2.1c1.2-.5 2.5-1.2 3.5-2.1.8.1 1.5.2 2.3.2 4.5 0 8-3 8-7s-3.5-7.6-10-7.6z" fill="#00758F" />
+        <path d="M15 11c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" fill="#F29111" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Prisma',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M12.5 2L3 18.5h7L9 22l11-8.5h-5.5L18 8l-5.5-6z" fill="#2D3748" />
+      </svg>
+    ),
+  },
 ];
 
 const TechStack = () => {
   const [hovered, setHovered] = useState(null);
 
-  const renderLogoItem = (item) => (
+  const renderLogoItem = (item, idx) => (
     <div
-      key={item.name}
+      key={`${item.name}-${idx}`}
       onMouseEnter={() => setHovered(item)}
       onMouseLeave={() => setHovered(null)}
       className="market_content_logo_wrap"
