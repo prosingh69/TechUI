@@ -55,31 +55,31 @@ const AboutUs = () => {
         {/* Ambient Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#020B24]/75 via-[#020B24]/45 to-[#020B24]/85 z-0 pointer-events-none" />
 
-        {/* Hero Content Fold (Expanded cinematic presence) */}
-        <div className="flex-1 min-h-0 w-full relative z-10 flex flex-col justify-center px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto pt-20 sm:pt-24 lg:pt-28 pb-6 sm:pb-8">
-          <div className="max-w-4xl">
-            {/* Editorial Serif Heading */}
+        {/* Hero Content Fold (Balanced vertical rhythm & spacing) */}
+        <div className="flex-1 min-h-0 w-full relative z-10 flex flex-col justify-center px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto pt-20 lg:pt-24 pb-4">
+          <div className="w-full">
+            {/* Editorial Serif Heading (Fits 'Ventures of' on line 1, 'Tomorrow' on line 2) */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="font-ibm-serif text-3xl sm:text-5xl lg:text-[3.75rem] xl:text-[4.15rem] font-normal leading-[1.12] tracking-tight text-white mb-5 sm:mb-6"
+              className="font-ibm-serif text-2xl sm:text-4xl lg:text-[2.65rem] xl:text-[2.85rem] font-normal leading-[1.2] tracking-tight text-white max-w-5xl mb-4 sm:mb-5"
             >
               Designing, Building &amp; Scaling the Ventures of Tomorrow
             </motion.h1>
 
-            {/* Description Paragraph */}
+            {/* Description Paragraph (42rem max width with clean 1.6 line height) */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-base sm:text-lg lg:text-[1.18rem] text-white/90 max-w-2xl font-ibm leading-relaxed mb-7 sm:mb-9 font-light"
+              className="text-sm sm:text-base lg:text-[1.08rem] text-white/90 max-w-[42rem] font-ibm leading-[1.6] mb-5 sm:mb-7 font-light"
             >
               BigFeathers is a full-stack venture building company. We partner with enterprises to
               design, build, and scale businesses to turn ideas into market-leading ventures.
             </motion.p>
 
-            {/* CTA Button */}
+            {/* CTA Button (Sleek, sharp, comfortable) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ const AboutUs = () => {
             >
               <Link
                 to="/contact-us"
-                className="inline-flex items-center gap-2.5 px-6 py-3 sm:px-7 sm:py-3.5 rounded-lg bg-white text-[#1A1D2E] font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-gradient-to-r hover:from-[#00A2ED] hover:to-[#1F40CB] hover:text-white shadow-xl group w-fit font-ibm"
+                className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg bg-white text-[#1A1D2E] font-semibold text-xs sm:text-sm transition-all duration-300 hover:bg-gradient-to-r hover:from-[#00A2ED] hover:to-[#1F40CB] hover:text-white shadow-xl group w-fit font-ibm"
               >
                 <span>Connect with us</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
