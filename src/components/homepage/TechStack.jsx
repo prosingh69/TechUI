@@ -1075,34 +1075,33 @@ const TechStack = () => {
                       </div>
                       <div className="market_badge">
                         <span className="market_badge_dot" />
-                        <span>100+ INTEGRATIONS</span>
+                        <span>FULL-STACK TECH & AI</span>
                       </div>
                     </div>
 
                     <div className="market_desc_wrap">
                       <h3 className="market_card_title">
-                        Build your connected ecosystem
+                        Build, Automate & Scale Your Business
                       </h3>
                       <p className="market_desc">
-                        Connect roommaster with <strong>100+ third-party solutions</strong> — from door locks and point of
-                        sale to accounting systems and marketing tools, so your business runs like a well-oiled machine.
+                        We deliver end-to-end <strong>Technology, AI & E-Commerce solutions</strong> — from custom web, mobile, and enterprise CRM/ERP development to AI-driven photoshoots, multi-marketplace catalogue management, and high-performance digital marketing.
                       </p>
                     </div>
                   </div>
 
-                  {/* Bottom Addon: Fills the lower gap with rich, structured feature highlights */}
+                  {/* Bottom Addon: 4 Core Services Pillars */}
                   <div className="market_card_addon">
                     <div className="market_addon_item">
                       <span className="market_addon_icon">✓</span>
-                      <span>Real-time 2-way data synchronization</span>
+                      <span>Custom Web, Mobile & Enterprise CRM/ERP Systems</span>
                     </div>
                     <div className="market_addon_item">
                       <span className="market_addon_icon">✓</span>
-                      <span>Automated guest, POS & financial workflows</span>
+                      <span>AI Product Photography, Enhancement & Chatbots</span>
                     </div>
                     <div className="market_addon_item">
                       <span className="market_addon_icon">✓</span>
-                      <span>Plug-and-play secure enterprise APIs</span>
+                      <span>Multi-Marketplace E-Commerce & Performance Marketing</span>
                     </div>
                   </div>
                 </div>
@@ -1112,12 +1111,12 @@ const TechStack = () => {
               <div className="market_content_cta">
                 <div className="market_content_title_wrap">
                   <h3 className="market_content_title text-size-large" role="heading" aria-level="3">
-                    See how roommaster connects with your favorite tools
+                    Ready to accelerate your business with modern tech & AI?
                   </h3>
                 </div>
                 <div className="market_content_link">
                   <a href="#contact" className="button w-inline-block is-alternate">
-                    <div>Visit Marketplace</div>
+                    <div>Get in Touch</div>
                   </a>
                 </div>
               </div>
