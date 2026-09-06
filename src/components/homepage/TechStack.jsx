@@ -570,12 +570,11 @@ const TechStack = () => {
     restDelta: 0.001,
   });
 
-  // Alternating horizontal displacements
-  const xTrack1 = useTransform(smoothProgress, [0, 1], [-50, 50]);
-  const xTrack2 = useTransform(smoothProgress, [0, 1], [50, -50]);
-  const xTrack3 = useTransform(smoothProgress, [0, 1], [-60, 60]);
-  const xTrack4 = useTransform(smoothProgress, [0, 1], [60, -60]);
-  const xTrack5 = useTransform(smoothProgress, [0, 1], [-50, 50]);
+  // Alternating horizontal displacements for 4 tracks
+  const xTrack1 = useTransform(smoothProgress, [0, 1], [-45, 45]);
+  const xTrack2 = useTransform(smoothProgress, [0, 1], [45, -45]);
+  const xTrack3 = useTransform(smoothProgress, [0, 1], [-55, 55]);
+  const xTrack4 = useTransform(smoothProgress, [0, 1], [55, -55]);
 
   const renderLogoItem = (item, idx) => (
     <div
@@ -718,7 +717,7 @@ const TechStack = () => {
 
         .market_content.is_1 {
           background-color: var(--royal-blue--600-primary);
-          padding: 1.75rem 5vw 1.75rem 2rem;
+          padding: 2.15rem 5vw 2.15rem 2.25rem;
           border-radius: 1.5rem;
           flex: 1;
           height: 100%;
@@ -734,26 +733,26 @@ const TechStack = () => {
         }
 
         .market_logo {
-          width: 2.75rem;
-          height: 2.75rem;
+          width: 3.1rem;
+          height: 3.1rem;
           color: #ffffff;
           background-color: #ffffff3d;
-          border-radius: 0.6rem;
+          border-radius: 0.65rem;
           justify-content: center;
           align-items: center;
-          margin-bottom: 1.15rem;
+          margin-bottom: 1.35rem;
           display: flex;
         }
 
         .market_desc_wrap {
           width: 100%;
-          max-width: 22rem;
+          max-width: 23rem;
         }
 
         .market_desc {
           color: #ffffff;
-          font-size: 1.05rem;
-          line-height: 1.5;
+          font-size: 1.075rem;
+          line-height: 1.55;
           margin: 0;
           font-weight: 400;
         }
@@ -766,7 +765,7 @@ const TechStack = () => {
           flex-flow: row;
           justify-content: space-between;
           align-items: center;
-          padding: 0.9rem 1.35rem;
+          padding: 1.15rem 1.6rem;
           display: flex;
           background-color: #ffffff;
           flex-shrink: 0;
@@ -832,7 +831,7 @@ const TechStack = () => {
         .market_content.is_2 {
           background-color: var(--beige--100-primary);
           height: 100%;
-          padding: 1.15rem 0;
+          padding: 1.6rem 0;
           position: relative;
           overflow: hidden;
           border-radius: 1.5rem;
@@ -852,13 +851,13 @@ const TechStack = () => {
           height: 100%;
           display: flex;
           position: relative;
-          gap: 0.85rem;
+          gap: 1.35rem;
           z-index: 2;
         }
 
         .market_content_logos_track {
-          grid-column-gap: 1.35rem;
-          grid-row-gap: 1.35rem;
+          grid-column-gap: 1.75rem;
+          grid-row-gap: 1.75rem;
           justify-content: flex-start;
           align-items: center;
           display: flex;
@@ -867,26 +866,27 @@ const TechStack = () => {
         }
 
         @media (min-width: 992px) {
-          .market_content_logos_track.is_1,
-          .market_content_logos_track.is_5 {
-            margin-left: 2.75rem;
+          .market_content_logos_track.is_1 {
+            margin-left: 3.5rem;
           }
           .market_content_logos_track.is_2 {
             margin-left: 10.5rem;
           }
-          .market_content_logos_track.is_3,
+          .market_content_logos_track.is_3 {
+            margin-left: 0.75rem;
+          }
           .market_content_logos_track.is_4 {
-            margin-left: 0.5rem;
+            margin-left: 3.5rem;
           }
         }
 
         .market_content_logo_wrap {
           background-color: #ffffff;
-          border-radius: 0.875rem;
+          border-radius: 1.25rem;
           justify-content: center;
           align-items: center;
-          width: 3.75rem;
-          height: 3.75rem;
+          width: 5.25rem;
+          height: 5.25rem;
           display: flex;
           flex-shrink: 0;
           box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
@@ -901,8 +901,8 @@ const TechStack = () => {
 
         .market_content_logo {
           flex: none;
-          width: 2rem;
-          height: 2rem;
+          width: 2.6rem;
+          height: 2.6rem;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -1047,11 +1047,6 @@ const TechStack = () => {
                   <motion.div style={{ x: xTrack4 }} logo-wrapper="" className="market_content_logos_track is_4">
                     {track4Logos.map(renderLogoItem)}
                   </motion.div>
-
-                  {/* Track 5 (Left to Right) */}
-                  <motion.div style={{ x: xTrack5 }} logo-wrapper="" className="market_content_logos_track is_5">
-                    {track5Logos.map(renderLogoItem)}
-                  </motion.div>
                 </div>
 
                 {/* Overlays */}
@@ -1064,7 +1059,7 @@ const TechStack = () => {
           {/* Interactive Tooltip Hint Bar */}
           {hovered && (
             <div className="text-center mt-6 text-sm font-medium text-slate-600">
-              <span className="font-semibold text-[#0156fc]">{hovered.name}</span> — {hovered.category} Architecture
+              <span className="font-semibold text-[#0156fc]">{hovered.name}</span> — Integration Ecosystem
             </div>
           )}
         </div>
