@@ -490,12 +490,12 @@ const TechStack = () => {
 
         .market_content_left {
           grid-column-gap: 1.5rem;
-          grid-row-gap: 1rem;
+          grid-row-gap: 1.25rem;
+          gap: 1.25rem;
           flex-flow: column;
           width: 45%;
           margin-right: -9%;
           display: flex;
-          justify-content: space-between;
           z-index: 2;
           position: relative;
         }
@@ -525,7 +525,7 @@ const TechStack = () => {
           flex: 1;
           display: flex;
           flex-direction: column;
-          margin-bottom: 0.875rem;
+          min-height: 0;
         }
 
         .market_content.is_1 {
@@ -533,6 +533,7 @@ const TechStack = () => {
           padding: 2.25rem 10vw 2.25rem 2.25rem;
           border-radius: 1.5rem;
           flex: 1;
+          height: 100%;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -580,7 +581,6 @@ const TechStack = () => {
           padding: 1.25rem 1.75rem;
           display: flex;
           background-color: #ffffff;
-          margin-top: auto;
           flex-shrink: 0;
         }
 
