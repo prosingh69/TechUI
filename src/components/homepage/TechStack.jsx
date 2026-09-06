@@ -651,20 +651,6 @@ const TechStack = () => {
           margin-bottom: 2rem;
         }
 
-        .top_title {
-          font-size: clamp(2rem, 3.4vw, 3.2rem);
-          font-weight: 500;
-          letter-spacing: -0.025em;
-          color: #0f172a;
-          line-height: 1.15;
-          margin: 0;
-        }
-
-        :global(.dark) .top_title,
-        .dark .top_title {
-          color: #ffffff;
-        }
-
         .market_content_wrap {
           justify-content: flex-start;
           display: flex;
@@ -1004,10 +990,10 @@ const TechStack = () => {
       <div className="max-w-7xl mx-auto market_component">
         {/* ── Section Title Header ── */}
         <div className="top_title_wrap">
-          <h2 className="top_title">
-            Modern technologies engineered to power{' '}
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] xl:text-[3.35rem] font-medium sm:font-semibold tracking-tight text-gray-900 dark:text-white leading-[1.12] font-ibm">
+            Technologies we use to{' '}
             <span className="bg-gradient-to-r from-[#00A2ED] to-[#1F40CB] bg-clip-text text-transparent">
-              your digital scale
+              power your scale
             </span>
           </h2>
         </div>
