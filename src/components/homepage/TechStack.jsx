@@ -1004,7 +1004,7 @@ const TechStack = () => {
       <div className="max-w-7xl mx-auto market_component">
         {/* ── Section Title Header ── */}
         <div className="top_title_wrap">
-          <h2 className="top_title">Cutting-edge technologies powering your digital scale</h2>
+          <h2 className="top_title">Technologies powering your scale</h2>
         </div>
 
           {/* ── Exact RoomMaster Inspected HTML Hierarchy ── */}
