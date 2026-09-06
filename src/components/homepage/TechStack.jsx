@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 /* ─────────────────────────────────────────────────────────────────
@@ -555,7 +555,6 @@ const track5Logos = [
 ];
 
 const TechStack = () => {
-  const [hovered, setHovered] = useState(null);
   const sectionRef = useRef(null);
 
   // Scroll-linked animation: tracks move in parallel alternating directions while scrolling
@@ -579,8 +578,6 @@ const TechStack = () => {
   const renderLogoItem = (item, idx) => (
     <div
       key={`${item.name}-${idx}`}
-      onMouseEnter={() => setHovered(item)}
-      onMouseLeave={() => setHovered(null)}
       className="market_content_logo_wrap"
     >
       <div className="market_content_logo">
@@ -1146,13 +1143,6 @@ const TechStack = () => {
               </div>
             </div>
           </div>
-
-          {/* Interactive Tooltip Hint Bar */}
-          {hovered && (
-            <div className="text-center mt-6 text-sm font-medium text-slate-600">
-              <span className="font-semibold text-[#0156fc]">{hovered.name}</span> — Integration Ecosystem
-            </div>
-          )}
         </div>
     </section>
   );
