@@ -570,7 +570,7 @@ const TechStack = () => {
   );
 
   return (
-    <section logo-section="" eyebrow-section="" className="section_market">
+    <section logo-section="" className="w-full section_market bg-white dark:bg-[#030A1E] text-gray-900 dark:text-white px-6 sm:px-8 lg:px-12 overflow-hidden transition-colors duration-300">
       {/* ── Exact RoomMaster Hidden SVG Gooey Filter ── */}
       <div className="clip-path-round w-embed">
         <svg
@@ -604,65 +604,31 @@ const TechStack = () => {
         }
 
         .section_market {
-          background-color: #ffffff;
-          padding: 1.5rem 1.5rem 4rem;
+          padding-top: 1.5rem;
+          padding-bottom: 3.5rem;
           font-family: inherit;
         }
 
         @media (min-width: 992px) {
           .section_market {
-            padding: 2rem 2rem 5rem;
+            padding-top: 1.75rem;
+            padding-bottom: 4rem;
           }
         }
 
         .market_component {
           width: 100%;
-          max-width: 82rem;
+          max-width: 80rem;
           margin: 0 auto;
         }
 
         .top_title_wrap {
           text-align: left;
-          margin-bottom: 2.25rem;
-        }
-
-        @media (min-width: 992px) {
-          .top_title_wrap {
-            padding-left: 4.5%;
-          }
-        }
-
-        .eyebrow_wrap {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 1rem;
-        }
-
-        .eyebrow {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.35rem 0.875rem;
-          background-color: #eaf1fe;
-          border-radius: 9999px;
-          border: 1px solid rgba(1, 86, 252, 0.15);
-        }
-
-        .eyebrow_dot {
-          width: 0.4rem;
-          height: 0.4rem;
-          border-radius: 9999px;
-          background-color: #0156fc;
-        }
-
-        .eyebrow_title {
-          color: #0156fc;
-          font-size: 0.875rem;
-          font-weight: 600;
+          margin-bottom: 2rem;
         }
 
         .top_title {
-          font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+          font-size: clamp(2rem, 3.4vw, 3.2rem);
           font-weight: 500;
           letter-spacing: -0.025em;
           color: #0f172a;
@@ -671,7 +637,7 @@ const TechStack = () => {
         }
 
         .market_content_wrap {
-          justify-content: center;
+          justify-content: flex-start;
           display: flex;
           align-items: stretch;
           width: 100%;
@@ -687,11 +653,11 @@ const TechStack = () => {
 
         .market_content_left {
           grid-column-gap: 1.5rem;
-          grid-row-gap: 1.5rem;
-          gap: 1.5rem;
+          grid-row-gap: 1.25rem;
+          gap: 1.25rem;
           flex-flow: column;
-          width: 45%;
-          margin-right: -9%;
+          width: 44%;
+          margin-right: -8%;
           display: flex;
           z-index: 2;
           position: relative;
@@ -714,7 +680,7 @@ const TechStack = () => {
           }
 
           .market_content.is_2 {
-            clip-path: polygon(20% 0%, 100% 0%, 100% 48%, 100% 100%, 75.5% 100%, 20% 100%, 20% 77%, 0% 77%, 0% 41.5%, 20% 41.5%);
+            clip-path: polygon(20% 0%, 100% 0%, 100% 48%, 100% 100%, 75.5% 100%, 20% 100%, 20% 77%, 0% 77%, 0% 42%, 20% 42%);
           }
         }
 
@@ -727,7 +693,7 @@ const TechStack = () => {
 
         .market_content.is_1 {
           background-color: var(--royal-blue--600-primary);
-          padding: 2.25rem 10vw 2.25rem 2.25rem;
+          padding: 1.75rem 5vw 1.75rem 2rem;
           border-radius: 1.5rem;
           flex: 1;
           height: 100%;
@@ -743,14 +709,14 @@ const TechStack = () => {
         }
 
         .market_logo {
-          width: 3.25rem;
-          height: 3.25rem;
+          width: 2.75rem;
+          height: 2.75rem;
           color: #ffffff;
           background-color: #ffffff3d;
-          border-radius: 0.65rem;
+          border-radius: 0.6rem;
           justify-content: center;
           align-items: center;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.15rem;
           display: flex;
         }
 
@@ -761,8 +727,8 @@ const TechStack = () => {
 
         .market_desc {
           color: #ffffff;
-          font-size: 1.1rem;
-          line-height: 1.6;
+          font-size: 1.05rem;
+          line-height: 1.5;
           margin: 0;
           font-weight: 400;
         }
@@ -775,7 +741,7 @@ const TechStack = () => {
           flex-flow: row;
           justify-content: space-between;
           align-items: center;
-          padding: 1.25rem 1.75rem;
+          padding: 0.9rem 1.35rem;
           display: flex;
           background-color: #ffffff;
           flex-shrink: 0;
@@ -794,7 +760,7 @@ const TechStack = () => {
         }
 
         .market_content_title {
-          font-size: 1.05rem;
+          font-size: 0.95rem;
           line-height: 1.35;
           color: #0f172a;
           margin: 0;
@@ -810,8 +776,8 @@ const TechStack = () => {
           color: var(--royal-blue--600-primary);
           background-color: transparent;
           border-radius: 0.5rem;
-          padding: 0.65rem 1.35rem;
-          font-size: 0.875rem;
+          padding: 0.5rem 1.15rem;
+          font-size: 0.825rem;
           font-weight: 600;
           text-decoration: none;
           display: inline-block;
@@ -826,7 +792,7 @@ const TechStack = () => {
         }
 
         .market_content_round.is_2 {
-          width: 55%;
+          width: 64%;
           overflow: hidden;
           z-index: 1;
           position: relative;
@@ -841,7 +807,7 @@ const TechStack = () => {
         .market_content.is_2 {
           background-color: var(--beige--100-primary);
           height: 100%;
-          padding: 1.5rem 0;
+          padding: 1.15rem 0;
           position: relative;
           overflow: hidden;
           border-radius: 1.5rem;
@@ -861,13 +827,13 @@ const TechStack = () => {
           height: 100%;
           display: flex;
           position: relative;
-          gap: 1.15rem;
+          gap: 0.85rem;
           z-index: 2;
         }
 
         .market_content_logos_track {
-          grid-column-gap: 1.6rem;
-          grid-row-gap: 1.6rem;
+          grid-column-gap: 1.35rem;
+          grid-row-gap: 1.35rem;
           justify-content: flex-start;
           align-items: center;
           display: flex;
@@ -877,20 +843,20 @@ const TechStack = () => {
         @media (min-width: 992px) {
           .market_content_logos_track.is_1,
           .market_content_logos_track.is_5 {
-            margin-left: 3.25rem;
+            margin-left: 2.75rem;
           }
           .market_content_logos_track.is_2 {
-            margin-left: 9.75rem;
+            margin-left: 8.5rem;
           }
         }
 
         .market_content_logo_wrap {
           background-color: #ffffff;
-          border-radius: 1rem;
+          border-radius: 0.875rem;
           justify-content: center;
           align-items: center;
-          width: 4.4rem;
-          height: 4.4rem;
+          width: 3.75rem;
+          height: 3.75rem;
           display: flex;
           flex-shrink: 0;
           box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
@@ -905,8 +871,8 @@ const TechStack = () => {
 
         .market_content_logo {
           flex: none;
-          width: 2.25rem;
-          height: 2.25rem;
+          width: 2rem;
+          height: 2rem;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -929,12 +895,11 @@ const TechStack = () => {
         }
       `}</style>
 
-      <div className="padding-global padding-section-medium">
-        <div className="container-large market_component">
-          {/* ── Section Title Header ── */}
-          <div className="margin-bottom margin-medium top_title_wrap">
-            <h2 className="top_title">Create your perfect technology ecosystem</h2>
-          </div>
+      <div className="max-w-7xl mx-auto market_component">
+        {/* ── Section Title Header ── */}
+        <div className="top_title_wrap">
+          <h2 className="top_title">Create your perfect technology ecosystem</h2>
+        </div>
 
           {/* ── Exact RoomMaster Inspected HTML Hierarchy ── */}
           <div className="market_content_wrap">
@@ -1073,7 +1038,6 @@ const TechStack = () => {
             </div>
           )}
         </div>
-      </div>
     </section>
   );
 };
