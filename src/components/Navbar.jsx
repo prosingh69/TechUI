@@ -64,17 +64,15 @@ const Navbar = () => {
           {/* Brand Logo */}
           <Link
             to="/"
-            className={`flex items-center group ${
-              isScrolled ? 'py-0.5' : 'py-0.5 -mr-3 sm:-mr-5 lg:-mr-6'
-            }`}
+            className="flex items-center group py-0.5"
           >
             <img
-              src={isScrolled ? '/logo-trimmed.png' : '/logo.png'}
+              src="/logo-trimmed.png"
               alt="Big Feathers Technology"
               className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                 isScrolled
-                  ? 'h-[2.65rem] sm:h-[2.9rem] lg:h-[3.15rem] max-w-[200px] sm:max-w-[230px] lg:max-w-[250px] -translate-y-1 sm:-translate-y-1.5 drop-shadow-[0_2px_8px_rgba(31,64,203,0.22)]'
-                  : 'h-16 sm:h-20 lg:h-24 max-w-[250px] sm:max-w-[295px] -translate-y-1 sm:-translate-y-1.5 drop-shadow-[0_2px_12px_rgba(0,102,255,0.25)]'
+                  ? 'h-[2.65rem] sm:h-[2.9rem] lg:h-[3.15rem] max-w-[200px] sm:max-w-[230px] lg:max-w-[250px] drop-shadow-[0_2px_8px_rgba(31,64,203,0.22)]'
+                  : 'h-11 sm:h-13 lg:h-14 max-w-[210px] sm:max-w-[240px] lg:max-w-[260px] drop-shadow-[0_2px_12px_rgba(0,102,255,0.25)]'
               }`}
             />
           </Link>
