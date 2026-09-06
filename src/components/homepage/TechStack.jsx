@@ -1056,7 +1056,7 @@ const TechStack = () => {
                       </h3>
                       <p className="market_desc">
                         Connect BigFeathers with <strong>the modern tech stack and ecosystems</strong> <br className="hidden lg:inline" />{' '}
-                        from scalable databases and AI model to secure payments,<br className="hidden lg:inline" />{' '}
+                        from scalable databases and AI model to secure payments<br className="hidden lg:inline" />{' '}
                         and enterprise APIs, so your business runs like a<br className="hidden lg:inline" />{' '}
                         high-performance machine.
                       </p>
