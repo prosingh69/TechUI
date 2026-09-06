@@ -656,7 +656,7 @@ const TechStack = () => {
           grid-row-gap: 1.25rem;
           gap: 1.25rem;
           flex-flow: column;
-          width: 44%;
+          width: 48%;
           margin-right: -8%;
           display: flex;
           z-index: 2;
@@ -676,11 +676,11 @@ const TechStack = () => {
           }
 
           .market_content.is_1 {
-            clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 75.5% 48%, 75.5% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 79.8% 48%, 79.8% 100%, 0% 100%);
           }
 
           .market_content.is_2 {
-            clip-path: polygon(20% 0%, 100% 0%, 100% 48%, 100% 100%, 75.5% 100%, 20% 100%, 20% 77%, 0% 77%, 0% 42%, 20% 42%);
+            clip-path: polygon(16.2% 0%, 100% 0%, 100% 48%, 100% 100%, 75.5% 100%, 16.2% 100%, 16.2% 77%, 0% 77%, 0% 42%, 16.2% 42%);
           }
         }
 
@@ -792,7 +792,7 @@ const TechStack = () => {
         }
 
         .market_content_round.is_2 {
-          width: 64%;
+          width: 60%;
           overflow: hidden;
           z-index: 1;
           position: relative;
@@ -843,10 +843,10 @@ const TechStack = () => {
         @media (min-width: 992px) {
           .market_content_logos_track.is_1,
           .market_content_logos_track.is_5 {
-            margin-left: 2.75rem;
+            margin-left: 2rem;
           }
           .market_content_logos_track.is_2 {
-            margin-left: 8.5rem;
+            margin-left: 7.25rem;
           }
         }
 
