@@ -1104,7 +1104,7 @@ const TechStack = () => {
               <div className="market_content_cta">
                 <div className="market_content_title_wrap">
                   <h3 className="market_content_title text-size-large" role="heading" aria-level="3">
-                    See how roommaster connects with your favorite tools
+                    See how BigFeathers integrates with your favorite tools
                   </h3>
                 </div>
                 <div className="market_content_link">
