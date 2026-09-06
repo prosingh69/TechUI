@@ -824,7 +824,7 @@ const TechStack = () => {
           flex-flow: row;
           justify-content: space-between;
           align-items: center;
-          padding: 1.15rem 1.6rem;
+          padding: 1.1rem 1.35rem;
           display: flex;
           background-color: #ffffff;
           flex-shrink: 0;
@@ -834,12 +834,13 @@ const TechStack = () => {
           .market_content_cta {
             flex-direction: column;
             align-items: flex-start;
+            gap: 0.75rem;
           }
         }
 
         .market_content_title_wrap {
           width: 100%;
-          max-width: 18rem;
+          max-width: 17.5rem;
         }
 
         .market_content_title {
@@ -855,16 +856,18 @@ const TechStack = () => {
         }
 
         .button.is-alternate {
-          border: 1px solid var(--royal-blue--600-primary);
+          border: 1.5px solid var(--royal-blue--600-primary);
           color: var(--royal-blue--600-primary);
           background-color: transparent;
-          border-radius: 0.5rem;
-          padding: 0.5rem 1.15rem;
-          font-size: 0.825rem;
+          border-radius: 0.55rem;
+          padding: 0.55rem 1.15rem;
+          font-size: 0.835rem;
           font-weight: 600;
           text-decoration: none;
-          display: inline-block;
-          transition: background-color 0.2s, color 0.2s;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
           cursor: pointer;
           white-space: nowrap;
         }
@@ -1106,7 +1109,7 @@ const TechStack = () => {
                 </div>
                 <div className="market_content_link">
                   <a href="#contact" className="button w-inline-block is-alternate">
-                    <div>Visit Marketplace</div>
+                    <div>Talk to Tech consult</div>
                   </a>
                 </div>
               </div>
