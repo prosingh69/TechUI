@@ -7,23 +7,23 @@ import Footer from '../components/Footer';
 const trustMetrics = [
   {
     number: '250+',
-    line1: 'Digital Solutions &',
-    line2: 'Web Apps Engineered',
+    line1: 'Venture Micro-services',
+    line2: 'Engineered',
   },
   {
     number: '32+',
-    line1: 'Businesses Scaled',
-    line2: 'across Industries',
+    line1: 'Ventures Co-Built across',
+    line2: 'Industries',
   },
   {
     number: '780+',
-    line1: 'Tech & Marketing',
-    line2: 'Sprints Completed',
+    line1: 'Strategic Sprints',
+    line2: 'Completed',
   },
   {
     number: '>98%',
-    line1: 'Client & Partner',
-    line2: 'Satisfaction Rate',
+    line1: 'Venture Owner',
+    line2: 'Satisfaction',
   },
 ];
 
@@ -58,26 +58,25 @@ const AboutUs = () => {
         {/* Hero Content Fold (Balanced vertical rhythm & spacing) */}
         <div className="flex-1 min-h-0 w-full relative z-10 flex flex-col justify-center px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto pt-20 lg:pt-24 pb-4">
           <div className="w-full">
-            {/* Editorial Serif Heading */}
+            {/* Editorial Serif Heading (Fits 'Ventures of' on line 1, 'Tomorrow' on line 2) */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="font-ibm-serif text-2xl sm:text-4xl lg:text-[2.65rem] xl:text-[2.85rem] font-normal leading-[1.2] tracking-tight text-white max-w-5xl mb-4 sm:mb-5"
             >
-              Designing, Building &amp; Scaling the Technology of Tomorrow
+              Designing, Building &amp; Scaling the Ventures of Tomorrow
             </motion.h1>
 
-            {/* Description Paragraph (Highlights Tech, AI, E-Commerce & Marketing) */}
+            {/* Description Paragraph (42rem max width with clean 1.6 line height) */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-sm sm:text-base lg:text-[1.08rem] text-white/90 max-w-[44rem] font-ibm leading-[1.6] mb-5 sm:mb-7 font-light"
+              className="text-sm sm:text-base lg:text-[1.08rem] text-white/90 max-w-[42rem] font-ibm leading-[1.6] mb-5 sm:mb-7 font-light"
             >
-              BigFeathers Technology is an end-to-end digital solutions company. We partner with
-              businesses to engineer custom software, deploy intelligent AI, scale e-commerce
-              marketplaces, and drive high-impact digital marketing.
+              BigFeathers is a full-stack venture building company. We partner with enterprises to
+              design, build, and scale businesses to turn ideas into market-leading ventures.
             </motion.p>
 
             {/* CTA Button (Sleek, sharp, comfortable) */}
@@ -99,7 +98,7 @@ const AboutUs = () => {
 
         {/* 
           Trust & Metrics Strip:
-          Sleek height, bold numbers & clear 2-line labels (Tailored to BigFeathers services)
+          Sleek height, bold numbers & clear 2-line labels
         */}
         <div className="w-full bg-[#F7F8FC] dark:bg-[#030B22] border-t border-slate-200/70 dark:border-white/10 z-20 shrink-0 py-3 sm:py-3.5 lg:py-4 shadow-[0_-4px_30px_rgba(0,0,0,0.12)] transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
