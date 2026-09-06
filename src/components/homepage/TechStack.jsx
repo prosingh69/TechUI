@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 /* ─────────────────────────────────────────────────────────────────
    27 AUTHENTIC BRAND ICONS IN ROOMMASTER 5-TRACK FORMAT
@@ -555,6 +556,26 @@ const track5Logos = [
 
 const TechStack = () => {
   const [hovered, setHovered] = useState(null);
+  const sectionRef = useRef(null);
+
+  // Scroll-linked animation: tracks move in parallel alternating directions while scrolling
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 90,
+    damping: 25,
+    restDelta: 0.001,
+  });
+
+  // Alternating horizontal displacements
+  const xTrack1 = useTransform(smoothProgress, [0, 1], [-50, 50]);
+  const xTrack2 = useTransform(smoothProgress, [0, 1], [50, -50]);
+  const xTrack3 = useTransform(smoothProgress, [0, 1], [-60, 60]);
+  const xTrack4 = useTransform(smoothProgress, [0, 1], [60, -60]);
+  const xTrack5 = useTransform(smoothProgress, [0, 1], [-50, 50]);
 
   const renderLogoItem = (item, idx) => (
     <div
@@ -570,7 +591,11 @@ const TechStack = () => {
   );
 
   return (
-    <section logo-section="" className="w-full section_market bg-white dark:bg-[#030A1E] text-gray-900 dark:text-white px-6 sm:px-8 lg:px-12 overflow-hidden transition-colors duration-300">
+    <section
+      ref={sectionRef}
+      logo-section=""
+      className="w-full section_market bg-white dark:bg-[#030A1E] text-gray-900 dark:text-white px-6 sm:px-8 lg:px-12 overflow-hidden transition-colors duration-300"
+    >
       {/* ── Exact RoomMaster Hidden SVG Gooey Filter ── */}
       <div className="clip-path-round w-embed">
         <svg
@@ -838,15 +863,20 @@ const TechStack = () => {
           align-items: center;
           display: flex;
           white-space: nowrap;
+          will-change: transform;
         }
 
         @media (min-width: 992px) {
           .market_content_logos_track.is_1,
           .market_content_logos_track.is_5 {
-            margin-left: 2rem;
+            margin-left: 2.75rem;
           }
           .market_content_logos_track.is_2 {
-            margin-left: 7.25rem;
+            margin-left: 10.5rem;
+          }
+          .market_content_logos_track.is_3,
+          .market_content_logos_track.is_4 {
+            margin-left: 0.5rem;
           }
         }
 
@@ -998,30 +1028,30 @@ const TechStack = () => {
             <div id="w-node-_8c3b925d-ad9c-0682-3acb-a2ef7ab91c12-7ab91bf7" className="market_content_round is_2">
               <div className="market_content is_2">
                 <div className="market_content_logos_container">
-                  {/* Track 1 */}
-                  <div logo-wrapper="" className="market_content_logos_track is_1">
+                  {/* Track 1 (Left to Right) */}
+                  <motion.div style={{ x: xTrack1 }} logo-wrapper="" className="market_content_logos_track is_1">
                     {track1Logos.map(renderLogoItem)}
-                  </div>
+                  </motion.div>
 
-                  {/* Track 2 */}
-                  <div logo-wrapper="" className="market_content_logos_track is_2">
+                  {/* Track 2 (Right to Left) */}
+                  <motion.div style={{ x: xTrack2 }} logo-wrapper="" className="market_content_logos_track is_2">
                     {track2Logos.map(renderLogoItem)}
-                  </div>
+                  </motion.div>
 
-                  {/* Track 3 */}
-                  <div logo-wrapper="" className="market_content_logos_track">
+                  {/* Track 3 (Left to Right) */}
+                  <motion.div style={{ x: xTrack3 }} logo-wrapper="" className="market_content_logos_track is_3">
                     {track3Logos.map(renderLogoItem)}
-                  </div>
+                  </motion.div>
 
-                  {/* Track 4 */}
-                  <div logo-wrapper="" className="market_content_logos_track">
+                  {/* Track 4 (Right to Left) */}
+                  <motion.div style={{ x: xTrack4 }} logo-wrapper="" className="market_content_logos_track is_4">
                     {track4Logos.map(renderLogoItem)}
-                  </div>
+                  </motion.div>
 
-                  {/* Track 5 */}
-                  <div logo-wrapper="" className="market_content_logos_track is_5">
+                  {/* Track 5 (Left to Right) */}
+                  <motion.div style={{ x: xTrack5 }} logo-wrapper="" className="market_content_logos_track is_5">
                     {track5Logos.map(renderLogoItem)}
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Overlays */}
