@@ -1,50 +1,13 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 
 /* ─────────────────────────────────────────────────────────────────
-   24 AUTHENTIC TECH ICONS FOR THE 6-COLUMN x 5-ROW ECOSYSTEM GRID
+   27 AUTHENTIC BRAND ICONS IN ROOMMASTER 5-TRACK FORMAT
 ───────────────────────────────────────────────────────────────── */
-const techIcons = {
-  // Col 1 (Notch icons)
-  gemini: {
-    name: 'Gemini AI',
-    category: 'AI Models',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <defs>
-          <linearGradient id="puz-gemini" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#1BA1E3" />
-            <stop offset="50%" stopColor="#5B68DF" />
-            <stop offset="100%" stopColor="#D96570" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M12 2c.5 5 4.5 9.5 9.5 10-5 .5-9 4.5-9.5 10-.5-5-4.5-9-9.5-10 5-.5 9-5 9.5-10z"
-          fill="url(#puz-gemini)"
-        />
-      </svg>
-    ),
-  },
-  apple: {
-    name: 'Apple iOS',
-    category: 'Native Mobile',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.09 1.73-.95 2.76 1.01.08 2.05-.51 2.67-1.26z"
-          fill="#000000"
-        />
-      </svg>
-    ),
-  },
-
-  // Col 2
-  python: {
+const track1Logos = [
+  {
     name: 'Python',
-    category: 'Backend & ML',
     icon: (
-      <svg viewBox="0 0 110 110" className="w-8 h-8">
+      <svg viewBox="0 0 110 110" className="w-10 h-10">
         <path
           d="M53.8 2.6c-24.8 0-23.3 10.8-23.3 10.8l.1 11.2h23.7v3.4H21.2S6.5 26.3 6.5 51.3s12.9 24.1 12.9 24.1h7.7V64.6s-.4-12.9 12.7-12.9h23.5s12.2-.2 12.2-12.2V14.8s1.6-12.2-21.7-12.2zm-12.9 7.4c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5-4.5-2-4.5-4.5 2-4.5 4.5-4.5z"
           fill="#3776AB"
@@ -56,68 +19,10 @@ const techIcons = {
       </svg>
     ),
   },
-  react: {
-    name: 'React 19',
-    category: 'UI Engine',
-    icon: (
-      <svg viewBox="-11.5 -10.23174 23 20.46348" className="w-8 h-8">
-        <circle cx="0" cy="0" r="2.05" fill="#61DAFB" />
-        <g stroke="#61DAFB" strokeWidth="1" fill="none">
-          <ellipse rx="11" ry="4.2" />
-          <ellipse rx="11" ry="4.2" transform="rotate(60)" />
-          <ellipse rx="11" ry="4.2" transform="rotate(120)" />
-        </g>
-      </svg>
-    ),
-  },
-  mongo: {
-    name: 'MongoDB',
-    category: 'Database',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          d="M12 1.5c-.3 0-.6.2-.7.4-1.9 3.2-5.3 9.4-5.3 13.6 0 4.1 3 7 6 7s6-2.9 6-7c0-4.2-3.4-10.4-5.3-13.6-.1-.2-.4-.4-.7-.4zm0 2.8c1.3 2.5 4.3 8.3 4.3 12.2 0 2.8-2 4.9-4.3 4.9V4.3z"
-          fill="#47A248"
-        />
-        <path
-          d="M12 21.4c-2.3 0-4.3-2.1-4.3-4.9 0-3.9 3-9.7 4.3-12.2v17.1z"
-          fill="#3FA037"
-        />
-      </svg>
-    ),
-  },
-  android: {
-    name: 'Android',
-    category: 'Native Mobile',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h4v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v6c0 .83.67 1.5 1.5 1.5S5 16.33 5 15.5v-6C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-6c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71a.498.498 0 00-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM9 5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"
-          fill="#3DDC84"
-        />
-      </svg>
-    ),
-  },
-  javascript: {
-    name: 'JavaScript',
-    category: 'Runtime',
-    icon: (
-      <svg viewBox="0 0 256 256" className="w-8 h-8">
-        <rect width="256" height="256" rx="28" fill="#F7DF1E" />
-        <path
-          d="M67.3 213.7c11.9 6.9 25 10.5 38.3 10.5 22.2 0 35.7-10.8 35.7-34.9v-86.8h-26.6v86.2c0 9.7-4.8 14.8-13.8 14.8-6.1 0-11.6-2.1-16.7-5.9l-16.9 16.1zm84.4-1.2c13.7 7.7 29.8 12.2 46.4 12.2 26.8 0 43.2-13.3 43.2-34.7 0-20.4-12.8-30.9-35.9-40.4-15.6-6.4-22.8-11.3-22.8-19.5 0-7.8 6.4-13.6 17.5-13.6 9.7 0 19.3 3.6 28 9.5l11-19.1c-11.4-7.4-25.5-11.5-39.7-11.5-25.7 0-41.9 14.2-41.9 34.3 0 20.3 13.5 31.4 36.4 40.5 16.4 6.7 22.8 12 22.8 20.6 0 8.8-7.7 14.9-19.7 14.9-12.3 0-24.6-4.7-34.8-12.4l-10.5 19.7z"
-          fill="#000000"
-        />
-      </svg>
-    ),
-  },
-
-  // Col 3
-  node: {
+  {
     name: 'Node.js',
-    category: 'Backend',
     icon: (
-      <svg viewBox="0 0 256 256" className="w-8 h-8">
+      <svg viewBox="0 0 256 256" className="w-10 h-10">
         <path d="M128 12l104 60v120l-104 60-104-60V72L128 12z" fill="#5FA04E" />
         <path d="M128 32l86 50v100l-86 50-86-50V82l86-50z" fill="#333333" />
         <path
@@ -127,72 +32,10 @@ const techIcons = {
       </svg>
     ),
   },
-  shopify: {
-    name: 'Shopify',
-    category: 'E-Commerce',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          d="M18.8 6.2c-.1-.3-.3-.4-.5-.4h-1.4c-.1-.7-.4-2.5-1.9-3.7C13.8 1 12.4 1 11.6 1.3 10.3 1.8 9.5 3.1 9.3 4.6L6.5 5.5c-.5.2-.6.4-.7.8L3 21.4c0 .3.1.5.4.6l12.4 2c.2 0 .4 0 .5-.1L21 21c.2-.1.3-.3.3-.5l-2.5-14.3z"
-          fill="#95BF47"
-        />
-        <path
-          d="M12 3.6c.5 0 1.2.3 1.6 1.1.4.8.4 2 .4 2.8l-3.8 1.2c.2-1.3.8-3.1 1.8-4.6.3-.3.6-.5.9-.5z"
-          fill="#5E8E3E"
-        />
-      </svg>
-    ),
-  },
-  openai: {
-    name: 'OpenAI',
-    category: 'AI Models',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          d="M22.28 10.8a5.97 5.97 0 00-.47-4.65 6.03 6.03 0 00-5.83-3.1 5.98 5.98 0 00-4.47-2 6.02 6.02 0 00-5.7 4.14 5.98 5.98 0 00-4.06 2.94 6.03 6.03 0 00.73 6.54 5.97 5.97 0 00.47 4.65 6.03 6.03 0 005.83 3.1 5.98 5.98 0 004.47 2 6.02 6.02 0 005.7-4.14 5.98 5.98 0 004.06-2.94 6.03 6.03 0 00-.73-6.54zM12 13.8a1.8 1.8 0 111.8-1.8c0 1-.8 1.8-1.8 1.8z"
-          fill="#10A37F"
-        />
-      </svg>
-    ),
-  },
-  figma: {
-    name: 'Figma',
-    category: 'Design',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path d="M8 24a4 4 0 01-4-4 4 4 0 014-4h4v4a4 4 0 01-4 4z" fill="#0ACF83" />
-        <path d="M4 12a4 4 0 014-4h4v8H8a4 4 0 01-4-4z" fill="#A259FF" />
-        <path d="M4 4a4 4 0 014-4h4v8H8a4 4 0 01-4-4z" fill="#F24E1E" />
-        <path d="M12 0h4a4 4 0 014 4 4 4 0 01-4 4h-4V0z" fill="#FF7262" />
-        <path d="M20 12a4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4 4 4 0 014 4z" fill="#1ABCFE" />
-      </svg>
-    ),
-  },
-  graphql: {
-    name: 'GraphQL',
-    category: 'API Schema',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2zm0 2.3L4.99 8.4v7.2L12 19.7l7.01-4.1V8.4L12 4.3z"
-          fill="#E10098"
-        />
-        <circle cx="12" cy="2" r="2" fill="#E10098" />
-        <circle cx="20.66" cy="7" r="2" fill="#E10098" />
-        <circle cx="20.66" cy="17" r="2" fill="#E10098" />
-        <circle cx="12" cy="22" r="2" fill="#E10098" />
-        <circle cx="3.34" cy="17" r="2" fill="#E10098" />
-        <circle cx="3.34" cy="7" r="2" fill="#E10098" />
-      </svg>
-    ),
-  },
-
-  // Col 4
-  aws: {
+  {
     name: 'AWS',
-    category: 'Cloud Infra',
     icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
         <path
           d="M7.8 11.5c-.8.7-1.4 1.3-1.4 2.3 0 1.2.8 1.9 2 1.9 1 0 1.9-.6 2.4-1.5v2.7c-.8.4-1.8.6-2.8.6-2.5 0-4.2-1.6-4.2-4.1 0-1.8 1-3.2 2.6-4.1 1.3-.7 3.1-1.1 5.3-1.1v.6c0 1.8-.7 2.7-3.9 3.3zm5.7-4.4h2.5l3.2 10.4h-2.6l-.6-2.4H13.6l-.6 2.4h-2.5l3-10.4zm2.4 6.2l-.9-3.7-.9 3.7h1.8z"
           fill="#232F3E"
@@ -204,11 +47,63 @@ const techIcons = {
       </svg>
     ),
   },
-  nextjs: {
-    name: 'Next.js 15',
-    category: 'Framework',
+  {
+    name: 'Docker',
     icon: (
-      <svg viewBox="0 0 180 180" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          d="M13 5h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2H7zm6 3h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2H7zm-3 0h2v2H4zm9 3h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2H7zm-3 0h2v2H4zm17.5 1.5c-.4-.3-1.4-.4-2.1-.2-.3-.6-.8-1.2-1.4-1.6l-.7-.4-.4.7c-.5 1-1.3 1.7-2.3 2H2c-.4 2.2.3 4.5 1.8 6.1 1.7 1.8 4.2 2.9 6.8 2.9 5.8 0 10.7-3.8 11.9-9.5z"
+          fill="#2496ED"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'Supabase',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          d="M13.4 23.6c-.6.8-1.9.4-1.9-.6V13.8H2.8c-.9 0-1.4-1-.8-1.7L10.6.4c.6-.8 1.9-.4 1.9.6v9.2h8.7c.9 0 1.4 1 .8 1.7l-8.6 11.7z"
+          fill="#3ECF8E"
+        />
+      </svg>
+    ),
+  },
+];
+
+const track2Logos = [
+  {
+    name: 'React 19',
+    icon: (
+      <svg viewBox="-11.5 -10.23174 23 20.46348" className="w-10 h-10">
+        <circle cx="0" cy="0" r="2.05" fill="#61DAFB" />
+        <g stroke="#61DAFB" strokeWidth="1" fill="none">
+          <ellipse rx="11" ry="4.2" />
+          <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+          <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    name: 'Shopify',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          d="M18.8 6.2c-.1-.3-.3-.4-.5-.4h-1.4c-.1-.7-.4-2.5-1.9-3.7C13.8 1 12.4 1 11.6 1.3 10.3 1.8 9.5 3.1 9.3 4.6L6.5 5.5c-.5.2-.6.4-.7.8L3 21.4c0 .3.1.5.4.6l12.4 2c.2 0 .4 0 .5-.1L21 21c.2-.1.3-.3.3-.5l-2.5-14.3z"
+          fill="#95BF47"
+        />
+        <path
+          d="M12 3.6c.5 0 1.2.3 1.6 1.1.4.8.4 2 .4 2.8l-3.8 1.2c.2-1.3.8-3.1 1.8-4.6.3-.3.6-.5.9-.5z"
+          fill="#5E8E3E"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'Next.js 15',
+    icon: (
+      <svg viewBox="0 0 180 180" className="w-10 h-10">
         <circle cx="90" cy="90" fill="#000000" r="90" />
         <path
           d="M149.508 157.438L69.147 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.14 149.508 157.438Z"
@@ -218,59 +113,10 @@ const techIcons = {
       </svg>
     ),
   },
-  flutter: {
-    name: 'Flutter',
-    category: 'Cross-Platform',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path d="M14.3 2.5L5.7 11.1l3.5 3.5 12.1-12.1h-7z" fill="#54C5F8" />
-        <path d="M14.3 12.4l-5.1 5.1 5.1 5.1h7l-8.6-8.6-3.5 3.5 5.1-5.1z" fill="#02569B" />
-        <path d="M9.2 17.5l5.1-5.1 3.5 3.5-5.1 5.1z" fill="#0175C2" />
-      </svg>
-    ),
-  },
-  github: {
-    name: 'GitHub',
-    category: 'DevOps',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-          fill="#181717"
-        />
-      </svg>
-    ),
-  },
-  vercel: {
-    name: 'Vercel',
-    category: 'Deployment',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path d="M12 2L24 22H0L12 2z" fill="#000000" />
-      </svg>
-    ),
-  },
-
-  // Col 5
-  docker: {
-    name: 'Docker',
-    category: 'Containers',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          d="M13 5h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2H7zm6 3h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2H7zm-3 0h2v2H4zm9 3h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2H7zm-3 0h2v2H4zm17.5 1.5c-.4-.3-1.4-.4-2.1-.2-.3-.6-.8-1.2-1.4-1.6l-.7-.4-.4.7c-.5 1-1.3 1.7-2.3 2H2c-.4 2.2.3 4.5 1.8 6.1 1.7 1.8 4.2 2.9 6.8 2.9 5.8 0 10.7-3.8 11.9-9.5z"
-          fill="#2496ED"
-        />
-      </svg>
-    ),
-  },
-  stripe: {
+  {
     name: 'Stripe',
-    category: 'Payments',
     icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
         <rect width="24" height="24" rx="5" fill="#635BFF" />
         <path
           d="M11.6 9.4c0-.7.6-1 1.6-1 1.4 0 3.2.5 4.6 1.2V6.1C16.3 5.4 14.7 5 13.2 5 9.4 5 7 7 7 10c0 4.6 6.3 3.9 6.3 5.9 0 .9-.8 1.2-1.9 1.2-1.6 0-3.7-.7-5.3-1.6v3.7c1.7.7 3.6 1.1 5.3 1.1 4 0 6.6-2 6.6-5.1 0-4.9-6.4-4.1-6.4-5.8z"
@@ -279,11 +125,78 @@ const techIcons = {
       </svg>
     ),
   },
-  postgres: {
-    name: 'PostgreSQL',
-    category: 'SQL Database',
+  {
+    name: 'Tailwind CSS',
     icon: (
-      <svg viewBox="0 0 256 256" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
+        <path
+          d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.336 6.182 14.975 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.336 13.382 8.975 12 6.001 12z"
+          fill="#38BDF8"
+        />
+      </svg>
+    ),
+  },
+];
+
+const track3Logos = [
+  {
+    name: 'Gemini AI',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <defs>
+          <linearGradient id="rm-gemini-logo" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1BA1E3" />
+            <stop offset="50%" stopColor="#5B68DF" />
+            <stop offset="100%" stopColor="#D96570" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M12 2c.5 5 4.5 9.5 9.5 10-5 .5-9 4.5-9.5 10-.5-5-4.5-9-9.5-10 5-.5 9-5 9.5-10z"
+          fill="url(#rm-gemini-logo)"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'MongoDB',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          d="M12 1.5c-.3 0-.6.2-.7.4-1.9 3.2-5.3 9.4-5.3 13.6 0 4.1 3 7 6 7s6-2.9 6-7c0-4.2-3.4-10.4-5.3-13.6-.1-.2-.4-.4-.7-.4zm0 2.8c1.3 2.5 4.3 8.3 4.3 12.2 0 2.8-2 4.9-4.3 4.9V4.3z"
+          fill="#47A248"
+        />
+        <path
+          d="M12 21.4c-2.3 0-4.3-2.1-4.3-4.9 0-3.9 3-9.7 4.3-12.2v17.1z"
+          fill="#3FA037"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'OpenAI',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          d="M22.28 10.8a5.97 5.97 0 00-.47-4.65 6.03 6.03 0 00-5.83-3.1 5.98 5.98 0 00-4.47-2 6.02 6.02 0 00-5.7 4.14 5.98 5.98 0 00-4.06 2.94 6.03 6.03 0 00.73 6.54 5.97 5.97 0 00.47 4.65 6.03 6.03 0 005.83 3.1 5.98 5.98 0 004.47 2 6.02 6.02 0 005.7-4.14 5.98 5.98 0 004.06-2.94 6.03 6.03 0 00-.73-6.54zM12 13.8a1.8 1.8 0 111.8-1.8c0 1-.8 1.8-1.8 1.8z"
+          fill="#10A37F"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'Flutter',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M14.3 2.5L5.7 11.1l3.5 3.5 12.1-12.1h-7z" fill="#54C5F8" />
+        <path d="M14.3 12.4l-5.1 5.1 5.1 5.1h7l-8.6-8.6-3.5 3.5 5.1-5.1z" fill="#02569B" />
+        <path d="M9.2 17.5l5.1-5.1 3.5 3.5-5.1 5.1z" fill="#0175C2" />
+      </svg>
+    ),
+  },
+  {
+    name: 'PostgreSQL',
+    icon: (
+      <svg viewBox="0 0 256 256" className="w-10 h-10">
         <path
           d="M128 16C66.1 16 16 66.1 16 128s50.1 112 112 112 112-50.1 112-112S189.9 16 128 16z"
           fill="#336791"
@@ -299,60 +212,10 @@ const techIcons = {
       </svg>
     ),
   },
-  redis: {
-    name: 'Redis',
-    category: 'Cache',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path d="M2.5 8.5L12 4l9.5 4.5L12 13 2.5 8.5z" fill="#DC382D" />
-        <path d="M2.5 12L12 16.5 21.5 12l-1.5 2.5-8 3.5-8-3.5-1.5-2.5z" fill="#B71C1C" />
-        <path d="M2.5 15.5L12 20l9.5-4.5-1.5 2.5-8 3.5-8-3.5-1.5-2.5z" fill="#7F0000" />
-      </svg>
-    ),
-  },
-  cloudflare: {
-    name: 'Cloudflare',
-    category: 'Security & CDN',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          d="M18.8 12.8c-.2-1.8-1.7-3.2-3.6-3.2-.8 0-1.5.3-2.1.8-.6-1.5-2.2-2.6-4-2.6-2.3 0-4.2 1.8-4.3 4.1C2.1 12.4 0 14.7 0 17.5 0 20.5 2.5 23 5.5 23h13.2c2.9 0 5.3-2.4 5.3-5.3 0-2.6-1.9-4.7-4.5-5.1l-.7.2z"
-          fill="#F38020"
-        />
-      </svg>
-    ),
-  },
-
-  // Col 6
-  supabase: {
-    name: 'Supabase',
-    category: 'Backend',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          d="M13.4 23.6c-.6.8-1.9.4-1.9-.6V13.8H2.8c-.9 0-1.4-1-.8-1.7L10.6.4c.6-.8 1.9-.4 1.9.6v9.2h8.7c.9 0 1.4 1 .8 1.7l-8.6 11.7z"
-          fill="#3ECF8E"
-        />
-      </svg>
-    ),
-  },
-  tailwind: {
-    name: 'Tailwind CSS',
-    category: 'Styling',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8">
-        <path
-          d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.336 6.182 14.975 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.336 13.382 8.975 12 6.001 12z"
-          fill="#38BDF8"
-        />
-      </svg>
-    ),
-  },
-  gcp: {
+  {
     name: 'Google Cloud',
-    category: 'Cloud Infra',
     icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
         <path
           d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"
           fill="#4285F4"
@@ -366,11 +229,70 @@ const techIcons = {
       </svg>
     ),
   },
-  typescript: {
-    name: 'TypeScript',
-    category: 'Type Safety',
+];
+
+const track4Logos = [
+  {
+    name: 'Apple iOS',
     icon: (
-      <svg viewBox="0 0 256 256" className="w-8 h-8">
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.09 1.73-.95 2.76 1.01.08 2.05-.51 2.67-1.26z"
+          fill="#000000"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'Android',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h4v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v6c0 .83.67 1.5 1.5 1.5S5 16.33 5 15.5v-6C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-6c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71a.498.498 0 00-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM9 5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"
+          fill="#3DDC84"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'Figma',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M8 24a4 4 0 01-4-4 4 4 0 014-4h4v4a4 4 0 01-4 4z" fill="#0ACF83" />
+        <path d="M4 12a4 4 0 014-4h4v8H8a4 4 0 01-4-4z" fill="#A259FF" />
+        <path d="M4 4a4 4 0 014-4h4v8H8a4 4 0 01-4-4z" fill="#F24E1E" />
+        <path d="M12 0h4a4 4 0 014 4 4 4 0 01-4 4h-4V0z" fill="#FF7262" />
+        <path d="M20 12a4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4 4 4 0 014 4z" fill="#1ABCFE" />
+      </svg>
+    ),
+  },
+  {
+    name: 'GitHub',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+          fill="#181717"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'Redis',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M2.5 8.5L12 4l9.5 4.5L12 13 2.5 8.5z" fill="#DC382D" />
+        <path d="M2.5 12L12 16.5 21.5 12l-1.5 2.5-8 3.5-8-3.5-1.5-2.5z" fill="#B71C1C" />
+        <path d="M2.5 15.5L12 20l9.5-4.5-1.5 2.5-8 3.5-8-3.5-1.5-2.5z" fill="#7F0000" />
+      </svg>
+    ),
+  },
+  {
+    name: 'TypeScript',
+    icon: (
+      <svg viewBox="0 0 256 256" className="w-10 h-10">
         <rect width="256" height="256" rx="28" fill="#3178C6" />
         <path
           d="M150 193.6c14.2 8.3 30.1 12.8 46.4 13 16.5 0 26.6-7.3 26.6-18.7 0-12.7-11.4-17.7-30.8-24.8-24.9-9-40.8-21.4-40.8-44.5 0-23.7 18.6-41.5 49-41.5 14.8 0 28.3 3.5 39.5 9.4l-7.4 20.3c-11.2-5.7-22.7-8.6-33.6-8.6-14.7 0-23.2 6.8-23.2 16.5 0 11.4 10.4 16 28.8 22.8 27.5 10.1 43.1 22.8 43.1 46.8 0 25.4-20 43.7-53.5 43.7-17.8 0-35.3-5-48.4-12.8l7.3-21.6zM32 99.8h78.3v21.5H75v84.9H49.3v-84.9H32V99.8z"
@@ -379,310 +301,575 @@ const techIcons = {
       </svg>
     ),
   },
-  fastapi: {
-    name: 'FastAPI',
-    category: 'Python APIs',
+];
+
+const track5Logos = [
+  {
+    name: 'JavaScript',
     icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
+      <svg viewBox="0 0 256 256" className="w-10 h-10">
+        <rect width="256" height="256" rx="28" fill="#F7DF1E" />
+        <path
+          d="M67.3 213.7c11.9 6.9 25 10.5 38.3 10.5 22.2 0 35.7-10.8 35.7-34.9v-86.8h-26.6v86.2c0 9.7-4.8 14.8-13.8 14.8-6.1 0-11.6-2.1-16.7-5.9l-16.9 16.1zm84.4-1.2c13.7 7.7 29.8 12.2 46.4 12.2 26.8 0 43.2-13.3 43.2-34.7 0-20.4-12.8-30.9-35.9-40.4-15.6-6.4-22.8-11.3-22.8-19.5 0-7.8 6.4-13.6 17.5-13.6 9.7 0 19.3 3.6 28 9.5l11-19.1c-11.4-7.4-25.5-11.5-39.7-11.5-25.7 0-41.9 14.2-41.9 34.3 0 20.3 13.5 31.4 36.4 40.5 16.4 6.7 22.8 12 22.8 20.6 0 8.8-7.7 14.9-19.7 14.9-12.3 0-24.6-4.7-34.8-12.4l-10.5 19.7z"
+          fill="#000000"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'GraphQL',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2zm0 2.3L4.99 8.4v7.2L12 19.7l7.01-4.1V8.4L12 4.3z"
+          fill="#E10098"
+        />
+        <circle cx="12" cy="2" r="2" fill="#E10098" />
+        <circle cx="20.66" cy="7" r="2" fill="#E10098" />
+        <circle cx="20.66" cy="17" r="2" fill="#E10098" />
+        <circle cx="12" cy="22" r="2" fill="#E10098" />
+        <circle cx="3.34" cy="17" r="2" fill="#E10098" />
+        <circle cx="3.34" cy="7" r="2" fill="#E10098" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Vercel',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path d="M12 2L24 22H0L12 2z" fill="#000000" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Cloudflare',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
+        <path
+          d="M18.8 12.8c-.2-1.8-1.7-3.2-3.6-3.2-.8 0-1.5.3-2.1.8-.6-1.5-2.2-2.6-4-2.6-2.3 0-4.2 1.8-4.3 4.1C2.1 12.4 0 14.7 0 17.5 0 20.5 2.5 23 5.5 23h13.2c2.9 0 5.3-2.4 5.3-5.3 0-2.6-1.9-4.7-4.5-5.1l-.7.2z"
+          fill="#F38020"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: 'FastAPI',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-10 h-10">
         <path d="M12 0a12 12 0 100 24 12 12 0 000-24zm-.8 18l-3-6h2.7l.8-4 3 6h-2.7l-.8 4z" fill="#009688" />
       </svg>
     ),
   },
-};
+];
 
 const TechStack = () => {
   const [hovered, setHovered] = useState(null);
 
-  const Card = ({ tech, faded = false }) => (
-    <motion.div
-      onMouseEnter={() => setHovered(tech)}
+  const renderLogoItem = (item) => (
+    <div
+      key={item.name}
+      onMouseEnter={() => setHovered(item)}
       onMouseLeave={() => setHovered(null)}
-      whileHover={{ scale: 1.08, y: -2 }}
-      transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-      className={`w-[70px] h-[70px] bg-white rounded-2xl flex items-center justify-center shadow-md hover:shadow-xl transition-all duration-200 cursor-pointer shrink-0 relative group border border-slate-100/90 z-20 ${
-        faded ? 'opacity-70 hover:opacity-100' : 'opacity-100'
-      }`}
+      className="market_content_logo_wrap"
     >
-      <div className="w-8 h-8 flex items-center justify-center transition-transform duration-200 group-hover:scale-110">
-        {tech.icon}
+      <div className="market_content_logo">
+        {item.icon}
       </div>
-
-      {/* Tooltip */}
-      <div className="absolute -top-9 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[11px] font-medium font-ibm py-1 px-2.5 rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-150 whitespace-nowrap z-50 shadow-lg">
-        {tech.name}
-      </div>
-    </motion.div>
+    </div>
   );
 
   return (
-    <section className="w-full bg-white dark:bg-[#030A1E] text-gray-900 dark:text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden font-ibm transition-colors duration-300">
-      <div className="max-w-7xl mx-auto">
-        {/* ── Heading ── */}
-        <div className="text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-white/10 border border-blue-200/60 dark:border-white/15 text-[#0D6EFD] dark:text-cyan-300 text-xs font-semibold tracking-wide mb-4 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0D6EFD] dark:bg-cyan-300 animate-pulse" />
-            <span>Marketplace</span>
+    <section logo-section="" eyebrow-section="" className="section_market">
+      {/* ── Exact RoomMaster Hidden SVG Gooey Filter ── */}
+      <div className="clip-path-round w-embed">
+        <svg
+          style={{ visibility: 'hidden', position: 'absolute', pointerEvents: 'none' }}
+          width="0"
+          height="0"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+        >
+          <defs>
+            <filter id="roundLarge">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                result="goo"
+              />
+              <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
+      {/* ── RoomMaster Scoped CSS Rules ── */}
+      <style>{`
+        :root {
+          --royal-blue--600-primary: #0156fc;
+          --beige--100-primary: #f7f5f2;
+          --powder-blue--400-primary: #aac7fe;
+        }
+
+        .section_market {
+          background-color: #ffffff;
+          padding: 4rem 1.5rem;
+          font-family: inherit;
+        }
+
+        @media (min-width: 992px) {
+          .section_market {
+            padding: 6rem 2rem;
+          }
+        }
+
+        .market_component {
+          width: 100%;
+          max-width: 82rem;
+          margin: 0 auto;
+        }
+
+        .top_title_wrap {
+          text-align: center;
+          margin-bottom: 3.5rem;
+        }
+
+        .eyebrow_wrap {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1rem;
+        }
+
+        .eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.35rem 0.875rem;
+          background-color: #eaf1fe;
+          border-radius: 9999px;
+          border: 1px solid rgba(1, 86, 252, 0.15);
+        }
+
+        .eyebrow_dot {
+          width: 0.4rem;
+          height: 0.4rem;
+          border-radius: 9999px;
+          background-color: #0156fc;
+        }
+
+        .eyebrow_title {
+          color: #0156fc;
+          font-size: 0.875rem;
+          font-weight: 600;
+        }
+
+        .top_title {
+          font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+          font-weight: 500;
+          letter-spacing: -0.025em;
+          color: #0f172a;
+          line-height: 1.15;
+          margin: 0;
+        }
+
+        .market_content_wrap {
+          justify-content: center;
+          display: flex;
+          align-items: stretch;
+          width: 100%;
+          position: relative;
+        }
+
+        @media (max-width: 991px) {
+          .market_content_wrap {
+            flex-direction: column;
+            gap: 1.5rem;
+          }
+        }
+
+        .market_content_left {
+          grid-column-gap: 1.5rem;
+          grid-row-gap: 1.5rem;
+          flex-flow: column;
+          width: 45%;
+          margin-right: -9%;
+          display: flex;
+          z-index: 2;
+          position: relative;
+        }
+
+        @media (max-width: 991px) {
+          .market_content_left {
+            width: 100%;
+            margin-right: 0;
+          }
+        }
+
+        @media (min-width: 992px) {
+          .market_content_round {
+            filter: url('#roundLarge');
+          }
+
+          .market_content.is_1 {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 46.5%, 75.5% 46.5%, 75.5% 100%, 0% 100%);
+          }
+
+          .market_content.is_2 {
+            clip-path: polygon(20% 0%, 100% 0%, 100% 46.5%, 100% 100%, 75.5% 100%, 20% 100%, 20% 71.04%, 0% 71.04%, 0% 38.58%, 20% 38.58%);
+          }
+        }
+
+        .market_content.is_1 {
+          background-color: var(--royal-blue--600-primary);
+          padding: 2.75rem 12vw 2.75rem 2.75rem;
+          border-radius: 1.5rem;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+
+        @media (min-width: 992px) {
+          .market_content.is_1 {
+            border-radius: 0;
+          }
+        }
+
+        .market_logo {
+          width: 3.5rem;
+          height: 3.5rem;
+          color: #ffffff;
+          background-color: #ffffff3d;
+          border-radius: 0.65rem;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 2rem;
+          display: flex;
+        }
+
+        .market_desc_wrap {
+          width: 100%;
+          max-width: 22rem;
+        }
+
+        .market_desc {
+          color: #ffffff;
+          font-size: 1.15rem;
+          line-height: 1.65;
+          margin: 0;
+          font-weight: 400;
+        }
+
+        .market_content_cta {
+          grid-column-gap: 1rem;
+          grid-row-gap: 1rem;
+          border: 1px dashed var(--powder-blue--400-primary);
+          border-radius: 0.875rem;
+          flex-flow: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1.5rem 2rem;
+          display: flex;
+          background-color: #ffffff;
+        }
+
+        @media (max-width: 640px) {
+          .market_content_cta {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+        }
+
+        .market_content_title_wrap {
+          width: 100%;
+          max-width: 18rem;
+        }
+
+        .market_content_title {
+          font-size: 1.15rem;
+          line-height: 1.35;
+          color: #0f172a;
+          margin: 0;
+          font-weight: 500;
+        }
+
+        .market_content_link {
+          flex: none;
+        }
+
+        .button.is-alternate {
+          border: 1px solid var(--royal-blue--600-primary);
+          color: var(--royal-blue--600-primary);
+          background-color: transparent;
+          border-radius: 0.5rem;
+          padding: 0.65rem 1.35rem;
+          font-size: 0.875rem;
+          font-weight: 600;
+          text-decoration: none;
+          display: inline-block;
+          transition: background-color 0.2s, color 0.2s;
+          cursor: pointer;
+          white-space: nowrap;
+        }
+
+        .button.is-alternate:hover {
+          background-color: var(--royal-blue--600-primary);
+          color: #ffffff;
+        }
+
+        .market_content_round.is_2 {
+          width: 55%;
+          overflow: hidden;
+          z-index: 1;
+          position: relative;
+        }
+
+        @media (max-width: 991px) {
+          .market_content_round.is_2 {
+            width: 100%;
+          }
+        }
+
+        .market_content.is_2 {
+          background-color: var(--beige--100-primary);
+          height: 100%;
+          padding: 2.25rem 0;
+          position: relative;
+          overflow: hidden;
+          border-radius: 1.5rem;
+        }
+
+        @media (min-width: 992px) {
+          .market_content.is_2 {
+            border-radius: 0;
+          }
+        }
+
+        .market_content_logos_container {
+          flex-flow: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          position: relative;
+          gap: 1.75rem;
+          z-index: 2;
+        }
+
+        .market_content_logos_track {
+          grid-column-gap: 2rem;
+          grid-row-gap: 2rem;
+          justify-content: flex-start;
+          align-items: center;
+          display: flex;
+          white-space: nowrap;
+        }
+
+        @media (min-width: 992px) {
+          .market_content_logos_track.is_1,
+          .market_content_logos_track.is_5 {
+            margin-left: 3.75rem;
+          }
+          .market_content_logos_track.is_2 {
+            margin-left: 10.95rem;
+          }
+        }
+
+        .market_content_logo_wrap {
+          background-color: #ffffff;
+          border-radius: 1.125rem;
+          justify-content: center;
+          align-items: center;
+          width: 5rem;
+          height: 5rem;
+          display: flex;
+          flex-shrink: 0;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          cursor: pointer;
+        }
+
+        .market_content_logo_wrap:hover {
+          transform: scale(1.08);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .market_content_logo {
+          flex: none;
+          width: 2.5rem;
+          height: 2.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .market_overlay.is_left_right {
+          background-image: linear-gradient(90deg, #f7f5f2f0, #f7f5f200 20%, #f7f5f200 80%, #f7f5f2f0);
+          position: absolute;
+          inset: 0%;
+          pointer-events: none;
+          z-index: 3;
+        }
+
+        .market_overlay.is_top_bottom {
+          background-image: linear-gradient(#f7f5f2e6, #f7f5f200 20%, #f7f5f200 80%, #f7f5f2e6);
+          position: absolute;
+          inset: 0%;
+          pointer-events: none;
+          z-index: 3;
+        }
+      `}</style>
+
+      <div className="padding-global padding-section-medium">
+        <div className="container-large market_component">
+          {/* ── Section Title Header ── */}
+          <div className="margin-bottom margin-medium top_title_wrap">
+            <div className="eyebrow_wrap">
+              <div className="eyebrow">
+                <div className="eyebrow_dot" />
+                <div className="eyebrow_title">Marketplace</div>
+              </div>
+            </div>
+            <h2 className="top_title">Create your perfect technology ecosystem</h2>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-medium tracking-tight text-gray-900 dark:text-white leading-[1.14]">
-            Create your perfect technology ecosystem
-          </h2>
-        </div>
-
-        {/* ── DESKTOP: MATHEMATICALLY LOCKED 7-COLUMN x 5-ROW ECOSYSTEM BOARD ── */}
-        <div className="hidden lg:flex justify-center items-center">
-          <div
-            className="grid grid-cols-[360px_repeat(6,70px)] grid-rows-[repeat(5,70px)] gap-3.5 relative select-none"
-            style={{ width: '886px', height: '406px' }}
-          >
-            {/* ══════════════════════════════════════════════════════════
-                1. THE STEPPED BLUE HIGHLIGHT CARD
-               ══════════════════════════════════════════════════════════ */}
-            
-            {/* Upper Overhang Part (Col 1 to 2, Row 1 to 2) */}
-            <div className="col-start-1 col-end-3 row-start-1 row-end-3 bg-[#0D6EFD] rounded-tl-3xl rounded-tr-3xl rounded-br-3xl p-7 flex flex-col justify-start z-10 shadow-xl relative">
-              {/* RoomMaster 4-box app grid icon */}
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4 text-white shadow-inner">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="26"
-                  height="26"
-                  viewBox="0 0 33 33"
-                  fill="none"
-                >
-                  <path
-                    d="M5.54 7.12C5.54 6.76 5.69 6.41 5.94 6.16C6.2 5.91 6.54 5.76 6.9 5.76H12.32C12.68 5.76 13.03 5.91 13.28 6.16C13.53 6.41 13.68 6.76 13.68 7.12V12.54C13.68 12.9 13.53 13.24 13.28 13.5C13.03 13.75 12.68 13.9 12.32 13.9H6.9C6.54 13.9 6.2 13.75 5.94 13.5C5.69 13.24 5.54 12.9 5.54 12.54V7.12Z"
-                    stroke="currentColor"
-                    strokeWidth="2.7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M5.54 20.67C5.54 20.31 5.69 19.97 5.94 19.71C6.2 19.46 6.54 19.32 6.9 19.32H12.32C12.68 19.32 13.03 19.46 13.28 19.71C13.53 19.97 13.68 20.31 13.68 20.67V26.09C13.68 26.45 13.53 26.8 13.28 27.05C13.03 27.31 12.68 27.45 12.32 27.45H6.9C6.54 27.45 6.2 27.31 5.94 27.05C5.69 26.8 5.54 26.45 5.54 26.09V20.67Z"
-                    stroke="currentColor"
-                    strokeWidth="2.7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M19.1 20.67C19.1 20.31 19.24 19.97 19.49 19.71C19.75 19.46 20.09 19.32 20.45 19.32H25.87C26.23 19.32 26.58 19.46 26.83 19.71C27.09 19.97 27.23 20.31 27.23 20.67V26.09C27.23 26.45 27.09 26.8 26.83 27.05C26.58 27.31 26.23 27.45 25.87 27.45H20.45C20.09 27.45 19.75 27.31 19.49 27.05C19.24 26.8 19.1 26.45 19.1 26.09V20.67Z"
-                    stroke="currentColor"
-                    strokeWidth="2.7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M19.1 9.83H27.23"
-                    stroke="currentColor"
-                    strokeWidth="2.7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M23.17 5.76V13.9"
-                    stroke="currentColor"
-                    strokeWidth="2.7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+          {/* ── Exact RoomMaster Inspected HTML Hierarchy ── */}
+          <div className="market_content_wrap">
+            {/* Left Column */}
+            <div id="w-node-_8c3b925d-ad9c-0682-3acb-a2ef7ab91c00-7ab91bf7" className="market_content_left">
+              <div className="market_content_round is_1">
+                <div className="market_content is_1">
+                  <div className="market_logo">
+                    <div className="icon-embed-small w-embed">
+                      {/* Exact RoomMaster 4-Box App Grid SVG */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 33 33"
+                        fill="none"
+                        preserveAspectRatio="xMidYMid meet"
+                        aria-hidden="true"
+                        role="img"
+                      >
+                        <g clipPath="url(#clip0_2514_10113)">
+                          <path
+                            d="M5.54492 7.11902C5.54492 6.75956 5.68772 6.41482 5.94189 6.16064C6.19607 5.90647 6.54081 5.76367 6.90027 5.76367H12.3217C12.6811 5.76367 13.0259 5.90647 13.28 6.16064C13.5342 6.41482 13.677 6.75956 13.677 7.11902V12.5404C13.677 12.8999 13.5342 13.2446 13.28 13.4988C13.0259 13.753 12.6811 13.8958 12.3217 13.8958H6.90027C6.54081 13.8958 6.19607 13.753 5.94189 13.4988C5.68772 13.2446 5.54492 12.8999 5.54492 12.5404V7.11902Z"
+                            stroke="currentColor"
+                            strokeWidth="2.71069"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M5.54492 20.6718C5.54492 20.3123 5.68772 19.9676 5.94189 19.7134C6.19607 19.4592 6.54081 19.3164 6.90027 19.3164H12.3217C12.6811 19.3164 13.0259 19.4592 13.28 19.7134C13.5342 19.9676 13.677 20.3123 13.677 20.6718V26.0931C13.677 26.4526 13.5342 26.7973 13.28 27.0515C13.0259 27.3057 12.6811 27.4485 12.3217 27.4485H6.90027C6.54081 27.4485 6.19607 27.3057 5.94189 27.0515C5.68772 26.7973 5.54492 26.4526 5.54492 26.0931V20.6718Z"
+                            stroke="currentColor"
+                            strokeWidth="2.71069"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M19.0977 20.6718C19.0977 20.3123 19.2405 19.9676 19.4946 19.7134C19.7488 19.4592 20.0935 19.3164 20.453 19.3164H25.8744C26.2338 19.3164 26.5786 19.4592 26.8328 19.7134C27.0869 19.9676 27.2297 20.3123 27.2297 20.6718V26.0931C27.2297 26.4526 27.0869 26.7973 26.8328 27.0515C26.5786 27.3057 26.2338 27.4485 25.8744 27.4485H20.453C20.0935 27.4485 19.7488 27.3057 19.4946 27.0515C19.2405 26.7973 19.0977 26.4526 19.0977 26.0931V20.6718Z"
+                            stroke="currentColor"
+                            strokeWidth="2.71069"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M19.0977 9.8291H27.2297"
+                            stroke="currentColor"
+                            strokeWidth="2.71069"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M23.165 5.76367V13.8958"
+                            stroke="currentColor"
+                            strokeWidth="2.71069"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_2514_10113">
+                            <rect
+                              width="32.5283"
+                              height="32.5283"
+                              fill="currentColor"
+                              transform="translate(0.123047 0.341797)"
+                            />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="market_desc_wrap">
+                    <p className="market_desc text-size-large">
+                      Connect roommaster with <strong>100+ third-party solutions</strong> from door locks, and point of
+                      sale to accounting systems, and marketing tools, so your hotel runs like a well-oiled machine.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Description Top Lines */}
-              <p className="text-white text-[1.05rem] leading-[1.65] font-normal max-w-[20rem]">
-                Connect roommaster with{' '}
-                <strong className="text-white font-bold">100+ third-party solutions</strong> from door locks, and point of sale to
-              </p>
-            </div>
-
-            {/* Lower Body Part (Col 1 only, Row 3 to 4) */}
-            <div className="col-start-1 col-end-2 row-start-3 row-end-5 bg-[#0D6EFD] rounded-bl-3xl px-7 pb-6 flex flex-col justify-between z-10 shadow-xl relative -mt-3.5 pt-3.5">
-              {/* Description Remaining Lines */}
-              <p className="text-white text-[1.05rem] leading-[1.65] font-normal max-w-[20rem]">
-                accounting systems, and marketing tools, so your hotel runs like a well-oiled machine.
-              </p>
-            </div>
-
-            {/* Smooth Concave Fillet between Overhang and Lower Body */}
-            <div
-              className="col-start-2 col-end-3 row-start-3 row-end-4 pointer-events-none z-10 -ml-3.5 -mt-3.5 w-7 h-7 overflow-hidden"
-              style={{ position: 'relative' }}
-            >
-              <div className="w-14 h-14 rounded-tl-2xl bg-[#0D6EFD] absolute -top-7 -left-7" />
-            </div>
-
-            {/* ══════════════════════════════════════════════════════════
-                2. THE BOTTOM CTA ACTION BOX (Col 1, Row 5)
-               ══════════════════════════════════════════════════════════ */}
-            <div className="col-start-1 col-end-2 row-start-5 row-end-6 bg-white dark:bg-white/5 border border-dashed border-[#BCD4FE] dark:border-white/20 rounded-2xl px-5 flex items-center justify-between gap-3 shadow-sm z-10">
-              <span className="text-[13px] font-medium text-slate-800 dark:text-white/90 leading-tight max-w-[14rem]">
-                See how roommaster connects with your favorite tools
-              </span>
-              <a
-                href="#contact"
-                className="shrink-0 inline-flex items-center justify-center border border-[#0D6EFD] text-[#0D6EFD] dark:text-white dark:border-white/40 hover:bg-[#0D6EFD] hover:text-white font-semibold text-xs px-3.5 py-2 rounded-xl transition-all duration-150 whitespace-nowrap"
-              >
-                <span>Visit Marketplace</span>
-              </a>
-            </div>
-
-            {/* ══════════════════════════════════════════════════════════
-                3. THE BEIGE / NAVY STEPPED BACKGROUND CONTAINER
-               ══════════════════════════════════════════════════════════ */}
-            {/* Main background block (Cols 3 to 7, Rows 1 to 5) */}
-            <div className="col-start-3 col-end-8 row-start-1 row-end-6 bg-[#F6F5F2] dark:bg-[#0B1C3D] rounded-3xl z-0 shadow-lg -m-3.5 relative overflow-hidden" />
-
-            {/* Left notch extension block (Col 2, Rows 3 to 4) */}
-            <div className="col-start-2 col-end-3 row-start-3 row-end-5 bg-[#F6F5F2] dark:bg-[#0B1C3D] rounded-l-3xl z-0 -my-3.5 -ml-3.5" />
-
-            {/* ══════════════════════════════════════════════════════════
-                4. THE 24 ICONS (LOCKED TO EXACT (X, Y) POSITIONS)
-               ══════════════════════════════════════════════════════════ */}
-
-            {/* ── ROW 1 (Cols 3, 4, 5, 6, 7) ── */}
-            <div className="col-start-3 col-end-4 row-start-1 row-end-2 flex items-center justify-center">
-              <Card tech={techIcons.python} faded={true} />
-            </div>
-            <div className="col-start-4 col-end-5 row-start-1 row-end-2 flex items-center justify-center">
-              <Card tech={techIcons.node} faded={true} />
-            </div>
-            <div className="col-start-5 col-end-6 row-start-1 row-end-2 flex items-center justify-center">
-              <Card tech={techIcons.aws} faded={true} />
-            </div>
-            <div className="col-start-6 col-end-7 row-start-1 row-end-2 flex items-center justify-center">
-              <Card tech={techIcons.docker} faded={true} />
-            </div>
-            <div className="col-start-7 col-end-8 row-start-1 row-end-2 flex items-center justify-center">
-              <Card tech={techIcons.supabase} faded={true} />
-            </div>
-
-            {/* ── ROW 2 (Cols 3, 4, 5, 6, 7) ── */}
-            <div className="col-start-3 col-end-4 row-start-2 row-end-3 flex items-center justify-center">
-              <Card tech={techIcons.react} />
-            </div>
-            <div className="col-start-4 col-end-5 row-start-2 row-end-3 flex items-center justify-center">
-              <Card tech={techIcons.shopify} />
-            </div>
-            <div className="col-start-5 col-end-6 row-start-2 row-end-3 flex items-center justify-center">
-              <Card tech={techIcons.nextjs} />
-            </div>
-            <div className="col-start-6 col-end-7 row-start-2 row-end-3 flex items-center justify-center">
-              <Card tech={techIcons.stripe} />
-            </div>
-            <div className="col-start-7 col-end-8 row-start-2 row-end-3 flex items-center justify-center">
-              <Card tech={techIcons.tailwind} />
-            </div>
-
-            {/* ── ROW 3 (ALL 6 COLUMNS: Cols 2, 3, 4, 5, 6, 7) ── */}
-            <div className="col-start-2 col-end-3 row-start-3 row-end-4 flex items-center justify-center">
-              <Card tech={techIcons.gemini} />
-            </div>
-            <div className="col-start-3 col-end-4 row-start-3 row-end-4 flex items-center justify-center">
-              <Card tech={techIcons.mongo} />
-            </div>
-            <div className="col-start-4 col-end-5 row-start-3 row-end-4 flex items-center justify-center">
-              <Card tech={techIcons.openai} />
-            </div>
-            <div className="col-start-5 col-end-6 row-start-3 row-end-4 flex items-center justify-center">
-              <Card tech={techIcons.flutter} />
-            </div>
-            <div className="col-start-6 col-end-7 row-start-3 row-end-4 flex items-center justify-center">
-              <Card tech={techIcons.postgres} />
-            </div>
-            <div className="col-start-7 col-end-8 row-start-3 row-end-4 flex items-center justify-center">
-              <Card tech={techIcons.gcp} />
-            </div>
-
-            {/* ── ROW 4 (ALL 6 COLUMNS: Cols 2, 3, 4, 5, 6, 7) ── */}
-            <div className="col-start-2 col-end-3 row-start-4 row-end-5 flex items-center justify-center">
-              <Card tech={techIcons.android} />
-            </div>
-            <div className="col-start-3 col-end-4 row-start-4 row-end-5 flex items-center justify-center">
-              <Card tech={techIcons.figma} />
-            </div>
-            <div className="col-start-4 col-end-5 row-start-4 row-end-5 flex items-center justify-center">
-              <Card tech={techIcons.github} />
-            </div>
-            <div className="col-start-5 col-end-6 row-start-4 row-end-5 flex items-center justify-center">
-              <Card tech={techIcons.redis} />
-            </div>
-            <div className="col-start-6 col-end-7 row-start-4 row-end-5 flex items-center justify-center">
-              <Card tech={techIcons.typescript} />
-            </div>
-            <div className="col-start-7 col-end-8 row-start-4 row-end-5 flex items-center justify-center">
-              <Card tech={techIcons.apple} />
-            </div>
-
-            {/* ── ROW 5 (Cols 3, 4, 5, 6, 7) ── */}
-            <div className="col-start-3 col-end-4 row-start-5 row-end-6 flex items-center justify-center">
-              <Card tech={techIcons.javascript} faded={true} />
-            </div>
-            <div className="col-start-4 col-end-5 row-start-5 row-end-6 flex items-center justify-center">
-              <Card tech={techIcons.graphql} faded={true} />
-            </div>
-            <div className="col-start-5 col-end-6 row-start-5 row-end-6 flex items-center justify-center">
-              <Card tech={techIcons.vercel} faded={true} />
-            </div>
-            <div className="col-start-6 col-end-7 row-start-5 row-end-6 flex items-center justify-center">
-              <Card tech={techIcons.cloudflare} faded={true} />
-            </div>
-            <div className="col-start-7 col-end-8 row-start-5 row-end-6 flex items-center justify-center">
-              <Card tech={techIcons.fastapi} faded={true} />
-            </div>
-          </div>
-        </div>
-
-        {/* ── MOBILE / TABLET RESPONSIVE (< 1024px) ── */}
-        <div className="flex lg:hidden flex-col gap-6 max-w-lg mx-auto">
-          {/* Blue Card */}
-          <div className="bg-[#0D6EFD] text-white p-7 rounded-3xl shadow-xl">
-            <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5 text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 33 33" fill="none">
-                <path d="M5.54 7.12H12.32V13.9H5.54V7.12Z" stroke="currentColor" strokeWidth="2.7" />
-                <path d="M5.54 20.67H12.32V27.45H5.54V20.67Z" stroke="currentColor" strokeWidth="2.7" />
-                <path d="M19.1 20.67H25.87V27.45H19.1V20.67Z" stroke="currentColor" strokeWidth="2.7" />
-                <path d="M19.1 9.83H27.23" stroke="currentColor" strokeWidth="2.7" />
-                <path d="M23.17 5.76V13.9" stroke="currentColor" strokeWidth="2.7" />
-              </svg>
-            </div>
-            <p className="text-white text-base leading-relaxed">
-              Connect roommaster with <strong className="text-white font-bold">100+ third-party solutions</strong> from door locks, and point of sale to accounting systems, and marketing tools, so your hotel runs like a well-oiled machine.
-            </p>
-          </div>
-
-          {/* Grid Container */}
-          <div className="bg-[#F6F5F2] dark:bg-[#0B1C3D] p-5 rounded-3xl shadow-lg">
-            <div className="grid grid-cols-4 sm:grid-cols-5 gap-3 place-items-center">
-              {Object.values(techIcons).slice(0, 15).map((tech) => (
-                <div key={tech.name} className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm">
-                  {tech.icon}
+              {/* Bottom CTA Box */}
+              <div className="market_content_cta">
+                <div className="market_content_title_wrap">
+                  <h3 className="market_content_title text-size-large" role="heading" aria-level="3">
+                    See how roommaster connects with your favorite tools
+                  </h3>
                 </div>
-              ))}
+                <div className="market_content_link">
+                  <a href="#contact" className="button w-inline-block is-alternate">
+                    <div>Visit Marketplace</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Logo Grid with Overhang Wrap */}
+            <div id="w-node-_8c3b925d-ad9c-0682-3acb-a2ef7ab91c12-7ab91bf7" className="market_content_round is_2">
+              <div className="market_content is_2">
+                <div className="market_content_logos_container">
+                  {/* Track 1 */}
+                  <div logo-wrapper="" className="market_content_logos_track is_1">
+                    {track1Logos.map(renderLogoItem)}
+                  </div>
+
+                  {/* Track 2 */}
+                  <div logo-wrapper="" className="market_content_logos_track is_2">
+                    {track2Logos.map(renderLogoItem)}
+                  </div>
+
+                  {/* Track 3 */}
+                  <div logo-wrapper="" className="market_content_logos_track">
+                    {track3Logos.map(renderLogoItem)}
+                  </div>
+
+                  {/* Track 4 */}
+                  <div logo-wrapper="" className="market_content_logos_track">
+                    {track4Logos.map(renderLogoItem)}
+                  </div>
+
+                  {/* Track 5 */}
+                  <div logo-wrapper="" className="market_content_logos_track is_5">
+                    {track5Logos.map(renderLogoItem)}
+                  </div>
+                </div>
+
+                {/* Overlays */}
+                <div className="market_overlay is_left_right" />
+                <div className="market_overlay is_top_bottom" />
+              </div>
             </div>
           </div>
 
-          {/* CTA Box */}
-          <div className="border border-dashed border-[#BCD4FE] dark:border-white/20 rounded-2xl p-4 bg-white dark:bg-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm">
-            <span className="text-xs sm:text-sm font-medium text-slate-800 dark:text-white text-center sm:text-left">
-              See how roommaster connects with your favorite tools
-            </span>
-            <a
-              href="#contact"
-              className="border border-[#0D6EFD] text-[#0D6EFD] dark:text-white hover:bg-[#0D6EFD] hover:text-white font-semibold text-xs px-4 py-2 rounded-lg transition-all"
-            >
-              Visit Marketplace
-            </a>
-          </div>
-        </div>
-
-        {/* ── Status Hint Bar ── */}
-        <div className="text-center mt-10 text-xs text-slate-500 dark:text-white/40">
-          {hovered ? (
-            <span className="font-semibold text-slate-800 dark:text-white">
-              {hovered.name} — <span className="font-normal text-slate-500 dark:text-white/60">{hovered.category}</span>
-            </span>
-          ) : (
-            'Hover over any integration to inspect ecosystem connectivity.'
+          {/* Interactive Tooltip Hint Bar */}
+          {hovered && (
+            <div className="text-center mt-6 text-sm font-medium text-slate-600">
+              <span className="font-semibold text-[#0156fc]">{hovered.name}</span> — {hovered.category} Architecture
+            </div>
           )}
         </div>
       </div>
