@@ -495,6 +495,7 @@ const TechStack = () => {
           width: 45%;
           margin-right: -9%;
           display: flex;
+          justify-content: space-between;
           z-index: 2;
           position: relative;
         }
@@ -572,6 +573,7 @@ const TechStack = () => {
           padding: 1.5rem 2rem;
           display: flex;
           background-color: #ffffff;
+          margin-top: auto;
         }
 
         @media (max-width: 640px) {
