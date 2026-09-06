@@ -55,7 +55,7 @@ const processSteps = [
 
 const ProcessVision = () => {
   return (
-    <section className="w-full bg-white dark:bg-[#030A1E] text-gray-900 dark:text-white pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-10 lg:pb-12 px-6 sm:px-8 lg:px-12 overflow-hidden transition-colors duration-300">
+    <section className="w-full bg-white dark:bg-[#030A1E] text-gray-900 dark:text-white pt-4 sm:pt-6 lg:pt-8 pb-2 sm:pb-3 lg:pb-4 px-6 sm:px-8 lg:px-12 overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header: Headline only */}

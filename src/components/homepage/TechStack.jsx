@@ -605,13 +605,13 @@ const TechStack = () => {
 
         .section_market {
           background-color: #ffffff;
-          padding: 4rem 1.5rem;
+          padding: 1.5rem 1.5rem 4rem;
           font-family: inherit;
         }
 
         @media (min-width: 992px) {
           .section_market {
-            padding: 6rem 2rem;
+            padding: 2rem 2rem 5rem;
           }
         }
 
@@ -622,8 +622,8 @@ const TechStack = () => {
         }
 
         .top_title_wrap {
-          text-align: center;
-          margin-bottom: 3.5rem;
+          text-align: left;
+          margin-bottom: 2.25rem;
         }
 
         .eyebrow_wrap {
@@ -927,12 +927,6 @@ const TechStack = () => {
         <div className="container-large market_component">
           {/* ── Section Title Header ── */}
           <div className="margin-bottom margin-medium top_title_wrap">
-            <div className="eyebrow_wrap">
-              <div className="eyebrow">
-                <div className="eyebrow_dot" />
-                <div className="eyebrow_title">Marketplace</div>
-              </div>
-            </div>
             <h2 className="top_title">Create your perfect technology ecosystem</h2>
           </div>
 
