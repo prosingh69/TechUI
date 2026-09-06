@@ -626,6 +626,12 @@ const TechStack = () => {
           margin-bottom: 2.25rem;
         }
 
+        @media (min-width: 992px) {
+          .top_title_wrap {
+            padding-left: 4.5%;
+          }
+        }
+
         .eyebrow_wrap {
           display: flex;
           justify-content: center;
